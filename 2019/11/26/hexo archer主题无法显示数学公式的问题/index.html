@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">330</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">345</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -402,13 +402,13 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <p>稍微记录解决此问题的过程。</p>
-<h2 id="一、简单地卸载并重装新插件"><a href="#一、简单地卸载并重装新插件" class="headerlink" title="一、简单地卸载并重装新插件"></a>一、<a href="https://dxj1113.github.io/2017/07/14/%E5%A4%84%E7%90%86hexo%E4%B8%8Emathjax%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">简单地卸载并重装新插件</a></h2><p>在hexo目录下，卸载 hexo-renderer-marked插件，并安装 hexo-renderer-kramed 插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure><br>发现无法解决<br>被$符号包含的公式无法显示（比起最初的还更完蛋）</p>
+<h2 id="一、简单地卸载并重装新插件"><a href="#一、简单地卸载并重装新插件" class="headerlink" title="一、简单地卸载并重装新插件"></a>一、<a href="https://dxj1113.github.io/2017/07/14/%E5%A4%84%E7%90%86hexo%E4%B8%8Emathjax%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">简单地卸载并重装新插件</a></h2><p>在hexo目录下，卸载 hexo-renderer-marked插件，并安装 hexo-renderer-kramed 插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure><br>发现无法解决<br>被‘$’符号包含的公式无法显示（比起最初的还更完蛋）</p>
 <h2 id="二、老老实实看Make-Hexo-Support-Math-Again"><a href="#二、老老实实看Make-Hexo-Support-Math-Again" class="headerlink" title="二、老老实实看Make Hexo Support Math Again"></a>二、老老实实看<a href="https://nathaniel.blog/tutorials/make-hexo-support-math-again/" target="_blank" rel="noopener">Make Hexo Support Math Again</a></h2><p>果然很实在，顺利解决，依旧是在hexo目录下操作<br>步骤如下：</p>
 <h3 id="1-先重装插件"><a href="#1-先重装插件" class="headerlink" title="(1)先重装插件"></a>(1)先重装插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
 <h3 id="2-修改js文件"><a href="#2-修改js文件" class="headerlink" title="(2)修改js文件"></a>(2)修改js文件</h3><p>打开/HEXO/node_modules/hexo-renderer-kramed/lib/renderer.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Change inline math rule</span><br><span class="line">function formatText(text) &#123;</span><br><span class="line">    // Fit kramed&apos;s rule: $$ + \1 + $$</span><br><span class="line">    return text.replace(/`\$(.*?)\$`/g, &apos;$$$$$1$$$$&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>修改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Change inline math rule</span><br><span class="line">function formatText(text) &#123;</span><br><span class="line">    return text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="3）安装mathjax插件"><a href="#3）安装mathjax插件" class="headerlink" title="(3）安装mathjax插件"></a>(3）安装mathjax插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-math --save</span><br><span class="line">$ npm install hexo-renderer-mathjax --save</span><br></pre></td></tr></table></figure>
 <h3 id="（4）修改html文件"><a href="#（4）修改html文件" class="headerlink" title="（4）修改html文件"></a>（4）修改html文件</h3><p>打开/HEXO/node_modules/hexo-renderer-mathjax/mathjax.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure><br>替换为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="（5）激活插件"><a href="#（5）激活插件" class="headerlink" title="（5）激活插件"></a>（5）激活插件</h3><p>在md文件开头title后加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure></p>
+<h3 id="（5）激活插件"><a href="#（5）激活插件" class="headerlink" title="（5）激活插件"></a>（5）激活插件</h3><p>在md文件开头title后加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure><br>但后面发现没有这步才能正常显示</p>
 <h3 id="（6）部署"><a href="#（6）部署" class="headerlink" title="（6）部署"></a>（6）部署</h3><p>生成网站静态文件到默认设置的 public 文件夹,并部署到设定的仓库。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
 <p><strong>不要随意hexo clean</strong><br>然后就完事了</p>
@@ -420,13 +420,18 @@ height:50vh;
             <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
             <p>原文链接：<a href="https://dgz-cyber.github.io/2019/11/26/hexo%20archer%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E9%97%AE%E9%A2%98/">https://dgz-cyber.github.io/2019/11/26/hexo%20archer%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E9%97%AE%E9%A2%98/</a>
             <p>发表日期：<a href="https://dgz-cyber.github.io/2019/11/26/hexo%20archer%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E9%97%AE%E9%A2%98/">November 26th 2019, 5:37:21 pm</a>
-            <p>更新日期：<a href="https://dgz-cyber.github.io/2019/11/26/hexo%20archer%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E9%97%AE%E9%A2%98/">November 26th 2019, 5:40:47 pm</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2019/11/26/hexo%20archer%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E9%97%AE%E9%A2%98/">November 27th 2019, 3:21:56 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/11/30/Aurora%E6%8B%9B%E6%96%B0%E8%B5%9B%E2%80%94%E2%80%94%E5%85%B3%E4%BA%8Emod/" title= "Aurora招新赛——关于mod">
+                    <div class="nextTitle">Aurora招新赛——关于mod</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -597,9 +602,16 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 4
+        Total : 5
         </div>
         <!-- search  -->
         
@@ -612,6 +624,16 @@ top:50vh;
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/30</span><a class="archive-post-title" href= "/2019/11/30/Aurora%E6%8B%9B%E6%96%B0%E8%B5%9B%E2%80%94%E2%80%94%E5%85%B3%E4%BA%8Emod/" >Aurora招新赛——关于mod</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span><a class="archive-post-title" href= "/2019/11/26/%E5%85%B3%E4%BA%8E%E6%AF%95%E8%AE%BE%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/" >关于毕设的一点记录</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -643,11 +665,6 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/26</span><a class="archive-post-title" href= "/2019/11/26/%E5%85%B3%E4%BA%8E%E6%AF%95%E8%AE%BE%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/" >关于毕设的一点记录</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" >第一篇博文</a>
         </li>
     
@@ -656,11 +673,13 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="None"><span class="iconfont-archer">&#xe606;</span>None</span>
+        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
     
         <span class="sidebar-tag-name" data-tags="钙钛矿"><span class="iconfont-archer">&#xe606;</span>钙钛矿</span>
     
         <span class="sidebar-tag-name" data-tags="毕设"><span class="iconfont-archer">&#xe606;</span>毕设</span>
+    
+        <span class="sidebar-tag-name" data-tags="None"><span class="iconfont-archer">&#xe606;</span>None</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
