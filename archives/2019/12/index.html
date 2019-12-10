@@ -346,23 +346,33 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/30/Aurora%E6%8B%9B%E6%96%B0%E8%B5%9B%E2%80%94%E2%80%94%E5%85%B3%E4%BA%8Emod/" >
+        <a class="abstract-title" href = "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >
             
-                <span>Aurora招新赛——关于mod</span>
+                <span>关于钠离子电池的学习记录</span>
         </a>
         <div class="abstract-content">
-            这道题充分反应了我的密码学是白学的，总共花的时间肯定24h+。先看题目脚本1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#second.py# -*- coding: utf-8 -*-from Crypto.Util.number import *from Crypto.Random.random import *from flag import flagAu = getStrongPrime(1024)AuAu = getStrongPrime(10...
+            12.3博后开题报告记录(高能量密度金属离子电池)研究背景液态电解质：
+
+优点：电导率高缺点：易挥发泄露、封装难
+
+准固态电解质
+
+优点：电导率较高、界面接触较好、稳定性较好缺点：…（没写）
+
+全固态电解质
+
+优点：克服泄露等缺点、稳定性好缺点：离子迁移数低、电导率低目前国际上研究固态电解质主要是三类其中无机固态电解质机械强度高，但是界面接触性差而聚合物固态电解质则相反，界面接触性较好，但机械强度差所以人们提出了一种有机-无机复合固态电解质，希望得到两种优点相结合的电解质制备方法：将无机纳米材料添加至聚合物电解质中，形成有效的网格结构，一定程度上提高电解质的电导率和离子的迁移率，并改善界...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/30</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/10</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "电池">电池</a>
     
 </div>
             
@@ -375,94 +385,24 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/26/hexo%20archer%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E9%97%AE%E9%A2%98/" >
+        <a class="abstract-title" href = "/2019/12/01/ubuntu18.04%E6%8D%A2%E6%BA%90%E9%97%AE%E9%A2%98/" >
             
-                <span>hexo archer主题无法显示数学公式的问题</span>
+                <span>ubuntu18.04换源问题</span>
         </a>
         <div class="abstract-content">
-            稍微记录解决此问题的过程。
-一、简单地卸载并重装新插件在hexo目录下，卸载 hexo-renderer-marked插件，并安装 hexo-renderer-kramed 插件12npm uninstall hexo-renderer-marked --savenpm install hexo-renderer-kramed --save发现无法解决被‘$’符号包含的公式无法显示（比起最初的还更完蛋）
-二、老老实实看Make Hexo Support Math Again果然很实在，顺利解决，依旧是在hexo目录下操作步骤如下：
-(1)先重装插件12$ npm uninstall he...
+            ubuntu18.04换源，装pwntools问题
+title: ubuntu18.04换源，装pwntools问题
+tags: 
+ - ubuntu
+
+首先当然要安装好vmware tools
+换源备份源1sudo cp /etc/apt/sources.list /etc/apt/sources_init.list
+更换源用gedit文本编辑器就相当方便，不知道为什么一堆人用vim1sudo gedit /etc/apt/sources.list删除文件中的所有内容，替换成1234567891011# 阿里源deb http://mirrors.aliyun.com/ubuntu/ ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "None">None</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/26/%E5%85%B3%E4%BA%8E%E6%AF%95%E8%AE%BE%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/" >
-            
-                <span>关于毕设的一点记录</span>
-        </a>
-        <div class="abstract-content">
-            11.5号拟定拟定方向：二维材料钙钛矿材料合成及器件论文题目：铯铅溴钙钛矿的制备及光电性能研究
-基本内容与要求：（1）利用饱和重结晶法合成掺杂铅的溴化铯钙钛矿单晶，通过调节加入溶质的量，在水溶剂下研究对钙钛矿单晶尺寸、形貌、发光性能的影响，进一步研究温度对产物尺寸、形貌、单晶生长速度的影响。（2）利用反溶剂法在常温下合成的Cs4PbBr6单晶，通过改变反溶剂的量、反溶剂的滴加速度，研究其尺寸、形貌、发光性能的变化。（3）研究合成的钙钛矿单晶在光电器件方面的应用
-进度安排：2019年11月10号-2019年12月15号，查阅相关文献、资料，进入实验室学习仪器的使用方法，完成开题报告并上交。...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "钙钛矿">钙钛矿</a>
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "毕设">毕设</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" >
-            
-                <span>第一篇博文</span>
-        </a>
-        <div class="abstract-content">
-            搭这个博客的目的，的确是想用来记录我的学习过程的，虽然现在觉得有点晚，我应该在一年前开始的，感觉这一年的信安是有点白学的，稍微有点难度的题都做不出来，题解笔记也记的乱七八糟，要找起来只靠everything有点僵硬。
-此外，希望在记录一些信安学习的经历，还要记录关于在科研上的一些事情，做一个另类的geek，毕竟现在到明年毕业，我的重点应该是在科研上。
-所以简单罗列一下本博客用途：
-
-
-整理信安知识，题解
-发布杂文，所见所想
-撰写发布技术文稿（代码支持）
-撰写发布科研上的学习记录
-
-
-希望真的可以方便以后自己需要时查阅，如果能帮助到你，那就更好了。
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/24</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/01</span>
             </div>
             <!-- tags  -->
             
@@ -475,29 +415,25 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/24/hello-world/" >
+        <a class="abstract-title" href = "/2019/12/01/ubuntu%E8%BF%9B%E7%A8%8B%E9%97%AE%E9%A2%98/" >
             
-                <span>Hello World</span>
+                <span>ubuntu进程问题</span>
         </a>
         <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
+            ubuntu进程问题
+title: ubuntu进程问题
+tags: 
+ - None
+
+E: Could not get lock /var/lib/dpkg/lock-frontend - open (11: Resource temporarly unavailable)E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is an other process using it?
+解决方法，删除锁文件12sudo rm /var/lib/dpkg/lock-frontendsudo r...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/24</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/01</span>
             </div>
             <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "None">None</a>
-    
-</div>
             
         </div>
     </article>
