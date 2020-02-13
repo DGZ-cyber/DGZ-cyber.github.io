@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>DGZ&#39;s Blog</title>
+    <title>HGAME-CRYPTO Writes up · DGZ&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >DGZ&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">HGAME-CRYPTO Writes up</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>DGZ's Blog.</a>
 </header>
@@ -227,17 +238,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            DGZ's Blog.
-            <!-- 文章页  -->
+            HGAME-CRYPTO Writes up
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,49 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                it's better to burn out than to fade away
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">472</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/02/13</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,431 +399,62 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/13/%E3%80%8A%E5%8F%8D%E6%AC%BA%E9%AA%97%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" >
-            
-                <span>《反欺骗的艺术》读书笔记</span>
-        </a>
-        <div class="abstract-content">
-            第7章 假冒的站点和危险的附件天下没有免费的午餐，然而我们大部分人因为贪小便宜，想急于得到免费品，以至于注意力被分散，无暇关注对方提供的是什么东西，可能“绵里藏针”。
-这一章主要讲的是钓鱼邮件，利用人们总是期望免费得到某些东西的心理来实施，让我注意到一个我之前没接触到的概念就是7.2来自朋友的消息，如果收到了与自己关系密切的人发来的邮件，也要考虑打开附件是否安全，提到了有一种病毒作用是：首先进入了某个人的电脑，然后把自己发送给此人邮箱地址簿的每个人。于是所有人都会从自己认识并信任的人那里收到一封邮件，附有带病毒的附件。
-第8章 利用同情心、内疚感和胁迫手段经验丰富的社交工程师善于设计一种...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "社工">社工</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >
-            
-                <span>HGAME-CRYPTO Writes up</span>
-        </a>
-        <div class="abstract-content">
-            Week 1签到题 InfantRSA发现我之前网上抄的脚本不太好用了1234567891011121314151617181920212223from libnum import n2sdef inverse(u, v):    &quot;&quot;&quot;The inverse of :data:`u` *mod* :data:`v`.&quot;&quot;&quot;    u3, v3 = u, v    u1, v1 = 1, 0    while v3 &gt; 0:        q = u3 // v3        u1, v1 = v1, u1 - v1*q...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/12/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%91%E7%91%9E%E5%B9%B8%E7%9C%9F%E6%98%AF%E5%89%B2%E7%BE%8E%E5%9B%BD%E9%9F%AD%E8%8F%9C%EF%BC%8C%E8%A1%A5%E8%B4%B4%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%96%9D%E5%92%96%E5%95%A1%E5%90%97%EF%BC%9F/" >
-            
-                <span>【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？</span>
-        </a>
-        <div class="abstract-content">
-            原链接地址 https://mp.weixin.qq.com/s/svfYhubkGtv-8PEA4erptA瑞幸咖啡只用了17个月，就完成了从创立到IPO，创造全球最快IPO纪录。在2019年底门店数量已超过星巴克，并计划在2021年底门店达到10000家（中国）。观点：瑞幸并不是割美国韭菜，补贴中国人喝咖啡。
-瑞幸的打法：1.短期：以咖啡为切入点瑞幸把咖啡当作“Grabber”，而星巴克把咖啡当作“Holder”。两个词：Grabber和Holder，来自于Edison Tse的《源创新》
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="Week-1"><a href="#Week-1" class="headerlink" title="Week 1"></a>Week 1</h2><h3 id="签到题-InfantRSA"><a href="#签到题-InfantRSA" class="headerlink" title="签到题 InfantRSA"></a>签到题 InfantRSA</h3><p>发现我之前网上抄的脚本不太好用了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">from libnum import n2s</span><br><span class="line">def inverse(u, v):</span><br><span class="line">    &quot;&quot;&quot;The inverse of :data:`u` *mod* :data:`v`.&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">    u3, v3 = u, v</span><br><span class="line">    u1, v1 = 1, 0</span><br><span class="line">    while v3 &gt; 0:</span><br><span class="line">        q = u3 // v3</span><br><span class="line">        u1, v1 = v1, u1 - v1*q</span><br><span class="line">        u3, v3 = v3, u3 - v3*q</span><br><span class="line">    while u1&lt;0:</span><br><span class="line">        u1 = u1 + v</span><br><span class="line">    return u1</span><br><span class="line">p = 681782737450022065655472455411</span><br><span class="line">q = 675274897132088253519831953441</span><br><span class="line">e = 13</span><br><span class="line">c = 275698465082361070145173688411496311542172902608559859019841</span><br><span class="line">n=p*q</span><br><span class="line">phi= (p-1)*(q-1)</span><br><span class="line">d= inverse(e,phi)</span><br><span class="line">m=pow(c,d,n)</span><br><span class="line">s=n2s(m)</span><br><span class="line">print (s) #hgame&#123;t3Xt6O0k_R5A!!!&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Affine"><a href="#Affine" class="headerlink" title="Affine"></a>Affine</h3><p>题目：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">import gmpy2</span><br><span class="line">from secret import A, B, flag</span><br><span class="line">assert flag.startswith(&apos;hgame&#123;&apos;) and flag.endswith(&apos;&#125;&apos;)</span><br><span class="line"></span><br><span class="line">TABLE = &apos;zxcvbnmasdfghjklqwertyuiop1234567890QWERTYUIOPASDFGHJKLZXCVBNM&apos;</span><br><span class="line">MOD = len(TABLE)</span><br><span class="line"></span><br><span class="line">cipher = &apos;&apos;</span><br><span class="line">for b in flag:</span><br><span class="line">    i = TABLE.find(b)</span><br><span class="line">    if i == -1:</span><br><span class="line">        cipher += b</span><br><span class="line">    else:</span><br><span class="line">        ii = (A*i + B) % MOD</span><br><span class="line">        cipher += TABLE[ii]</span><br><span class="line"></span><br><span class="line">print(cipher)</span><br><span class="line"># A8I5z&#123;xr1A_J7ha_vG_TpH410&#125;</span><br></pre></td></tr></table></figure><br>根据之前招新赛那道mod<br>对于r0 = (y * m) % n<br>由于我们知道r0，y，n的值，先通过求y模n的乘法逆元，然后可以求得m</p>
+<script type="math/tex; mode=display">y*y^{-1} mod\ n \equiv 1</script><script type="math/tex; mode=display">r0 = (y * m) mod \ n</script><p>两边同乘$y^{-1}$<br>修改：乍的一看应该是下面的形式</p>
+<script type="math/tex; mode=display">r0*y^{-1}=m</script><p>其实正确的换算应该是</p>
+<script type="math/tex; mode=display">m= (r0*y^{-1}) mod\ n</script><p>类似地，题目的关键是ii = (A<em>i + B) % MOD<br>提取A，得ii = (A</em>（i + B//A)） % MOD<br>把A看做y，把MOD看做n，把ii看做r0，i + B//A看做待求的m<br>接下来先求出A和B的值<br>A=13,B=14</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">def inverse(u, v):</span><br><span class="line">    &quot;&quot;&quot;The inverse of :data:`u` *mod* :data:`v`.&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">    u3, v3 = u, v</span><br><span class="line">    u1, v1 = 1, 0</span><br><span class="line">    while v3 &gt; 0:</span><br><span class="line">        q = u3 // v3</span><br><span class="line">        u1, v1 = v1, u1 - v1*q</span><br><span class="line">        u3, v3 = v3, u3 - v3*q</span><br><span class="line">    while u1&lt;0:</span><br><span class="line">        u1 = u1 + v</span><br><span class="line">    return u1</span><br><span class="line">#求A的逆元，得到43</span><br><span class="line">#A_1=inverse(13,62)</span><br><span class="line">#print (A_1)  </span><br><span class="line"></span><br><span class="line">TABLE = &apos;zxcvbnmasdfghjklqwertyuiop1234567890QWERTYUIOPASDFGHJKLZXCVBNM&apos;</span><br><span class="line">cipher = &apos;A8I5z&#123;xr1A_J7ha_vG_TpH410&#125;&apos;</span><br><span class="line">flag = &apos;&apos;</span><br><span class="line">for b in cipher:</span><br><span class="line">    i = TABLE.find(b)</span><br><span class="line">    if i == -1:</span><br><span class="line">        flag += b</span><br><span class="line">    else:</span><br><span class="line">        ii = ((i*43)%62)-44</span><br><span class="line">        #print (ii)</span><br><span class="line">        flag += TABLE[ii]</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+<p>有个坑，不知道之后有没有机会填掉，我不知道玩什么是-44才能得到正确答案，我一开始是-1，因为14//13=1</p>
 
-
-“Grabber”是任何可以吸引人兴趣的概念，它可能是一个美好的前景，一个新的价值诉求，一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "杂">杂</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" >
-            
-                <span>Windows下安装sqlmap，以及DVWA搭建的注意事项</span>
-        </a>
-        <div class="abstract-content">
-            首先百度搜索sqlmap，找到github的sqlmap，下载zip到本地，解压出来将解压出来的文件放到python2目录下
-之后可以在你方便的地方创建快捷方式，对象位置输入cmd，名称为sqlmap
-
-之后右键属性该快捷方式，修改为放置sqlmap文件的那个位置就完事了，打开该快捷方式，按照sqlmap的语法输入就可以了
-不过装dvwa碰到一个小坑，我记得我以前在本机上用过dvwa，还装了发现原先安装过wampserver，但是忘了怎么打开的，按照网上修改的方法修改 ：1$_DVWA[ &apos;db_password&apos; ] = &apos;p@ssw0rd&apos;;把...
+        <div class="license-wrapper">
+            <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
+            <p>原文链接：<a href="https://dgz-cyber.github.io/2020/02/13/HGAME-CRYPTO%20Writes%20up/">https://dgz-cyber.github.io/2020/02/13/HGAME-CRYPTO%20Writes%20up/</a>
+            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/02/13/HGAME-CRYPTO%20Writes%20up/">February 13th 2020, 11:52:28 pm</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/02/13/HGAME-CRYPTO%20Writes%20up/">February 13th 2020, 11:52:30 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >
-            
-                <span>关于钠离子电池的学习记录</span>
-        </a>
-        <div class="abstract-content">
-            12.3博后开题报告记录(高能量密度金属离子电池)研究背景液态电解质：
-
-优点：电导率高缺点：易挥发泄露、封装难
-
-准固态电解质
-
-优点：电导率较高、界面接触较好、稳定性较好缺点：…（没写）
-
-全固态电解质
-
-优点：克服泄露等缺点、稳定性好缺点：离子迁移数低、电导率低目前国际上研究固态电解质主要是三类其中无机固态电解质机械强度高，但是界面接触性差而聚合物固态电解质则相反，界面接触性较好，但机械强度差所以人们提出了一种有机-无机复合固态电解质，希望得到两种优点相结合的电解质制备方法：将无机纳米材料添加至聚合物电解质中，形成有效的网格结构，一定程度上提高电解质的电导率和离子的迁移率，并改善界...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "电池">电池</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/01/ubuntu18.04%E6%8D%A2%E6%BA%90%E9%97%AE%E9%A2%98/" >
-            
-                <span>ubuntu18.04换源问题</span>
-        </a>
-        <div class="abstract-content">
-            ubuntu18.04换源，装pwntools问题
-title: ubuntu18.04换源，装pwntools问题
-tags: 
- - ubuntu
-
-首先当然要安装好vmware tools
-换源备份源1sudo cp /etc/apt/sources.list /etc/apt/sources_init.list
-更换源用gedit文本编辑器就相当方便，不知道为什么一堆人用vim1sudo gedit /etc/apt/sources.list删除文件中的所有内容，替换成1234567891011# 阿里源deb http://mirrors.aliyun.com/ubuntu/ ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/01/ubuntu%E8%BF%9B%E7%A8%8B%E9%97%AE%E9%A2%98/" >
-            
-                <span>ubuntu进程问题</span>
-        </a>
-        <div class="abstract-content">
-            ubuntu进程问题
-title: ubuntu进程问题
-tags: 
- - None
-
-E: Could not get lock /var/lib/dpkg/lock-frontend - open (11: Resource temporarly unavailable)E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is an other process using it?
-解决方法，删除锁文件12sudo rm /var/lib/dpkg/lock-frontendsudo r...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/30/Aurora%E6%8B%9B%E6%96%B0%E8%B5%9B%E2%80%94%E2%80%94%E5%85%B3%E4%BA%8Emod/" >
-            
-                <span>Aurora招新赛——关于mod</span>
-        </a>
-        <div class="abstract-content">
-            这道题充分反应了我的密码学是白学的，总共花的时间肯定24h+。先看题目脚本1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#second.py# -*- coding: utf-8 -*-from Crypto.Util.number import *from Crypto.Random.random import *from flag import flagAu = getStrongPrime(1024)AuAu = getStrongPrime(10...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/26/hexo%20archer%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E9%97%AE%E9%A2%98/" >
-            
-                <span>hexo archer主题无法显示数学公式的问题</span>
-        </a>
-        <div class="abstract-content">
-            稍微记录解决此问题的过程。
-一、简单地卸载并重装新插件在hexo目录下，卸载 hexo-renderer-marked插件，并安装 hexo-renderer-kramed 插件12npm uninstall hexo-renderer-marked --savenpm install hexo-renderer-kramed --save发现无法解决被‘$’符号包含的公式无法显示（比起最初的还更完蛋）
-二、老老实实看Make Hexo Support Math Again果然很实在，顺利解决，依旧是在hexo目录下操作步骤如下：
-(1)先重装插件12$ npm uninstall he...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "None">None</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/26/%E5%85%B3%E4%BA%8E%E6%AF%95%E8%AE%BE%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/" >
-            
-                <span>关于毕设的一点记录</span>
-        </a>
-        <div class="abstract-content">
-            11.5号拟定拟定方向：二维材料钙钛矿材料合成及器件论文题目：铯铅溴钙钛矿的制备及光电性能研究
-基本内容与要求：（1）利用饱和重结晶法合成掺杂铅的溴化铯钙钛矿单晶，通过调节加入溶质的量，在水溶剂下研究对钙钛矿单晶尺寸、形貌、发光性能的影响，进一步研究温度对产物尺寸、形貌、单晶生长速度的影响。（2）利用反溶剂法在常温下合成的Cs4PbBr6单晶，通过改变反溶剂的量、反溶剂的滴加速度，研究其尺寸、形貌、发光性能的变化。（3）研究合成的钙钛矿单晶在光电器件方面的应用
-进度安排：2019年11月10号-2019年12月15号，查阅相关文献、资料，进入实验室学习仪器的使用方法，完成开题报告并上交。...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "钙钛矿">钙钛矿</a>
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "毕设">毕设</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">NEXT &amp;#62;</a>
-    </nav>
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/doge.jpg >
-    <div class="profile-name">大狗子</div>
-    
-    <div class="profile-signature">
-        咕咕咕
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2020/02/13/%E3%80%8A%E5%8F%8D%E6%AC%BA%E9%AA%97%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title= "《反欺骗的艺术》读书笔记">
+                    <div class="nextTitle">《反欺骗的艺术》读书笔记</div>
+                </a>
             
-                <a href="mailto:congjian_lin@163.com" target="_blank" rel="noopener" class="iconfont-archer email" title=email ></a>
+        </li>
+        <li class="previous">
             
-        
-    
-        
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/02/12/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%91%E7%91%9E%E5%B9%B8%E7%9C%9F%E6%98%AF%E5%89%B2%E7%BE%8E%E5%9B%BD%E9%9F%AD%E8%8F%9C%EF%BC%8C%E8%A1%A5%E8%B4%B4%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%96%9D%E5%92%96%E5%95%A1%E5%90%97%EF%BC%9F/" title= "【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？">
+                    <div class="prevTitle">【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？</div>
+                </a>
             
-                <a href="//github.com/DGZ-cyber" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                  
-                  <img class="profile-qr" src="/assets/wechat.png" />
-                </span>
-            
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= //https://chikorita.fun/ target="_black">domain</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= //https://apeng.fun/ target="_black">Apeng</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= //https://wulidecade.cn/ target="_black">Decade</a>
-                    </span>
-                
-            
-        </div>
-    
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -858,6 +537,24 @@ E: Could not get lock /var/lib/dpkg/lock-frontend - open (11: Resource temporarl
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Week-1"><span class="toc-number">1.</span> <span class="toc-text">Week 1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#签到题-InfantRSA"><span class="toc-number">1.1.</span> <span class="toc-text">签到题 InfantRSA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Affine"><span class="toc-number">1.2.</span> <span class="toc-text">Affine</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1230,6 +927,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
