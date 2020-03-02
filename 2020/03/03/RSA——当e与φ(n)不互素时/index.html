@@ -439,7 +439,7 @@ height:50vh;
 </blockquote>
 <p>所以x的通解一定是x′加上lcm(m1,m2)∗k，这样才能保证x模m1和m2的余数是a1和a2。由此，我们把这个x′当做新的方程的余数，把lcm(m1,m2)当做新的方程的模数。（这一段是关键）<br>即：　<img src="https://cdn.jsdelivr.net/gh/DGZ-cyber/PicGo-1/img/9b1c97810ff3c1d1c74465ec83a55b5.png" alt="">
 　</p>
-<h2 id="2018运维挑战赛"><a href="#2018运维挑战赛" class="headerlink" title="2018运维挑战赛"></a>2018运维挑战赛</h2><p>参考博客：<br><a href="https://www.cnblogs.com/MashiroSky/p/5918158.html" target="_blank" rel="noopener">https://www.cnblogs.com/MashiroSky/p/5918158.html</a><br><a href="https://www.anquanke.com/post/id/164575" target="_blank" rel="noopener">https://www.anquanke.com/post/id/164575</a><br><a href="https://findneo.github.io/181124-what-if-e-phi-not-coprime/" target="_blank" rel="noopener">https://findneo.github.io/181124-what-if-e-phi-not-coprime/</a><br>不好意思，飘零哥的做法我理解不了，还是第三位大哥的比较明白。<br>题目：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n1=0xcfc59d54b4b2e9ab1b5d90920ae88f430d39fee60d18dddbc623d15aae645e4e50db1c07a02d472b2eebb075a547618e1154a15b1657fbf66ed7e714d23ac70bdfba4c809bbb1e27687163cb09258a07ab2533568192e29a3b8e31a5de886050b28b3ed58e81952487714dd7ae012708db30eaf007620cdeb34f150836a4b723L</span><br><span class="line">e1=0xfae3aL</span><br><span class="line">c1=0x81523a330fb15125b6184e4461dadac7601340960840c5213b67a788c84aecfcdc3caf0bf3e27e4c95bb3c154db7055376981972b1565c22c100c47f3fa1dd2994e56090067b4e66f1c3905f9f780145cdf8d0fea88a45bae5113da37c8879c9cdb8ee9a55892bac3bae11fbbabcba0626163d0e2e12c04d99f4eeba5071cbeaL</span><br><span class="line">n2=0xd45304b186dc82e40bd387afc831c32a4c7ba514a64ae051b62f483f27951065a6a04a030d285bdc1cb457b24c2f8701f574094d46d8de37b5a6d55356d1d368b89e16fa71b6603bd037c7f329a3096ce903937bb0c4f112a678c88fd5d84016f745b8281aea8fd5bcc28b68c293e4ef4a62a62e478a8b6cd46f3da73fa34c63L</span><br><span class="line">e2=0x1f9eaeL</span><br><span class="line">c2=0x4d7ceaadf5e662ab2e0149a8d18a4777b4cd4a7712ab825cf913206c325e6abb88954ebc37b2bda19aed16c5938ac43f43966e96a86913129e38c853ecd4ebc89e806f823ffb802e3ddef0ac6c5ba078d3983393a91cd7a1b59660d47d2045c03ff529c341f3ed994235a68c57f8195f75d61fc8cac37e936d9a6b75c4bd2347L</span><br><span class="line">assert pow(flag,e1,n1)==c1</span><br><span class="line">assert pow(flag,e2,n2)==c2</span><br><span class="line">assert gcd(e1,(p1-1)*(q1-1))==14</span><br><span class="line">assert gcd(e2,(p2-1)*(q2-1))==14</span><br></pre></td></tr></table></figure><br>给了n1、n2想到了公约数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def gcd(a,b):</span><br><span class="line">    if b!=0:</span><br><span class="line">        return gcd(b,a%b)</span><br><span class="line">    else:</span><br><span class="line">        return a</span><br><span class="line">n1=145902412361478782344770381873783700413638083575664796147183684992615987925480426688706400688307583005196450858827113757408777361940584125700594767997877530445777012630266331221234501260829837820315200747919668506933176146599166089445798737129024362167061966283411487243534460764772316650320961711082540676899</span><br><span class="line">n2=149099187170511972630955070342575714830336629001429055523308641067867185643738492089983321303377141971663123411968339764579768625561000509534051657156505686277638053591553620131562538158327446457847814787147698749502556552831112070838138070024147578824279983531049306936118687161116949990664307619657857322083</span><br><span class="line"></span><br><span class="line">p=gcd(n1,n2)</span><br><span class="line">print(&quot;gcd(n1,n2)=%d\n&quot;%(p))</span><br><span class="line">#gcd(n1,n2)=12120327527644543811107783655014863098833219936714394976342507913322405566177432644931575840816861543106701611662013978324877080018872656490603706071067111</span><br></pre></td></tr></table></figure><br>所以解到了p，然后进一步我们可以求q1,q2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">q1=n1//p</span><br><span class="line">q2=n2//p</span><br><span class="line">print(&quot;p=%d\n&quot;%(p))</span><br><span class="line">print(&quot;q1=%d\n&quot;%(q1))</span><br><span class="line">print(&quot;q2=%d&quot;%(q2))</span><br><span class="line">#p=12120327527644543811107783655014863098833219936714394976342507913322405566177432644931575840816861543106701611662013978324877080018872656490603706071067111</span><br><span class="line">#q1=12037827528067911684278967221392433256129944002157200272548317200308481572950474775891360447285969682243206009995242277136633522897723532096467191105943909</span><br><span class="line">#q2=12301580698247665838432962460247894405698817646605188562297985838079356879336309758823376086396761749681729993573203954506346863479448531269351981555913253</span><br></pre></td></tr></table></figure><br>看起来很顺利，但是发现题目中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">assert gcd(e1,(p1-1)*(q1-1))==14</span><br><span class="line">assert gcd(e2,(p2-1)*(q2-1))==14</span><br></pre></td></tr></table></figure><br>因为e与phi(n)不互素，所以不能直接求出逆元d<br>只有当他们互素时，即gcd(e,(p-1)<em>(q-1))==1，才能保证e的逆元d唯一存在。<br>我们令$$e=a</em>b$$<br>令b=14，则a=e//b<br>我们知道e与phi不互素，但是a与phi此时必定互素，因为除掉了公约数了<br>当然我们也可以试试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">phi1=(p-1)*(q1-1)</span><br><span class="line">phi2=(p-1)*(q2-1)</span><br><span class="line">b=14</span><br><span class="line">e1=e1//b</span><br><span class="line">e2=e2//b</span><br><span class="line">test1=math.gcd(e1,phi1)</span><br><span class="line">test2=math.gcd(e2,phi2)</span><br><span class="line">print (test1)</span><br><span class="line">print (test2)</span><br><span class="line">#1</span><br><span class="line">#1</span><br></pre></td></tr></table></figure><br>下面是根据第三篇博客的记录：<br>n1,n2均可分解，且有一个公因数<br>由于gcd(e,phi)==14，将 (flag^e)%n = c 看作 (((flag^14)%n) ^ (e//14) ) % n == c<br>分别记 e1//14，e2//14为e1,e2 , (flag^14)%n1 为 f1 , (flag^14)%n2 为 f2,则 pow(f1,e1,n1)==c1,pow(f2,e2,n2)==c2 且我们已知 gcd(e1,phi1)==gcd(e2,phi2)==1，因此可求得 f1,f2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">e1=e1//14;e2=e2//14</span><br><span class="line">phi1=(p1-1)*(q1-1);phi2=(p2-1)*(q2-1)</span><br><span class="line">d1=gmpy2.invert(e1,phi1);d2=gmpy2.invert(e2,phi2)</span><br><span class="line">f1=pow(c1,d1,n1);f2=pow(c2,d2,n2)</span><br></pre></td></tr></table></figure><br>记 flag^14 为 f3,则有同余方程组 f3 % n1 == f1; f3 % n2 == f2。其中f1,f2,n1,n2已知，可利用中国剩余定理解 f3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def GCRT(mi, ai):</span><br><span class="line">    # mi,ai分别表示模数和取模后的值,都为列表结构</span><br><span class="line">    assert (isinstance(mi, list) and isinstance(ai, list))</span><br><span class="line">    curm, cura = mi[0], ai[0]</span><br><span class="line">    for (m, a) in zip(mi[1:], ai[1:]):</span><br><span class="line">        d = gmpy2.gcd(curm, m)</span><br><span class="line">        c = a - cura</span><br><span class="line">        assert (c % d == 0) #不成立则不存在解</span><br><span class="line">        K = c // d * gmpy2.invert(curm // d, m // d)</span><br><span class="line">        cura += curm * K</span><br><span class="line">        curm = curm * m // d</span><br><span class="line">        cura %= curm</span><br><span class="line">    return (cura % curm, curm) #(解,最小公倍数)</span><br><span class="line">f3,lcm = GCRT([n1,n2],[f1,f2])</span><br><span class="line">assert(f3%n1==f1);assert(f3%n2==f2);assert(lcm==p1*p2*q)</span><br></pre></td></tr></table></figure></p>
+<h2 id="2018运维挑战赛"><a href="#2018运维挑战赛" class="headerlink" title="2018运维挑战赛"></a>2018运维挑战赛</h2><p>参考博客：<br><a href="https://www.cnblogs.com/MashiroSky/p/5918158.html" target="_blank" rel="noopener">https://www.cnblogs.com/MashiroSky/p/5918158.html</a><br><a href="https://www.anquanke.com/post/id/164575" target="_blank" rel="noopener">https://www.anquanke.com/post/id/164575</a><br><a href="https://findneo.github.io/181124-what-if-e-phi-not-coprime/" target="_blank" rel="noopener">https://findneo.github.io/181124-what-if-e-phi-not-coprime/</a><br>不好意思，飘零哥的做法我理解不了，还是第三位大哥的比较明白。<br>题目：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n1=0xcfc59d54b4b2e9ab1b5d90920ae88f430d39fee60d18dddbc623d15aae645e4e50db1c07a02d472b2eebb075a547618e1154a15b1657fbf66ed7e714d23ac70bdfba4c809bbb1e27687163cb09258a07ab2533568192e29a3b8e31a5de886050b28b3ed58e81952487714dd7ae012708db30eaf007620cdeb34f150836a4b723L</span><br><span class="line">e1=0xfae3aL</span><br><span class="line">c1=0x81523a330fb15125b6184e4461dadac7601340960840c5213b67a788c84aecfcdc3caf0bf3e27e4c95bb3c154db7055376981972b1565c22c100c47f3fa1dd2994e56090067b4e66f1c3905f9f780145cdf8d0fea88a45bae5113da37c8879c9cdb8ee9a55892bac3bae11fbbabcba0626163d0e2e12c04d99f4eeba5071cbeaL</span><br><span class="line">n2=0xd45304b186dc82e40bd387afc831c32a4c7ba514a64ae051b62f483f27951065a6a04a030d285bdc1cb457b24c2f8701f574094d46d8de37b5a6d55356d1d368b89e16fa71b6603bd037c7f329a3096ce903937bb0c4f112a678c88fd5d84016f745b8281aea8fd5bcc28b68c293e4ef4a62a62e478a8b6cd46f3da73fa34c63L</span><br><span class="line">e2=0x1f9eaeL</span><br><span class="line">c2=0x4d7ceaadf5e662ab2e0149a8d18a4777b4cd4a7712ab825cf913206c325e6abb88954ebc37b2bda19aed16c5938ac43f43966e96a86913129e38c853ecd4ebc89e806f823ffb802e3ddef0ac6c5ba078d3983393a91cd7a1b59660d47d2045c03ff529c341f3ed994235a68c57f8195f75d61fc8cac37e936d9a6b75c4bd2347L</span><br><span class="line">assert pow(flag,e1,n1)==c1</span><br><span class="line">assert pow(flag,e2,n2)==c2</span><br><span class="line">assert gcd(e1,(p1-1)*(q1-1))==14</span><br><span class="line">assert gcd(e2,(p2-1)*(q2-1))==14</span><br></pre></td></tr></table></figure><br>给了n1、n2想到了公约数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def gcd(a,b):</span><br><span class="line">    if b!=0:</span><br><span class="line">        return gcd(b,a%b)</span><br><span class="line">    else:</span><br><span class="line">        return a</span><br><span class="line">n1=145902412361478782344770381873783700413638083575664796147183684992615987925480426688706400688307583005196450858827113757408777361940584125700594767997877530445777012630266331221234501260829837820315200747919668506933176146599166089445798737129024362167061966283411487243534460764772316650320961711082540676899</span><br><span class="line">n2=149099187170511972630955070342575714830336629001429055523308641067867185643738492089983321303377141971663123411968339764579768625561000509534051657156505686277638053591553620131562538158327446457847814787147698749502556552831112070838138070024147578824279983531049306936118687161116949990664307619657857322083</span><br><span class="line"></span><br><span class="line">p=gcd(n1,n2)</span><br><span class="line">print(&quot;gcd(n1,n2)=%d\n&quot;%(p))</span><br><span class="line">#gcd(n1,n2)=12120327527644543811107783655014863098833219936714394976342507913322405566177432644931575840816861543106701611662013978324877080018872656490603706071067111</span><br></pre></td></tr></table></figure><br>所以解到了p，然后进一步我们可以求q1,q2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">q1=n1//p</span><br><span class="line">q2=n2//p</span><br><span class="line">print(&quot;p=%d\n&quot;%(p))</span><br><span class="line">print(&quot;q1=%d\n&quot;%(q1))</span><br><span class="line">print(&quot;q2=%d&quot;%(q2))</span><br><span class="line">#p=12120327527644543811107783655014863098833219936714394976342507913322405566177432644931575840816861543106701611662013978324877080018872656490603706071067111</span><br><span class="line">#q1=12037827528067911684278967221392433256129944002157200272548317200308481572950474775891360447285969682243206009995242277136633522897723532096467191105943909</span><br><span class="line">#q2=12301580698247665838432962460247894405698817646605188562297985838079356879336309758823376086396761749681729993573203954506346863479448531269351981555913253</span><br></pre></td></tr></table></figure><br>看起来很顺利，但是发现题目中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">assert gcd(e1,(p1-1)*(q1-1))==14</span><br><span class="line">assert gcd(e2,(p2-1)*(q2-1))==14</span><br></pre></td></tr></table></figure><br>因为e与phi(n)不互素，所以不能直接求出逆元d<br>只有当他们互素时，即gcd(e,(p-1)<em>(q-1))==1，才能保证e的逆元d唯一存在。<br>我们令$e=a</em>b$<br>令b=14，则a=e//b<br>我们知道e与phi不互素，但是a与phi此时必定互素，因为除掉了公约数了<br>当然我们也可以试试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">phi1=(p-1)*(q1-1)</span><br><span class="line">phi2=(p-1)*(q2-1)</span><br><span class="line">b=14</span><br><span class="line">e1=e1//b</span><br><span class="line">e2=e2//b</span><br><span class="line">test1=math.gcd(e1,phi1)</span><br><span class="line">test2=math.gcd(e2,phi2)</span><br><span class="line">print (test1)</span><br><span class="line">print (test2)</span><br><span class="line">#1</span><br><span class="line">#1</span><br></pre></td></tr></table></figure><br>下面是根据第三篇博客的记录：<br>n1,n2均可分解，且有一个公因数<br>由于gcd(e,phi)==14，将 (flag^e)%n = c 看作 (((flag^14)%n) ^ (e//14) ) % n == c<br>分别记 e1//14，e2//14为e1,e2 , (flag^14)%n1 为 f1 , (flag^14)%n2 为 f2,则 pow(f1,e1,n1)==c1,pow(f2,e2,n2)==c2 且我们已知 gcd(e1,phi1)==gcd(e2,phi2)==1，因此可求得 f1,f2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">e1=e1//14;e2=e2//14</span><br><span class="line">phi1=(p1-1)*(q1-1);phi2=(p2-1)*(q2-1)</span><br><span class="line">d1=gmpy2.invert(e1,phi1);d2=gmpy2.invert(e2,phi2)</span><br><span class="line">f1=pow(c1,d1,n1);f2=pow(c2,d2,n2)</span><br></pre></td></tr></table></figure><br>记 flag^14 为 f3,则有同余方程组 f3 % n1 == f1; f3 % n2 == f2。其中f1,f2,n1,n2已知，可利用中国剩余定理解 f3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def GCRT(mi, ai):</span><br><span class="line">    # mi,ai分别表示模数和取模后的值,都为列表结构</span><br><span class="line">    assert (isinstance(mi, list) and isinstance(ai, list))</span><br><span class="line">    curm, cura = mi[0], ai[0]</span><br><span class="line">    for (m, a) in zip(mi[1:], ai[1:]):</span><br><span class="line">        d = gmpy2.gcd(curm, m)</span><br><span class="line">        c = a - cura</span><br><span class="line">        assert (c % d == 0) #不成立则不存在解</span><br><span class="line">        K = c // d * gmpy2.invert(curm // d, m // d)</span><br><span class="line">        cura += curm * K</span><br><span class="line">        curm = curm * m // d</span><br><span class="line">        cura %= curm</span><br><span class="line">    return (cura % curm, curm) #(解,最小公倍数)</span><br><span class="line">f3,lcm = GCRT([n1,n2],[f1,f2])</span><br><span class="line">assert(f3%n1==f1);assert(f3%n2==f2);assert(lcm==p1*p2*q)</span><br></pre></td></tr></table></figure></p>
 <p>此时求出的 f3 满足关系式子：flag^14 % lcm == f3</p>
 <blockquote>
 <p>因为我们知道flag^14 % n1 == f1 ， 此时flag^14，n1（p1<em>q），f1三者位数应该相同，当n1</em>p2时，flag^14小于lcm，模完就等于本身f3</p>
@@ -465,7 +465,7 @@ height:50vh;
             <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
             <p>原文链接：<a href="https://dgz-cyber.github.io/2020/03/03/RSA%E2%80%94%E2%80%94%E5%BD%93e%E4%B8%8E%CF%86(n)%E4%B8%8D%E4%BA%92%E7%B4%A0%E6%97%B6/">https://dgz-cyber.github.io/2020/03/03/RSA%E2%80%94%E2%80%94%E5%BD%93e%E4%B8%8E%CF%86(n)%E4%B8%8D%E4%BA%92%E7%B4%A0%E6%97%B6/</a>
             <p>发表日期：<a href="https://dgz-cyber.github.io/2020/03/03/RSA%E2%80%94%E2%80%94%E5%BD%93e%E4%B8%8E%CF%86(n)%E4%B8%8D%E4%BA%92%E7%B4%A0%E6%97%B6/">March 3rd 2020, 12:43:56 am</a>
-            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/03/03/RSA%E2%80%94%E2%80%94%E5%BD%93e%E4%B8%8E%CF%86(n)%E4%B8%8D%E4%BA%92%E7%B4%A0%E6%97%B6/">March 3rd 2020, 1:01:24 am</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/03/03/RSA%E2%80%94%E2%80%94%E5%BD%93e%E4%B8%8E%CF%86(n)%E4%B8%8D%E4%BA%92%E7%B4%A0%E6%97%B6/">March 3rd 2020, 1:08:00 am</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -957,11 +957,6 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/hgame2020%20%E6%9D%82%E8%AE%B0%E5%BD%95-1/" >hgame2020 杂记录-1</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "/2020/02/16/HGAME-WEB%20Writes%20up/" >HGAME-WEB Writes up</a>
         </li>
     
@@ -976,11 +971,6 @@ top:50vh;
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" >Windows下安装sqlmap，以及DVWA搭建的注意事项</a>
-        </li>
-    
-    
     
     
     
@@ -992,25 +982,6 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/30</span><a class="archive-post-title" href= "/2019/11/30/Aurora%E6%8B%9B%E6%96%B0%E8%B5%9B%E2%80%94%E2%80%94%E5%85%B3%E4%BA%8Emod/" >Aurora招新赛——关于mod</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/hello-world/" >Hello World</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/12/01/ubuntu%E8%BF%9B%E7%A8%8B%E9%97%AE%E9%A2%98/" >ubuntu进程问题</a>
         </li>
     
     
@@ -1033,12 +1004,41 @@ top:50vh;
     
         </ul>
     
-    <div class="archive-year"> Invalid date </div>
+    <div class="archive-year"> 2020 </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/13/%E3%80%8A%E5%8F%8D%E6%AC%BA%E9%AA%97%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" >《反欺骗的艺术》读书笔记</a>
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/hgame2020%20%E6%9D%82%E8%AE%B0%E5%BD%95-1/" >hgame2020 杂记录-1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" >Windows下安装sqlmap，以及DVWA搭建的注意事项</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >关于钠离子电池的学习记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" >第一篇博文</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/hello-world/" >Hello World</a>
         </li>
     
     
@@ -1066,6 +1066,20 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/12/01/ubuntu%E8%BF%9B%E7%A8%8B%E9%97%AE%E9%A2%98/" >ubuntu进程问题</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/12/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%91%E7%91%9E%E5%B9%B8%E7%9C%9F%E6%98%AF%E5%89%B2%E7%BE%8E%E5%9B%BD%E9%9F%AD%E8%8F%9C%EF%BC%8C%E8%A1%A5%E8%B4%B4%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%96%9D%E5%92%96%E5%95%A1%E5%90%97%EF%BC%9F/" >【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？</a>
         </li>
     
@@ -1080,17 +1094,21 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >关于钠离子电池的学习记录</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/26</span><a class="archive-post-title" href= "/2019/11/26/%E5%85%B3%E4%BA%8E%E6%AF%95%E8%AE%BE%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/" >关于毕设的一点记录</a>
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
-            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" >第一篇博文</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/13/%E3%80%8A%E5%8F%8D%E6%AC%BA%E9%AA%97%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" >《反欺骗的艺术》读书笔记</a>
         </li>
     
     </div>
@@ -1110,17 +1128,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
     
-        <span class="sidebar-tag-name" data-tags="社工"><span class="iconfont-archer">&#xe606;</span>社工</span>
-    
         <span class="sidebar-tag-name" data-tags="锂离子电池"><span class="iconfont-archer">&#xe606;</span>锂离子电池</span>
-    
-        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
     
         <span class="sidebar-tag-name" data-tags="钙钛矿"><span class="iconfont-archer">&#xe606;</span>钙钛矿</span>
     
         <span class="sidebar-tag-name" data-tags="毕设"><span class="iconfont-archer">&#xe606;</span>毕设</span>
     
         <span class="sidebar-tag-name" data-tags="晶体"><span class="iconfont-archer">&#xe606;</span>晶体</span>
+    
+        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
+    
+        <span class="sidebar-tag-name" data-tags="社工"><span class="iconfont-archer">&#xe606;</span>社工</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
