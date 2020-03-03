@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>DGZ&#39;s Blog</title>
+    <title>hgame2020 not_One-time · DGZ&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >DGZ&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">hgame2020 not_One-time</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>DGZ's Blog.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            hgame2020 not_One-time
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">1.1k</span>Reading time: <span class="post-count reading-time">5 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/03/03</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,323 +399,58 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/03/hgame2020%20not_One-time/" >
-            
-                <span>hgame2020 not_One-time</span>
-        </a>
-        <div class="abstract-content">
-            记过的东西都至少会有一点印象，但是看看而已就真的很容易忘。参考博客：https://blog.csdn.net/wh201906/article/details/104081772/以及官方wp
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>记过的东西都至少会有一点印象，但是看看而已就真的很容易忘。<br>参考博客：<a href="https://blog.csdn.net/wh201906/article/details/104081772/" target="_blank" rel="noopener">https://blog.csdn.net/wh201906/article/details/104081772/</a><br>以及官方wp</p>
+<blockquote>
+<p>题目:<br>In cryptography, the one-time pad (OTP) is an encryption technique that cannot be cracked, but…<br>Just XOR ;P<br>nc 47.98.192.231 25001<br>hint: reduced key space  </p>
+</blockquote>
+<p>以及task.py<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">import os, random</span><br><span class="line">import string, binascii, base64</span><br><span class="line"></span><br><span class="line">from secret import flag</span><br><span class="line">assert flag.startswith(b&apos;hgame&#123;&apos;) and flag.endswith(b&apos;&#125;&apos;)</span><br><span class="line"></span><br><span class="line">flag_len = len(flag)</span><br><span class="line"></span><br><span class="line">def xor(s1, s2):</span><br><span class="line">    #assert len(s1)==len(s2)</span><br><span class="line">    return bytes( map( (lambda x: x[0]^x[1]), zip(s1, s2) ) )</span><br><span class="line"></span><br><span class="line">random.seed( os.urandom(8) )</span><br><span class="line">keystream = &apos;&apos;.join( [ random.choice(string.ascii_letters+string.digits) for _ in range(flag_len) ] )</span><br><span class="line">keystream = keystream.encode()</span><br><span class="line">print( base64.b64encode(xor(flag, keystream)).decode() )</span><br></pre></td></tr></table></figure></p>
+<p>nc端口，会返回一串base64字符串<br>其中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import os, random</span><br><span class="line">import string, binascii, base64</span><br><span class="line">a=string.ascii_letters+string.digits</span><br><span class="line">print (a)#abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 即字母和数字 </span><br><span class="line"></span><br><span class="line">a=base64.b64encode(xor(flag, keystream)).decode()</span><br><span class="line">b=base64.b64decode(a)#假设得到的字符串是Cy1VWg4XIgs3IEgbFkAAUnd3Cz5dQElqKBELEjoKX1RrG1oRGEUobjRcJA==</span><br><span class="line">print (b) #b&apos;9\x10W]\x08B\x05eGK]4*&#123;\x1d\x05~cWWPBg\x7f*\x18&#125;\x0c&amp;5\\\x1c*RE\x00`g B+R?&apos;</span><br><span class="line">print (binascii.hexlify(b&apos;9\x10W]\x08B\x05eGK]4*&#123;\x1d\x05~cWWPBg\x7f*\x18&#125;\x0c&amp;5\\\x1c*RE\x00`g B+R?&apos;))#b&apos;3910575d08420565474b5d342a7b1d057e6357575042677f2a187d0c26355c1c2a524500606720422b523f&apos;</span><br><span class="line">#有86位十六进制数，所以知道flag位数为43</span><br></pre></td></tr></table></figure><br>urandom这个函数目前比较安全（我的认识），所以预测随机数不太行</p>
+<blockquote>
+<p>在从“reduced key space”角度多次进行搜索无果后，我尝试从题目“one time pad”的角度进行搜索，发现OTP极其安全。。。这题没法做了<br>然而，在搜索过程中接触到MTP(Many Time Pad)，通过进一步搜索，找到了一篇文章讲解相关内容，发现文中提到的Many Time Pad与本题有些类似。文中题目是若干明文由相同key加密得到若干密文，根据密文求key，并通过key解密目标密文；而本题是flag被随机key加密，需要解出flag。看上去两者所求不同，但是由于加密算法当中的异或运算满足交换律，本题也可看作是明文(随机key)经相同key(flag)加密得到一系列密文，求key(flag)。<br>继续研究文章，得到了几条重要信息<br>1.若a ^ x=b，则b ^ x=a（异或的自反性）<br>2.设明文为m1,m2，密文为c1,c2，则有c1 ^ c2=(m1 ^ key) ^ (m2 ^ key)=m1 ^ key ^ key ^ m2=m1 ^ m2<br>3.文章中推论得当c1 ^ c2为有意义的英文字母时，对应的m1,m2很可能一个是英文字母一个是空格<br>第三条概括下来就是，通过寻找有意义的c1 ^ c2来获得m1,m2可能的解</p>
+</blockquote>
+<p>我们的密文是明文与key异或得到的，既然key是urandom生成的，那就是可以任意构造，看作明文。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"># # -*- coding: utf-8 -*-  </span><br><span class="line">  </span><br><span class="line">import base64, string  </span><br><span class="line">from socket import socket  </span><br><span class="line">  </span><br><span class="line">table = (string.ascii_letters + string.digits).encode() # 源于题目中随机key  </span><br><span class="line"># result = (string.ascii_letters + string.digits + &apos;&apos;&apos;&#123;&#125;_&apos;&apos;&apos;).encode() #坑1  </span><br><span class="line">result = (string.printable).encode()  </span><br><span class="line">  </span><br><span class="line">ciphers = []  </span><br><span class="line">for i in range(30): # 设定获取密文数量  </span><br><span class="line">    sock = socket()  </span><br><span class="line">    sock.connect((&apos;47.98.192.231&apos;, 25001))  </span><br><span class="line">    text=sock.recv(500)  </span><br><span class="line">    ciphers.append(text)  </span><br><span class="line">    sock.close()  </span><br><span class="line">  </span><br><span class="line">for i in range(len(base64.b64decode(ciphers.pop(0)))):  </span><br><span class="line">    lis=set()  </span><br><span class="line">    for cur1 in ciphers:  </span><br><span class="line">        for cur2 in ciphers:  </span><br><span class="line">            cy1 = base64.b64decode(cur1)  </span><br><span class="line">            cy2 = base64.b64decode(cur2)  </span><br><span class="line">            if (cy1 == cy2):  </span><br><span class="line">                continue  </span><br><span class="line">            res=set()  </span><br><span class="line">            tmp1 = cy1[i] ^ cy2[i]  </span><br><span class="line">            for j in range(len(table)):  </span><br><span class="line">                for k in range(len(table)):  </span><br><span class="line">                    if (j == k):  </span><br><span class="line">                        continue  </span><br><span class="line">                    tmp2 = table[j] ^ table[k]  </span><br><span class="line">                    if (tmp1 == tmp2): # 使c1^c2有意义  </span><br><span class="line">                        res1 = int(cy2[i] ^ table[j]).to_bytes(1, &apos;big&apos;)  </span><br><span class="line">                        res2 = int(cy2[i] ^ table[k]).to_bytes(1, &apos;big&apos;)  </span><br><span class="line">                        if (result.find(res1) != -1): # 缩小解范围  </span><br><span class="line">                            res.add(res1)  </span><br><span class="line">                        if (result.find(res2) != -1): # 坑2  </span><br><span class="line">                            res.add(res2)  </span><br><span class="line">            if (lis == set()):  </span><br><span class="line">                lis = res  </span><br><span class="line">            if (res != set()):  </span><br><span class="line">                tmp = lis.intersection(res)  </span><br><span class="line">                if (tmp != set()):  </span><br><span class="line">                    lis.intersection_update(res)  </span><br><span class="line">                else:  </span><br><span class="line">                    lis.update(res)  </span><br><span class="line">    print(i,&apos;&apos;.encode().join(lis))</span><br></pre></td></tr></table></figure><br>至于官方wp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">import string, binascii, base64</span><br><span class="line">from socket import socket</span><br><span class="line"></span><br><span class="line">keySpace = string.ascii_letters + string.digits</span><br><span class="line"></span><br><span class="line">count = 0</span><br><span class="line">def enc():</span><br><span class="line">    global count</span><br><span class="line">    count += 1</span><br><span class="line">    sock = socket()</span><br><span class="line">    sock.connect((&apos;127.0.0.1&apos;, 1234))</span><br><span class="line">    return base64.b64decode( sock.recv(1024) )</span><br><span class="line"></span><br><span class="line">LEN = len(enc())</span><br><span class="line"></span><br><span class="line">flag = [set(b&apos;h&apos;), set(b&apos;g&apos;), set(b&apos;a&apos;), set(b&apos;m&apos;), set(b&apos;e&apos;), set(b&apos;&#123;&apos;), \</span><br><span class="line">    *([set(string.printable.encode()) for _ in range(LEN-7)]), \</span><br><span class="line">    set(b&apos;&#125;&apos;)]</span><br><span class="line"></span><br><span class="line">def check():</span><br><span class="line">    return sum(map(len, flag))==LEN</span><br><span class="line"></span><br><span class="line">def guess(cipher):</span><br><span class="line">    return bytes([ cipher^k for k in keySpace.encode() ])</span><br><span class="line"></span><br><span class="line">def update(index, s):</span><br><span class="line">    global flag</span><br><span class="line">    flag[index] = flag[index] &amp; set(s)</span><br><span class="line"></span><br><span class="line">while check()!=True:</span><br><span class="line">    cipher = enc()</span><br><span class="line">    for i in range(LEN):</span><br><span class="line">        m_i = guess(cipher[i])</span><br><span class="line">        update(i, m_i)</span><br><span class="line"></span><br><span class="line">print( count, &apos;flag:&apos;, &apos;&apos;.join( map(lambda x: chr(next(iter(x))), flag) ) )</span><br></pre></td></tr></table></figure></p>
 
-题目:In cryptography, the one-time pad (OTP) is an encryption technique that cannot be cracked, but…Just XOR ;Pnc 47.98.192.231 25001hint: reduced key space  
-
-以及task.py123456789101112131415161718#!/u...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/03/RSA%E2%80%94%E2%80%94%E5%BD%93e%E4%B8%8E%CF%86(n)%E4%B8%8D%E4%BA%92%E7%B4%A0%E6%97%B6/" >
-            
-                <span>RSA——当e与φ(n)不互素时</span>
-        </a>
-        <div class="abstract-content">
-            记录一下2018年运维挑战赛和新春赛还有一个脚本以及中国剩余定理的记录。
-中国剩余定理(CRT)补充知识（1）欧几里得算法欧几里德算法又称辗转相除法，是指用于计算两个正整数a，b的最大公约数。计算公式gcd(a,b) = gcd(b,a mod b)。假如需要求 1997 和 615 两个正整数的最大公约数,用欧几里德算法，是这样进行的：1997 / 615 = 3 (余 152)615 / 152 = 4(余7)152 / 7 = 21(余5)7 / 5 = 1 (余2)5 / 2 = 2 (余1)2 / 1 = 2 (余0)至此，最大公约数为1^以除数和余数反复做除法运算^(从计算公...
+        <div class="license-wrapper">
+            <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
+            <p>原文链接：<a href="https://dgz-cyber.github.io/2020/03/03/hgame2020%20not_One-time/">https://dgz-cyber.github.io/2020/03/03/hgame2020%20not_One-time/</a>
+            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/03/03/hgame2020%20not_One-time/">March 3rd 2020, 11:56:56 pm</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/03/03/hgame2020%20not_One-time/">March 3rd 2020, 11:56:23 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/28/Socketserver%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%BE%85%E5%A1%AB%EF%BC%89/" >
-            
-                <span>Socketserver学习（待填）</span>
-        </a>
-        <div class="abstract-content">
-            先用socket在本地起一个简单的聊天服务服务端：12345678910111213141516171819202122232425262728293031#!/user/bin/env python#-*- coding:utf-8 -*- import socket #待bind的ip/portip_port = (&apos;127.0.0.1&apos;, 9999)#建立sockets = socket.socket()#绑定ip/ports.bind(ip_port)#监听连接s.listen()print(&apos;等待用户连接中... ...&apos;)while(T...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "杂">杂</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/27/%E3%80%8A%E9%94%82%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E6%9D%90%E6%96%99%E8%A7%A3%E6%9E%90%E3%80%8B%E8%AE%B0%E5%BD%95%EF%BC%88%E7%AC%AC%E4%B8%80%E3%80%81%E4%BA%8C%E7%AB%A0%EF%BC%89/" >
-            
-                <span>《锂离子电池材料解析》记录（第一、二章）</span>
-        </a>
-        <div class="abstract-content">
-            第一章 锂电池概论1.1 概述锂离子电池因为其输出电压高、体积和质量能量密度大、循环寿命长、记忆效应不显著等诸多优点而备受关注。此外，锂电池能量密度大且循环性能好，因此也可以作为储能设备，特别是与不稳定的可再生能源相结合使用，例如太阳能、风能等，同时也可以和电网联用。
-锂电池发展简介最早的可充电电池以二硫化钛为正极，金属锂为负极，使用有机溶剂为支持电解质。在放电过程中，锂离子从负极金属锂表面脱出，迁移到正极，嵌入层状二硫化钛中，占据八面体的一个空位，同时正四价的钛离子被还原成正三价。充电时锂离子从层状的正极中脱嵌，往负极迁移并沉积在金属锂表面。在充放电循环中，锂离子的嵌入与脱嵌并不会影响...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "锂离子电池">锂离子电池</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/27/HGAME-MISC(WEEK%20TWO)%20Writes%20up/" >
-            
-                <span>HGAME-MISC(WEEK TWO) Writes up</span>
-        </a>
-        <div class="abstract-content">
-            看着wp涨涨知识
-地球上最后的夜晚⾸先解压附件，⾥⾯有⼀个名为“No Password”（⽆密码）的PDF，和⼀个加密的7z。尝试打开7z压缩包，发现⽂件名已被加密，不知道密码的情况下⽆法得知压缩包内有什么⽂件。于是思考密码是不是藏在PDF中。通过搜索可以得知，可能是使⽤wbStego将数据隐写到了PDF内。下载⼯具 (http://wbstego.wbailer.com/) 并尝试解密：
-(确实百度PDF隐写可以查到wbStego)
-那我就装一个来玩玩呗官网下载完解压可以直接用：在magicbook上会报错解不了密，用游戏本，解密得：Zip Password: OmR#O12#b3b%...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Misc">Misc</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/25/CBC%E7%BF%BB%E8%BD%AC%E6%94%BB%E5%87%BB%E5%8F%8APadding%20Oracle%20Attack(POA)%E7%9A%84%E8%AE%B0%E5%BD%95/" >
-            
-                <span>CBC翻转攻击及Padding Oracle Attack(POA)的记录</span>
-        </a>
-        <div class="abstract-content">
-            CBC翻转攻击加密与解密
-
-Plaintext：明文数据IV：初始向量Key：分组加密使用的密钥Ciphertext：密文数据明文都是先与混淆数据（第一组是与IV，之后都是与前一组的密文）进行异或，再执行分组加密的。
-
-分组加密算法在实现加解/密时，需要把消息进行分组(block)，而block的大小常见有64bit、128bit、256bit等。
-对于CBC，整个加密的过程简单说来就是：
-
-1.首先将明文分组(常见的以16字节为一组)，位数不足的使用特殊字符填充(padding)。2.生成一个随机的初始化向量(IV)和一个密钥。3.将IV和第一组明文异或。4.用密钥对3中xor后产生的...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/24/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Bpwn%E8%84%9A%E6%9C%AC/" >
-            
-                <span>i春秋新春赛pwn脚本</span>
-        </a>
-        <div class="abstract-content">
-            exp来自大哥诺夜
-borrowstack12345678910111213141516171819202122232425262728293031323334353637383940414243444546from pwn import *#p = process(&quot;./borrowstack&quot;)p = remote(&quot;123.56.85.29&quot;,3635)p.send(&quot;a&quot;*0x60+p64(0x601080+0x100-0x60)+p64(0x400699))vsyscall = 0xffffffffff600000pu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Pwn">Pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/24/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9BCrypto%E8%AE%B0%E5%BD%95/" >
-            
-                <span>i春秋新春赛Crypto记录</span>
-        </a>
-        <div class="abstract-content">
-            本菜依然很菜，只能做网上提供了脚本的题目。但还是结合wp和自己的理解写点东西吧。
-warm up题目给了三个文件：12345678910111213141516171819202122232425#challenge.pyfrom Crypto.Util.number import *from encode import KEYq=getPrime(1024)p=getPrime(1024)r=getPrime(1024)s=getPrime(1500)e1=125794e2=42373n1=p*qn2=p*rn3=p*q*sc1=pow(s,e1,n1)Key=int(KEY.enco...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/22/hgame2020%20%E4%BA%8C%E5%8F%91%E5%85%A5%E9%AD%82%20%E5%8F%8Amt_rand()%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%B0%E5%BD%95/" >
-            
-                <span>hgame2020 二发入魂 及mt_rand()函数的记录</span>
-        </a>
-        <div class="abstract-content">
-            原链接：https://www.ambionics.io/blog/php-mt-rand-prediction
-只用两个输出值破解mt_rand函数，无需爆破介绍当在对一个旧网站做渗透测试时，我们遇到了一些很久没见到过的代码：12345678&lt;?phpfunction resetPassword($email)&#123;    [...]    $superSecretToken = md5($email . &apos;:&apos; . mt_rand());    [...]    $this-&gt;sendEmailWithResetToken($email, $su...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/21/HGAME-MISC(WEEK%20ONE)%20Writes%20up/" >
-            
-                <span>HGAME-MISC(WEEK ONE) Writes up</span>
-        </a>
-        <div class="abstract-content">
-            签到题Li0tIC4uLi0tIC4tLi4gLS4tLiAtLS0tLSAtLSAuIC4uLS0uLSAtIC0tLSAuLi0tLi0gLi4tLS0gLS0tLS0gLi4tLS0gLS0tLS0gLi4tLS4tIC4uLi4gLS0uIC4tIC0tIC4uLi0tbase64解密：把空格换成斜杠：.—/…—/.-../-.-./——-/—/./..—.-/-/—-/..—.-/..—-/——-/..—-/——-/..—.-/…./—./.-/—/…—在http://www.bejson.com/enc/morse/这个网站解密得到：W3LC0ME%udTO%ud2020%u...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Misc">Misc</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/03/03/RSA%E2%80%94%E2%80%94%E5%BD%93e%E4%B8%8E%CF%86(n)%E4%B8%8D%E4%BA%92%E7%B4%A0%E6%97%B6/" title= "RSA——当e与φ(n)不互素时">
+                    <div class="prevTitle">RSA——当e与φ(n)不互素时</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &amp;#62;</a>
-    </nav>
     
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -739,6 +535,24 @@ warm up题目给了三个文件：12345678910111213141516171819202122232425#chal
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1354,6 +1168,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
