@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>DGZ&#39;s Blog</title>
+    <title>电饭煲蛋糕记录 · DGZ&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >DGZ&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">电饭煲蛋糕记录</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>DGZ's Blog.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            电饭煲蛋糕记录
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "烹饪">烹饪</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">876</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/03/06</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,103 +399,64 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/22/hgame2020%20%E4%BA%8C%E5%8F%91%E5%85%A5%E9%AD%82%20%E5%8F%8Amt_rand()%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%B0%E5%BD%95/" >
-            
-                <span>hgame2020 二发入魂 及mt_rand()函数的记录</span>
-        </a>
-        <div class="abstract-content">
-            原链接：https://www.ambionics.io/blog/php-mt-rand-prediction
-只用两个输出值破解mt_rand函数，无需爆破介绍当在对一个旧网站做渗透测试时，我们遇到了一些很久没见到过的代码：12345678&lt;?phpfunction resetPassword($email)&#123;    [...]    $superSecretToken = md5($email . &apos;:&apos; . mt_rand());    [...]    $this-&gt;sendEmailWithResetToken($email, $su...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/16/HGAME-WEB%20Writes%20up/" >
-            
-                <span>HGAME-WEB Writes up</span>
-        </a>
-        <div class="abstract-content">
-            WEEK ONECosmos 的博客利用awvs扫出git仓库地址，在仓库找到评论板块，https://github.com/FeYcYodhrPDJSru/8LTUKCL83VLhXbc/commit/f79171d9c97a1ab3ea6c97b3eb4f0e1551549853#commentsbase64解码aGdhbWV7ZzF0X2xlQGtfMXNfZGFuZ2VyMHVzXyEhISF9完事了
-接头霸王用burp或者F12改请求头，burp的过程就不展示了，简单记录一下用F12的过程其中里面有四关，12345You need to come from https://vi...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" >
-            
-                <span>Windows下安装sqlmap，以及DVWA搭建的注意事项</span>
-        </a>
-        <div class="abstract-content">
-            首先百度搜索sqlmap，找到github的sqlmap，下载zip到本地，解压出来将解压出来的文件放到python2目录下
-之后可以在你方便的地方创建快捷方式，对象位置输入cmd，名称为sqlmap
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>好的我决定把我的烹饪也丢在这记录一下吧。<br>首先要做这个电饭煲蛋糕是参考:<a href="https://www.bilibili.com/video/av14367495?from=search&amp;seid=10244584635812673814" target="_blank" rel="noopener">https://www.bilibili.com/video/av14367495?from=search&amp;seid=10244584635812673814</a></p>
+<p>3.4号第一次制作，分离蛋清和蛋黄就很有问题，挺多蛋黄流入了蛋清中，鸡蛋刚从冰箱里面拿出来，蛋黄和蛋清似乎分得不太开，再采用最传统的开蛋方法，也就是敲中间然后掰开，然后让蛋清流出来，蛋黄很容易弄破就流下来了，不太可靠。</p>
+<p>然后打发蛋清时，由于有蛋黄，我拿着打蛋器来来回回打了快四十分钟，还是液状的，加上糖没有分次下，可能一定程度上也影响了。</p>
+<p>在制备蛋黄糊时，我始终觉得面粉下多了，太稠了，然后我就把液状未打发的蛋清分两次加到了蛋黄糊中，混完我的蛋糕糊就成液状了，一点都不粘稠（我他喵那时也不想理了，能吃就行啦）。再直接倒进电饭煲里调蛋糕模式，等它出炉。<br><img src="https://raw.githubusercontent.com/DGZ-cyber/PicGo-1/master/20200305234923.png" alt=""></p>
+<p>因为入锅时表面也是一堆气泡，我没去处理，所以就做出来全都是孔洞的蛋糕饼。</p>
+<p>嗯，嚼劲十足！</p>
+<p>3.5号第二次制作，分离蛋清蛋黄，我采用的是在鸡蛋顶用小刀弄一个洞出来，这次分离得不错，没有蛋黄混到蛋清中。</p>
+<p>同样地在打发时，打发的我觉得很顺利，一分钟就变白有稠稠的样子了<br><img src="https://raw.githubusercontent.com/DGZ-cyber/PicGo-1/master/20200305235502.png" alt=""></p>
+<p>之后再打了一分钟，加多了一次糖，然后三分钟不到，我觉得应该可以了就不打发了（但是后面百度一查似乎还不太行），就去做蛋黄糊了。加面粉后还是觉得面粉太多了，一大块的样子，可塑性不好。然后我就把打发的蛋清分两次混入蛋黄糊中，注意，我此时是拿筷子顺时针搅拌的。<br>混的和教学视频挺像的，然后我就倒进了电饭煲中，用牙签处理了一下表面的气泡，就闭锅让他开动了。</p>
+<p>电饭煲工作结束时，开锅可以看着蛋糕挺胖的，涨得挺高，但是冷却后，他就缩回成饼状！</p>
+<p>又白做了。</p>
+<p>查了一下，原因可能有几个：</p>
+<blockquote>
+<p>1、蛋清打发的时间不够，要把蛋清完全打发才可以。要打发到蛋清到盆子倒扣不会掉下来，或是筷子好立在蛋白中。装蛋清的盆必须是干净不能有水有油，不小心把蛋黄打进去也不行。<br>2、搅拌方式不对，蛋清糊糊和蛋黄糊糊搅拌的时候不能划着圈使劲搅拌，这样可能就把打法的蛋清消泡泡了，烤出来也就不蓬松了。在将前面材料拌进蛋白霜里的时候要轻轻拌进去，同时，也要注意不要消泡了。<br>3、鸡蛋的膨松主要依赖蛋白中的胚乳蛋白，而胚乳蛋白只有在受到高速搅打时，才能大量的包裹空气，形成气泡，使蛋糕的体积增大膨松，故在搅打蛋白时，宜高速而不宜使用低速。</p>
+</blockquote>
+<p>所以下次可以高速档打发久一点，还有不用筷子，用一下锅铲来拌蛋清和蛋黄糊。</p>
 
-之后右键属性该快捷方式，修改为放置sqlmap文件的那个位置就完事了，打开该快捷方式，按照sqlmap的语法输入就可以了
-不过装dvwa碰到一个小坑，我记得我以前在本机上用过dvwa，还装了发现原先安装过wampserver，但是忘了怎么打开的，按照网上修改的方法修改 ：1$_DVWA[ &apos;db_password&apos; ] = &apos;p@ssw0rd&apos;;把...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
+            <p>原文链接：<a href="https://dgz-cyber.github.io/2020/03/06/%E7%94%B5%E9%A5%AD%E7%85%B2%E8%9B%8B%E7%B3%95%E8%AE%B0%E5%BD%95/">https://dgz-cyber.github.io/2020/03/06/%E7%94%B5%E9%A5%AD%E7%85%B2%E8%9B%8B%E7%B3%95%E8%AE%B0%E5%BD%95/</a>
+            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/03/06/%E7%94%B5%E9%A5%AD%E7%85%B2%E8%9B%8B%E7%B3%95%E8%AE%B0%E5%BD%95/">March 6th 2020, 12:10:40 am</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/03/06/%E7%94%B5%E9%A5%AD%E7%85%B2%E8%9B%8B%E7%B3%95%E8%AE%B0%E5%BD%95/">March 6th 2020, 12:11:17 am</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/03/03/hgame2020%20not_One-time/" title= "hgame2020 not_One-time">
+                    <div class="prevTitle">hgame2020 not_One-time</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -519,6 +541,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1146,6 +1186,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
