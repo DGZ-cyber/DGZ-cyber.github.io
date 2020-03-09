@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>DGZ&#39;s Blog</title>
+    <title>高校战“疫”网络安全分享赛-MISC · DGZ&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >DGZ&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">高校战“疫”网络安全分享赛-MISC</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>DGZ's Blog.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            高校战“疫”网络安全分享赛-MISC
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">1.2k</span>Reading time: <span class="post-count reading-time">5 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/03/09</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,43 +399,73 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" >
-            
-                <span>Windows下安装sqlmap，以及DVWA搭建的注意事项</span>
-        </a>
-        <div class="abstract-content">
-            首先百度搜索sqlmap，找到github的sqlmap，下载zip到本地，解压出来将解压出来的文件放到python2目录下
-之后可以在你方便的地方创建快捷方式，对象位置输入cmd，名称为sqlmap
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h2><h3 id="隐藏的信息"><a href="#隐藏的信息" class="headerlink" title="隐藏的信息"></a>隐藏的信息</h3><p>看了wp我要吐死了，纠结半天原来我还少看了这么多东西。<br>又瞎了看得到最后的电话音，但是看不到wav开头的电话音，所以说，粗心的人真的干什么都不太顺。<br><strong><em>一幅图</em></strong><br><img src="https://raw.githubusercontent.com/DGZ-cyber/PicGo-1/master/520bd16fdf412ae56ed8d9567b8708d.png" alt=""></p>
+<p>二维码反色，把定位符加上，扫码得到的结果说不是flag，而且解压密码也不在。<br><img src="https://raw.githubusercontent.com/DGZ-cyber/PicGo-1/master/20200309231551.png" alt=""><br>看了wp知道是把二维码.jpg放winhex看，然后看到最后有关键字</p>
+<blockquote>
+<p>TOGETYOURFLAG</p>
+</blockquote>
+<p>再把它string查看一下关键字，虽然在上面就可以看到USEBASER64<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strings erweima.jpg</span><br></pre></td></tr></table></figure><br><img src="https://raw.githubusercontent.com/DGZ-cyber/PicGo-1/master/20200309231525.png" alt=""><br>也就是</p>
+<blockquote>
+<p>USE BASE64 TO GET YOUR FLAG</p>
+</blockquote>
+<p>纯数字.zip是伪加密，用7z直接解压，然后Audacity打开，切换成频谱图来查看，发现前后都有<strong>短音</strong>!!!<br>框选短音，分析，频谱分析，<br><img src="https://raw.githubusercontent.com/DGZ-cyber/PicGo-1/master/20200309231635.png" alt=""><br>看出两个峰峰值是多少，再对照表：<br><img src="https://raw.githubusercontent.com/DGZ-cyber/PicGo-1/master/20200309231537.png" alt=""><br>wav文件前后汇总:</p>
+<blockquote>
+<p>187485618521</p>
+</blockquote>
+<p>base64一下，得到flag{MTg3NDg1NjE4NTIx}</p>
+<h3 id="ez-mem-amp-usb"><a href="#ez-mem-amp-usb" class="headerlink" title="ez_mem&amp;usb"></a>ez_mem&amp;usb</h3><p>用wireshark打开流量包，左上角工具栏的文件，导出40MB的的一个upload_file.php文件，binwalk一下，发现有一个zip，再用foremost提取这个zip，打开zip后有一个data.vmem的文件，那么用volatility分析<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">（1）volatility -f data.vmem imageinfo</span><br><span class="line">得到Suggested Profile(s) : WinXPSP2x86, WinXPSP3x86 (Instantiated with WinXPSP2x86)</span><br><span class="line">（2）volatility -f data.vmem –profile=WinXPSP2x86 pslist</span><br><span class="line">看到：</span><br><span class="line">0xff47dda0 ctfmon.exe              596   1476      1       71      0      0 2020-02-23 13:17:41 UTC+0000                                 </span><br><span class="line">0xff5b57b8 cmd.exe                1396   1476      1       61      0      0 2020-02-23 13:24:09 UTC+0000                                 </span><br><span class="line">0xff4583c0 conime.exe              544   1396      1       38      0      0 2020-02-23 13:24:09 UTC+0000  </span><br><span class="line">cmd停留了一段时间，可能在cmd那里有什么操作</span><br><span class="line">（3）volatility -f data.vmem –profile=WinXPSP2x86 cmdscan</span><br><span class="line">Cmd #0 @ 0x3609ea0: passwd:weak_auth_top100</span><br><span class="line">Cmd #1 @ 0x5576d0: start wireshark</span><br><span class="line">Cmd #13 @ 0x9f009f: ??</span><br><span class="line">Cmd #41 @ 0x9f003f: ?\?????????</span><br><span class="line">看到有passwd，其实第一遍使用我还看漏了，没看到有passwd只看到问号</span><br><span class="line">（4）volatility -f data.vmem –profile=WinXPSP2x86 cmdline</span><br><span class="line">没看到有什么比较有用的命令行指令</span><br><span class="line">（5）volatility -f data.vmem –profile=WinXPSP2x86 filescan</span><br><span class="line">可以列出所有文件，但是第一遍扫的时候也是看漏了一些重要东西</span><br><span class="line">（6）volatility -f data.vmem –profile=WinXPSP2x86 filescan |grep txt</span><br><span class="line">volatility -f data.vmem –profile=WinXPSP2x86 filescan | grep &quot;doc\|docx\|rtf&quot;</span><br><span class="line">找到的都没什么用</span><br><span class="line">volatility -f data.vmem –profile=WinXPSP2x86 filescan |grep flag</span><br><span class="line">0x0000000001155f90      1      0 R--rwd \Device\HarddiskVolume1\Documents and Settings\Administrator\flag.img</span><br><span class="line">这个就很有用了，dump下来</span><br><span class="line">（7）volatility -f data.vmem –profile=WinXPSP2x86 dumpfiles -Q 0x0000000001155f90  -n --dump-dir=./</span><br><span class="line">导出到当前目录，foremost一下提取出一个zip，密码就是passwd，打开里面有一个usbdata，接下来就是根据USB键盘协议中键码，一一对应得到flag</span><br></pre></td></tr></table></figure><br>协议：<a href="https://wenku.baidu.com/view/9050c3c3af45b307e971971e.html" target="_blank" rel="noopener">https://wenku.baidu.com/view/9050c3c3af45b307e971971e.html</a><br>网上找的脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">mappings = &#123; 0x04:&quot;A&quot;,  0x05:&quot;B&quot;,  0x06:&quot;C&quot;, 0x07:&quot;D&quot;, 0x08:&quot;E&quot;, 0x09:&quot;F&quot;, 0x0A:&quot;G&quot;,  0x0B:&quot;H&quot;, 0x0C:&quot;I&quot;,  0x0D:&quot;J&quot;, 0x0E:&quot;K&quot;, 0x0F:&quot;L&quot;, 0x10:&quot;M&quot;, 0x11:&quot;N&quot;,0x12:&quot;O&quot;,  0x13:&quot;P&quot;, 0x14:&quot;Q&quot;, 0x15:&quot;R&quot;, 0x16:&quot;S&quot;, 0x17:&quot;T&quot;, 0x18:&quot;U&quot;,0x19:&quot;V&quot;, 0x1A:&quot;W&quot;, 0x1B:&quot;X&quot;, 0x1C:&quot;Y&quot;, 0x1D:&quot;Z&quot;, 0x1E:&quot;1&quot;, 0x1F:&quot;2&quot;, 0x20:&quot;3&quot;, 0x21:&quot;4&quot;, 0x22:&quot;5&quot;,  0x23:&quot;6&quot;, 0x24:&quot;7&quot;, 0x25:&quot;8&quot;, 0x26:&quot;9&quot;, 0x27:&quot;0&quot;, 0x28:&quot;\n&quot;, 0x2a:&quot;[DEL]&quot;,  0X2B:&quot;    &quot;, 0x2C:&quot; &quot;,  0x2D:&quot;-&quot;, 0x2E:&quot;=&quot;, 0x2F:&quot;[&quot;,  0x30:&quot;]&quot;,  0x31:&quot;\\&quot;, 0x32:&quot;~&quot;, 0x33:&quot;;&quot;,  0x34:&quot;&apos;&quot;, 0x36:&quot;,&quot;,  0x37:&quot;.&quot; &#125;</span><br><span class="line">nums = []</span><br><span class="line">keys = open(&apos;usbdata.txt&apos;)</span><br><span class="line">for line in keys:</span><br><span class="line">    if line[0]!=&apos;0&apos; or line[1]!=&apos;0&apos; or line[3]!=&apos;0&apos; or line[4]!=&apos;0&apos; or line[9]!=&apos;0&apos; or line[10]!=&apos;0&apos; or line[12]!=&apos;0&apos; or line[13]!=&apos;0&apos; or line[15]!=&apos;0&apos; or line[16]!=&apos;0&apos; or line[18]!=&apos;0&apos; or line[19]!=&apos;0&apos; or line[21]!=&apos;0&apos; or line[22]!=&apos;0&apos;:</span><br><span class="line">         continue</span><br><span class="line">    nums.append(int(line[6:8],16))</span><br><span class="line">keys.close()</span><br><span class="line">output = &quot;&quot;</span><br><span class="line">for n in nums:</span><br><span class="line">    if n == 0 :</span><br><span class="line">        continue</span><br><span class="line">    if n in mappings:</span><br><span class="line">        output += mappings[n]</span><br><span class="line">    else:</span><br><span class="line">        output += &apos;[unknown]&apos;</span><br><span class="line">print (&apos;output :\n&apos; + output)</span><br><span class="line">#FLAG[69200835784EC3ED8D2A64E73FE913C0]</span><br></pre></td></tr></table></figure><br>将输出的字母改成小写，中括号改成大括号就可以了</p>
+<p>一开始因为不熟，所以顺序是先提取出了usbdata的zip文件，然后再去找密码，找了半天，wireshark里面也找了挺久，最后输多一次cmdscan，发现有passwd，才知道一开始看漏了。</p>
+<h3 id="简单MISC"><a href="#简单MISC" class="headerlink" title="简单MISC"></a>简单MISC</h3><p>下载的文件有一个jpg和一个带密码的zip，里面有flag，jpg打不开，用foremost提取出里面的zip，有一个摩斯密码：</p>
+<blockquote>
+<p>E P I D E M I C S I T U A T I O N O F U N I V E R S I T Y W A R </p>
+</blockquote>
+<p>去掉空格就是flag文件的密码，得到</p>
+<blockquote>
+<p>VGgxc19pc19GbGFHX3lvdV9hUkVfcmlnSFQ=<br>base64解得Th1s_is_FlaG_you_aRE_rigHT</p>
+</blockquote>
+<p>另外：<br><a href="https://merricx.github.io/qrazybox/" target="_blank" rel="noopener">https://merricx.github.io/qrazybox/</a><br>可以绘制二维码<br>教程：<a href="https://blog.xiafeng2333.top/ctf-13/" target="_blank" rel="noopener">https://blog.xiafeng2333.top/ctf-13/</a></p>
 
-之后右键属性该快捷方式，修改为放置sqlmap文件的那个位置就完事了，打开该快捷方式，按照sqlmap的语法输入就可以了
-不过装dvwa碰到一个小坑，我记得我以前在本机上用过dvwa，还装了发现原先安装过wampserver，但是忘了怎么打开的，按照网上修改的方法修改 ：1$_DVWA[ &apos;db_password&apos; ] = &apos;p@ssw0rd&apos;;把...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
+            <p>原文链接：<a href="https://dgz-cyber.github.io/2020/03/09/%E9%AB%98%E6%A0%A1%E6%88%98%E2%80%9C%E7%96%AB%E2%80%9D%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%88%86%E4%BA%AB%E8%B5%9B-MISC/">https://dgz-cyber.github.io/2020/03/09/%E9%AB%98%E6%A0%A1%E6%88%98%E2%80%9C%E7%96%AB%E2%80%9D%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%88%86%E4%BA%AB%E8%B5%9B-MISC/</a>
+            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/03/09/%E9%AB%98%E6%A0%A1%E6%88%98%E2%80%9C%E7%96%AB%E2%80%9D%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%88%86%E4%BA%AB%E8%B5%9B-MISC/">March 9th 2020, 11:23:23 pm</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/03/09/%E9%AB%98%E6%A0%A1%E6%88%98%E2%80%9C%E7%96%AB%E2%80%9D%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%88%86%E4%BA%AB%E8%B5%9B-MISC/">March 9th 2020, 11:24:27 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/03/09/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Beasy_RSA/" title= "i春秋新春赛easy_RSA">
+                    <div class="prevTitle">i春秋新春赛easy_RSA</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -459,6 +550,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#misc"><span class="toc-number">1.</span> <span class="toc-text">misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#隐藏的信息"><span class="toc-number">1.1.</span> <span class="toc-text">隐藏的信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ez-mem-amp-usb"><span class="toc-number">1.2.</span> <span class="toc-text">ez_mem&amp;usb</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单MISC"><span class="toc-number">1.3.</span> <span class="toc-text">简单MISC</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1236,6 +1345,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
