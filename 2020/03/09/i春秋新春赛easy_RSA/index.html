@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>DGZ&#39;s Blog</title>
+    <title>i春秋新春赛easy_RSA · DGZ&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >DGZ&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">i春秋新春赛easy_RSA</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>DGZ's Blog.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            i春秋新春赛easy_RSA
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">400</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/03/09</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,49 +399,59 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >
-            
-                <span>关于钠离子电池的学习记录</span>
-        </a>
-        <div class="abstract-content">
-            12.3博后开题报告记录(高能量密度金属离子电池)研究背景液态电解质：
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>task.py<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line">from Crypto.Util.number import *</span><br><span class="line">from secret import FLAG,BIT</span><br><span class="line">def genkey(bit):</span><br><span class="line">	while True:</span><br><span class="line">		p = getPrime(bit)</span><br><span class="line">		q = (2 ** bit - 1) ^ p + 65537</span><br><span class="line">		if isPrime(q):</span><br><span class="line">			return p, q</span><br><span class="line"></span><br><span class="line">p, q = genkey(BIT)</span><br><span class="line">m = bytes_to_long(flag)</span><br><span class="line">e = 65537</span><br><span class="line">n = p*q</span><br><span class="line">c = pow(m,e,n)</span><br><span class="line"></span><br><span class="line">print(&apos;n=&#123;&#125;&apos;.format(n))</span><br><span class="line">print(&apos;c=&#123;&#125;&apos;.format(c))</span><br><span class="line"></span><br><span class="line">#n=7772032347449135823378220332275440993540311268448333999104955932478564127911903406653058819764738253486720397879672764388694000771405819957057863950453851364451924517697547937666368408217911472655460552229194417053614032700684618244535892388408163789233729235322427060659037127722296126914934811062890693445333579231298411670177246830067908917781430587062195304269374876255855264856219488896495236456732142288991759222315207358866038667591630902141900715954462530027896528684147458995266239039054895859149945968620353933341415087063996651037681752709224486183823035542105003329794626718013206267196812545606103321821</span><br><span class="line">#c=2082303370386500999739407038433364384531268495285382462393864784029350314174833975697290115374382446746560936195242108283558410023998631974392437760920681553607338859157019178565294055755787756920003102506579335103169629546410439497570201554568266074421781047420687173530441469299976286281709526307661219925667082812294328343298836241624597491473793807687939912877432920934022304415340311930199467500833755390490763679081685821950332292303679223444816832000945972744492944044912168217765156110058474974887372388032286968936052010531850687361328326741707441938740295431353926037925950161386891437897990887861853097318</span><br></pre></td></tr></table></figure><br>一开始神仙一样，看着各路wp不知道怎么变成p+q=2^1024 -1 - 65537</p>
+<p>后面我吐了发现+优先级比xor高…</p>
+<p>不好意思这道题真的奇奇怪怪，算是把官方wp看懂了<br><img src="https://raw.githubusercontent.com/DGZ-cyber/PicGo-1/master/20200309115550.png" alt=""><br>就一个知识点<br>因为python中+优先级比xor高，所以</p>
+<blockquote>
+<p>(2 <strong> bit - 1) ^ p + 65537<br>等于(2 </strong> bit - 1) ^ (p + 65537)<br>wp第三行是两边加上q，即右边先xor再加q，而在python中会继续先加q，运算会错误</p>
+</blockquote>
+<p>至于第三行怎么变成第四行：</p>
+<blockquote>
+<p>2^bit-1是0b11111111….. 全是1<br>与一个数q异或，相当于对这个按位取反，再加q，就每一位都是1，也即第三行右边等于2^bit-1</p>
+</blockquote>
+<p>至于bit最先盲猜1024，因为bit位影响了p和q的位数，当然wp中可以遍历：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line">from Crypto.Util.number import *</span><br><span class="line">import sympy</span><br><span class="line"></span><br><span class="line">e = 65537</span><br><span class="line">n=7772032347449135823378220332275440993540311268448333999104955932478564127911903406653058819764738253486720397879672764388694000771405819957057863950453851364451924517697547937666368408217911472655460552229194417053614032700684618244535892388408163789233729235322427060659037127722296126914934811062890693445333579231298411670177246830067908917781430587062195304269374876255855264856219488896495236456732142288991759222315207358866038667591630902141900715954462530027896528684147458995266239039054895859149945968620353933341415087063996651037681752709224486183823035542105003329794626718013206267196812545606103321821</span><br><span class="line">c=2082303370386500999739407038433364384531268495285382462393864784029350314174833975697290115374382446746560936195242108283558410023998631974392437760920681553607338859157019178565294055755787756920003102506579335103169629546410439497570201554568266074421781047420687173530441469299976286281709526307661219925667082812294328343298836241624597491473793807687939912877432920934022304415340311930199467500833755390490763679081685821950332292303679223444816832000945972744492944044912168217765156110058474974887372388032286968936052010531850687361328326741707441938740295431353926037925950161386891437897990887861853097318</span><br><span class="line"></span><br><span class="line">p = sympy.symbols(&apos;p&apos;)</span><br><span class="line">q = sympy.symbols(&apos;q&apos;)</span><br><span class="line"></span><br><span class="line">for i in range(1000,1050):</span><br><span class="line">	res = sympy.solve([p*q-n, p+q-2**i+65538], (p, q))</span><br><span class="line">	if len(res)&gt;1:</span><br><span class="line">		print(i)</span><br><span class="line">		print(res)</span><br><span class="line">		break</span><br><span class="line"></span><br><span class="line">#1024</span><br><span class="line">#[(72356988033940122419862865191878675238242016880080962265441973140379691886394220688072110362559413510402072754902898224503345853278372546073863042457429691363311481477269645152325782001930391869045739370961356170148607063612137861483639965888231664404355083617264515197675631111636979987271638724116276090949, 107412325452291468353067653887023798123555681014149695007988108017352983919106742444636366959848122510718041124968495133155443915536044076418984388182044433014456411947595840123976437599315702250407343581123649598689543618730325019990273144652595572758995427067321783042271614826842736317563717605507947980729), (107412325452291468353067653887023798123555681014149695007988108017352983919106742444636366959848122510718041124968495133155443915536044076418984388182044433014456411947595840123976437599315702250407343581123649598689543618730325019990273144652595572758995427067321783042271614826842736317563717605507947980729, 72356988033940122419862865191878675238242016880080962265441973140379691886394220688072110362559413510402072754902898224503345853278372546073863042457429691363311481477269645152325782001930391869045739370961356170148607063612137861483639965888231664404355083617264515197675631111636979987271638724116276090949)]	</span><br><span class="line">p = res[0][0]</span><br><span class="line">q = res[0][1]</span><br><span class="line">phin = (p-1)*(q-1)</span><br><span class="line">d = int(inverse(e,phin))</span><br><span class="line">#d = long(inverse(e,phin)) wp脚本用python2才有的long，py3会报错，py3只有int改成int</span><br><span class="line">m = pow(c,d,n)</span><br><span class="line">print(long_to_bytes(m))</span><br><span class="line">#b&apos;flag&#123;8edf268a85202e540aaa070ac8ff63d2&#125;&apos;</span><br></pre></td></tr></table></figure><br>用sympy.solve解方程，学到了学到了，还不用装新的库</p>
 
-优点：电导率高缺点：易挥发泄露、封装难
-
-准固态电解质
-
-优点：电导率较高、界面接触较好、稳定性较好缺点：…（没写）
-
-全固态电解质
-
-优点：克服泄露等缺点、稳定性好缺点：离子迁移数低、电导率低目前国际上研究固态电解质主要是三类其中无机固态电解质机械强度高，但是界面接触性差而聚合物固态电解质则相反，界面接触性较好，但机械强度差所以人们提出了一种有机-无机复合固态电解质，希望得到两种优点相结合的电解质制备方法：将无机纳米材料添加至聚合物电解质中，形成有效的网格结构，一定程度上提高电解质的电导率和离子的迁移率，并改善界...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "电池">电池</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
+            <p>原文链接：<a href="https://dgz-cyber.github.io/2020/03/09/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Beasy_RSA/">https://dgz-cyber.github.io/2020/03/09/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Beasy_RSA/</a>
+            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/03/09/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Beasy_RSA/">March 9th 2020, 12:12:32 pm</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/03/09/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Beasy_RSA/">March 9th 2020, 12:12:37 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/03/08/%E3%80%8A%E6%99%B6%E4%BD%93%E7%94%9F%E9%95%BF%E7%9A%84%E7%89%A9%E7%90%86%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%AC%E4%B8%80%E3%80%81%E4%B9%9D%E7%AB%A0%EF%BC%88%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD%EF%BC%89/" title= "《晶体生长的物理基础》第一、九章（未完待续）">
+                    <div class="prevTitle">《晶体生长的物理基础》第一、九章（未完待续）</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -465,6 +536,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1213,6 +1302,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
