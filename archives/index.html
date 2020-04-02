@@ -346,6 +346,43 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/04/02/angstormctf%20WP%20(%E6%9C%AA%E5%AE%8C)/" >
+            
+                <span>angstormctf WP (未完)</span>
+        </a>
+        <div class="abstract-content">
+            MISCws1跟踪http流就可以看到flag
+ws2做法有两个吧，还有我选了最弱智的不行的第三种方法
+第一种找到POST包，看到有jpeg右键JPEG File Interchange Format，显示分组字节，或者导出分组字节流文件，令后缀为jpg
+第二种HTTP对象中有一个multipart，导出，再用foremost可以直接分离出该jpg图片
+我错就错在了只会foremost这个流量包文件
+ws3做法有两个
+第一种http对象导出18kb的文件，命名为test用binwalk一看只有Zlib文件，我觉得这就是为什么不能用foremost分离的原因，只能用binwalk分离，可以...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Misc">Misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/04/01/%E8%B5%B5%E5%B8%88%E5%82%85b%E7%AB%99%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9misc%20(%E6%9C%AA%E5%AE%8C)/" >
             
                 <span>赵师傅b站视频学习记录以及一点misc (未完)</span>
@@ -453,9 +490,9 @@ sstihttps://blog.csdn.net/qq_40657585/article/details/836572201&#123;% for c in 
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
         <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Misc">Misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
     
         <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Re">Re</a>
     
@@ -608,35 +645,6 @@ TOGETYOURFLAG
 USE BASE64 TO GET YOUR FLAG
 
 纯数字.zip是伪加密，用7z直接解压，然后Audacity打...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/09/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Beasy_RSA/" >
-            
-                <span>i春秋新春赛easy_RSA</span>
-        </a>
-        <div class="abstract-content">
-            task.py123456789101112131415161718192021#!/usr/bin/env pythonfrom Crypto.Util.number import *from secret import FLAG,BITdef genkey(bit):	while True:		p = getPrime(bit)		q = (2 ** bit - 1) ^ p + 65537		if isPrime(q):			return p, qp, q = genkey(BIT)m = bytes_to_long(flag)e = 65537n = p*qc = pow(m,e...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1261,6 +1269,12 @@ USE BASE64 TO GET YOUR FLAG
     
     
     
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 40
@@ -1279,7 +1293,22 @@ USE BASE64 TO GET YOUR FLAG
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">04/02</span><a class="archive-post-title" href= "/2020/04/02/angstormctf%20WP%20(%E6%9C%AA%E5%AE%8C)/" >angstormctf WP (未完)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">03/30</span><a class="archive-post-title" href= "/2020/03/30/2019%E9%AB%98%E6%A0%A1%E8%BF%90%E7%BB%B4%E6%8C%91%E6%88%98%E8%B5%9B%20WP-Crypto%20%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/" >2019高校运维挑战赛 WP-Crypto （未完）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span><a class="archive-post-title" href= "/2020/03/29/BJDCTF%20WP%20-%20WEB-1/" >BJDCTF WP - WEB-1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2020/03/24/BJDCTF%20WP%20-%20MISC%E3%80%81CRYPTO%E3%80%81RE/" >BJDCTF WP - MISC、CRYPTO、RE</a>
         </li>
     
     
@@ -1312,16 +1341,6 @@ USE BASE64 TO GET YOUR FLAG
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/29</span><a class="archive-post-title" href= "/2020/03/29/BJDCTF%20WP%20-%20WEB-1/" >BJDCTF WP - WEB-1</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2020/03/24/BJDCTF%20WP%20-%20MISC%E3%80%81CRYPTO%E3%80%81RE/" >BJDCTF WP - MISC、CRYPTO、RE</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/19</span><a class="archive-post-title" href= "/2020/03/19/%E7%83%A4%E9%B8%A1%E7%BF%85%EF%BC%88%E6%A0%B9%EF%BC%89%E5%8F%8A%E7%83%A4%E8%9B%8B%E6%8C%9E%E6%B6%B2%E8%AE%B0%E5%BD%95/" >烤鸡翅（根）及烤蛋挞液记录</a>
         </li>
     
@@ -1333,11 +1352,6 @@ USE BASE64 TO GET YOUR FLAG
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/%E8%AE%BA%E6%96%87%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/" >论文的一点记录</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/08</span><a class="archive-post-title" href= "/2020/03/08/angstormctf%20WP%20(%E6%9C%AA%E5%AE%8C)/" >angstormctf WP (未完)</a>
         </li>
     
     
@@ -1427,7 +1441,17 @@ USE BASE64 TO GET YOUR FLAG
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >HGAME-CRYPTO Writes up</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" >Windows下安装sqlmap，以及DVWA搭建的注意事项</a>
         </li>
     
     
@@ -1438,6 +1462,16 @@ USE BASE64 TO GET YOUR FLAG
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >关于钠离子电池的学习记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" >第一篇博文</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1456,20 +1490,6 @@ USE BASE64 TO GET YOUR FLAG
     
         <li class="archive-post-item">
             <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/11/26/hexo%20archer%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E9%97%AE%E9%A2%98/" >hexo archer主题无法显示数学公式的问题</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2020 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" >Windows下安装sqlmap，以及DVWA搭建的注意事项</a>
         </li>
     
     
@@ -1534,41 +1554,8 @@ USE BASE64 TO GET YOUR FLAG
     
         </ul>
     
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/12/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%91%E7%91%9E%E5%B9%B8%E7%9C%9F%E6%98%AF%E5%89%B2%E7%BE%8E%E5%9B%BD%E9%9F%AD%E8%8F%9C%EF%BC%8C%E8%A1%A5%E8%B4%B4%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%96%9D%E5%92%96%E5%95%A1%E5%90%97%EF%BC%9F/" >【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2020 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >关于钠离子电池的学习记录</a>
-        </li>
     
     
         <li class="archive-post-item">
@@ -1576,8 +1563,17 @@ USE BASE64 TO GET YOUR FLAG
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
-            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" >第一篇博文</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/12/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%91%E7%91%9E%E5%B9%B8%E7%9C%9F%E6%98%AF%E5%89%B2%E7%BE%8E%E5%9B%BD%E9%9F%AD%E8%8F%9C%EF%BC%8C%E8%A1%A5%E8%B4%B4%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%96%9D%E5%92%96%E5%95%A1%E5%90%97%EF%BC%9F/" >【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？</a>
         </li>
     
     
@@ -1599,37 +1595,37 @@ USE BASE64 TO GET YOUR FLAG
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
-    
         <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
     
         <span class="sidebar-tag-name" data-tags="Re"><span class="iconfont-archer">&#xe606;</span>Re</span>
     
         <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
-        <span class="sidebar-tag-name" data-tags="None"><span class="iconfont-archer">&#xe606;</span>None</span>
-    
         <span class="sidebar-tag-name" data-tags="杂"><span class="iconfont-archer">&#xe606;</span>杂</span>
+    
+        <span class="sidebar-tag-name" data-tags="None"><span class="iconfont-archer">&#xe606;</span>None</span>
     
         <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
     
-        <span class="sidebar-tag-name" data-tags="锂离子电池"><span class="iconfont-archer">&#xe606;</span>锂离子电池</span>
-    
         <span class="sidebar-tag-name" data-tags="社工"><span class="iconfont-archer">&#xe606;</span>社工</span>
     
-        <span class="sidebar-tag-name" data-tags="晶体"><span class="iconfont-archer">&#xe606;</span>晶体</span>
+        <span class="sidebar-tag-name" data-tags="锂离子电池"><span class="iconfont-archer">&#xe606;</span>锂离子电池</span>
     
-        <span class="sidebar-tag-name" data-tags="烹饪"><span class="iconfont-archer">&#xe606;</span>烹饪</span>
+        <span class="sidebar-tag-name" data-tags="晶体"><span class="iconfont-archer">&#xe606;</span>晶体</span>
     
         <span class="sidebar-tag-name" data-tags="钙钛矿"><span class="iconfont-archer">&#xe606;</span>钙钛矿</span>
     
         <span class="sidebar-tag-name" data-tags="毕设"><span class="iconfont-archer">&#xe606;</span>毕设</span>
     
+        <span class="sidebar-tag-name" data-tags="烹饪"><span class="iconfont-archer">&#xe606;</span>烹饪</span>
+    
         <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
     
-        <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
-    
         <span class="sidebar-tag-name" data-tags="待定"><span class="iconfont-archer">&#xe606;</span>待定</span>
+    
+        <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
