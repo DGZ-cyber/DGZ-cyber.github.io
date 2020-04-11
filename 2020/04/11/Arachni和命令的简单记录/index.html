@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>ubuntu18.04换源问题 · DGZ&#39;s Blog</title>
+    <title>Arachni和命令的简单记录 · DGZ&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >DGZ&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">ubuntu18.04换源问题</a>
+                <a href="#" class="post-name">Arachni和命令的简单记录</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            ubuntu18.04换源问题
+            Arachni和命令的简单记录
             <!-- 404 -->
             
         </h1>
@@ -264,14 +264,22 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Misc">Misc</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">353</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">1.7k</span>Reading time: <span class="post-count reading-time">6 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/12/01</span>
+                    <span class="post-intro-time">2020/04/11</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,25 +403,35 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="ubuntu18-04换源，装pwntools问题"><a href="#ubuntu18-04换源，装pwntools问题" class="headerlink" title="ubuntu18.04换源，装pwntools问题"></a>ubuntu18.04换源，装pwntools问题</h1><hr>
-<p>title: ubuntu18.04换源，装pwntools问题</p>
-<p>tags: </p>
-<pre><code> - ubuntu
-</code></pre><hr>
-<p>首先当然要安装好vmware tools</p>
-<h2 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h2><h3 id="备份源"><a href="#备份源" class="headerlink" title="备份源"></a>备份源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources_init.list</span><br></pre></td></tr></table></figure>
-<h3 id="更换源"><a href="#更换源" class="headerlink" title="更换源"></a>更换源</h3><p>用gedit文本编辑器就相当方便，不知道为什么一堆人用vim<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/apt/sources.list</span><br></pre></td></tr></table></figure><br>删除文件中的所有内容，替换成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 阿里源</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure></p>
-<h2 id="安装pwntools-可参考"><a href="#安装pwntools-可参考" class="headerlink" title="安装pwntools(可参考)"></a>安装pwntools<a href="https://www.cnblogs.com/pcat/p/5451780.html" target="_blank" rel="noopener">(可参考)</a></h2><p>pwntools需要python3的环境了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential</span><br><span class="line">python3 -m pip install --upgrade pip</span><br><span class="line">python3 -m pip install --upgrade git+https://github.com/Gallopsled/pwntools.git@dev3</span><br></pre></td></tr></table></figure></p>
-<h2 id="未解决问题-已解决"><a href="#未解决问题-已解决" class="headerlink" title="未解决问题(已解决)"></a>未解决问题(已解决)</h2><p>pip3 ImportError: cannot import name ‘main’<br>解决方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /usr/bin/pip</span><br><span class="line">将：</span><br><span class="line">from pip import main</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    sys.exit(main())</span><br><span class="line">替换成：</span><br><span class="line">from pip import __main__</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    sys.exit(__main__._main())</span><br></pre></td></tr></table></figure><br>最后输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip install pwntools --user</span><br><span class="line"></span><br><span class="line">#因为可能出现ERROR: Could not install packages due to an EnvironmentError: [Errno 13] Permission denied: &apos;/usr/local/lib/python2.7/dist-packages/filelock.py&apos;</span><br><span class="line">Consider using the `--user` option or check the permissions.</span><br></pre></td></tr></table></figure></p>
+        <h2 id="AWVS和Arachni区别"><a href="#AWVS和Arachni区别" class="headerlink" title="AWVS和Arachni区别"></a>AWVS和Arachni区别</h2><p><a href="https://blog.csdn.net/qq_25246873/article/details/88910522" target="_blank" rel="noopener">https://blog.csdn.net/qq_25246873/article/details/88910522</a><br>总体上来说，wvs是一款功能强大的漏扫工具，对于安全人员来说算是一款神器，但对于攻击人员来说就有点鸡肋。Arachni正如介绍所说是一款功能算不上强大但是很有特色的漏扫工具。对于安全人员来说不算好用，但是对于攻击人员来说可能就会很好用，因为其Ruby框架，功能一般的问题就可以通过集成其他的工具弥补，再加上分布式扫描的优势可能让其更加受到攻击者的青睐。<br>Arachni扫注入有点问题，不是很ok，而awvs则好很多</p>
+<h2 id="简单的命令记录"><a href="#简单的命令记录" class="headerlink" title="简单的命令记录"></a>简单的命令记录</h2><p>首先查看系统内核和发行版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uname -a #查看当前操作的Linux内核，经常会根据内核版本来判断是有本地提权风险</span><br><span class="line">lsb_release -a #查看发行版本</span><br></pre></td></tr></table></figure></p>
+<p>针对不同的发行版本，比如ubuntu、centos可能需要cat不同文件来查看，具体大家碰到的时候可以Google下</p>
+<p>cat，直接输出某个文件的全部内容</p>
+<p>类似cat这种把文件全部内容输出，假如文件比较大内容比较多，如果直接cat到屏幕上是不现实的，我们可以通过head和tail来输出文件头部和尾部的内容，并通过参数-n指定输出的行数</p>
+<p>如果需要实时的输出比如日志文件最新的日志，也就是文件新增的内容，可以用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f auth.log</span><br></pre></td></tr></table></figure></p>
+<p>由于直接tail或者head是把当前文件内容的头部或者尾部输出。在一些场景下，我们需要实时的观察最新产生的日志，这时候如果不断的执行tail来打印最新产生的日志肯定是不现实的，所以可以直接指定-f，这样一旦日志内容有变更，就会输出到屏幕。</p>
+<p>Vim是从vi发展出来的一个文本编辑器。通常我们会经常接触到的类UNIX系统，如Linux的各种常见发行版，MacOS都默认安装有VIM。</p>
+<p>我们可以用编辑器打开文件查看编辑内容，可以使用vim，直接vi 文件</p>
+<p>vi 进去文件后默认是命令模式，即所以按键操作被当做命令处理，可以通过J向下移动光标和K向上移动光标,左移动是H，右移动是L；如果需要涉及到查找字符串，在命令模式下/输入搜索关键词后回车即可进行搜索，小写的n是next到下个匹配的位置，大写的N上到上一个匹配的位置。</p>
+<p>如果想要退出，则可以直接在命令模式下输入:q即可退出，如果有涉及改动，保存退出是:wq，同样单纯:w就是保存不退出。那么如果需要编辑某个位置的内容怎么办？<br>先JKHL移动光标到编辑位置，在按i即可进入编辑模式，编辑模式下如果要移动光标是使用上下左右按键。编辑完之后，要做一些比如搜索、保存等命令模式下做的操作，就需要按esc键退出编辑模式进入命令模式才可以操作。<br>用vim新建文件时，可以编辑新文件再保存，来生成新文件。或者使用touch命令来生成一个空文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ps aux|grep xxx #查找某个进程,grep为查找的意思</span><br><span class="line">ps aux  #列出全部进程</span><br><span class="line">ps -u ubuntu  #指定进程用户ubuntu</span><br></pre></td></tr></table></figure><br>如果指定用户的基础上需要查找，那么同理是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -u ubuntu|grep xxx</span><br></pre></td></tr></table></figure></p>
+<p>关于进程的话，还可以使用top进入进程监视状态，类似Windows下的任务管理器。进程top模式下，按c可以显示进程的完整命令行，按M可以按内存占用降序排序，按P可以按CPU占用降序排序，退出的话，直接ctrl+c，同样可以通过-u来指定值查看某个用户的集成信息</p>
+<p>如果想查看端口信息，可以使用netstat -anp，就可以列出所有端口，最后一列为进程ID<br>netstat -anpt可以只看tcp端口信息</p>
+<p>在入侵溯源或者病毒排查的场景下，我们需要通过PS或者top命令来查找异常的进程，比如通过Top我们根据CPU排序，当发现排序前面的进程CPU占用接近100%，那么基本就可以怀疑是挖矿进程；而查看端口则可以帮助我们通过检查端口的异常监听，包含说连接的IP为未知或者国外的IP，则该端口监听往往有问题，这时再根据PID信息查找对应进程进行进一步确认。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab -l  #列表系统的计划任务</span><br><span class="line">crontab-e   #则进入编辑</span><br></pre></td></tr></table></figure>
+<p>默认操作进入的是当前用户的计划任务,如果想要查看某个用户的，需要用-u 指定，比如crontab -u root -e，当然，想要编辑操作某个用户的crotab任务，需要对应的权限。一般黑客入侵服务器后会喜欢通过设定crontab任务来达到执行脚本、启动某个程序的目的，比如启动挖矿程序。</p>
+<p>查看历史命令操作记录是history、lastlog查看最后登录信息、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">last -f /var/log/wtmp #查看历史用户登录信息</span><br><span class="line">ifconfig  #查看IP信息</span><br></pre></td></tr></table></figure><br>这些命令都或多或少记录了黑客入侵的痕迹，如果黑客没有清理，则可以成为溯源的重要参考。</p>
+<p>find命令用来查找文件，比如在当前目录下查找txt文件文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name &apos;*.txt&apos;</span><br></pre></td></tr></table></figure><br>在溯源的时候经常需要用这个命令来查找已知黑客入侵事件范围内变更的文件，那么得到的就可能是黑客新增和改动的文件</p>
+<p>可以通过touch命令-t生成指定时间的文件<br>比如touch -t 201803110000 t_start和touch -t 201803140000 t_end分别生成18年3月11日的t_start文件和3月14日的t_end文件，然后通过<br>find . -type f -newer t_start ! -newer t_end<br>查找更改时间比t_start新，但比t_end旧的文件</p>
+<p>一些关键目录和文件：<br>1、vi ~/.bash_history 命令操作历史，对应命令history输出的结果<br>2、/var/spool/cron/(crontabs) 对应不同用户计划任务<br>3、cd /proc/pid 对应进程的目录，进程对应目录再ls -lh 可以看到对应进程的相关信息(kali没有pid)<br>4、/var/log 日志目录，包含系统登录日志auth.log都在这个目录，经常黑客入侵后会删除这个目录下的文件以达到清除痕迹的效果</p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
-            <p>原文链接：<a href="https://dgz-cyber.github.io/2019/12/01/ubuntu18.04%E6%8D%A2%E6%BA%90%E9%97%AE%E9%A2%98/">https://dgz-cyber.github.io/2019/12/01/ubuntu18.04%E6%8D%A2%E6%BA%90%E9%97%AE%E9%A2%98/</a>
-            <p>发表日期：<a href="https://dgz-cyber.github.io/2019/12/01/ubuntu18.04%E6%8D%A2%E6%BA%90%E9%97%AE%E9%A2%98/">December 1st 2019, 7:44:39 pm</a>
-            <p>更新日期：<a href="https://dgz-cyber.github.io/2019/12/01/ubuntu18.04%E6%8D%A2%E6%BA%90%E9%97%AE%E9%A2%98/">February 17th 2020, 11:22:49 pm</a>
+            <p>原文链接：<a href="https://dgz-cyber.github.io/2020/04/11/Arachni%E5%92%8C%E5%91%BD%E4%BB%A4%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">https://dgz-cyber.github.io/2020/04/11/Arachni%E5%92%8C%E5%91%BD%E4%BB%A4%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</a>
+            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/04/11/Arachni%E5%92%8C%E5%91%BD%E4%BB%A4%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">April 11th 2020, 12:30:20 am</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/04/11/Arachni%E5%92%8C%E5%91%BD%E4%BB%A4%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">April 11th 2020, 3:08:06 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -422,16 +440,16 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title= "关于钠离子电池的学习记录">
-                    <div class="nextTitle">关于钠离子电池的学习记录</div>
+                <a href= "/2020/04/11/%E8%82%96%E7%89%B9%E5%9F%BA%E5%8A%BF%E5%9E%92%E4%B8%8E%E6%AC%A7%E5%A7%86%E6%8E%A5%E8%A7%A6/" title= "肖特基势垒与欧姆接触">
+                    <div class="nextTitle">肖特基势垒与欧姆接触</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/12/01/ubuntu%E8%BF%9B%E7%A8%8B%E9%97%AE%E9%A2%98/" title= "ubuntu进程问题">
-                    <div class="prevTitle">ubuntu进程问题</div>
+                <a href= "/2020/04/03/%E5%85%B3%E4%BA%8ERGB%E6%95%B0%E5%80%BC%E8%BD%AC%E5%9B%BE%E7%89%87%E8%84%9A%E6%9C%AC%E4%BB%A5%E5%8F%8A%E8%9A%81%E5%89%91%E5%A4%87%E6%B3%A8%E4%BB%A5%E5%8F%8AZ3%E5%AD%A6%E4%B9%A0%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/" title= "关于RGB数值转图片脚本以及蚁剑备注以及Z3学习简单记录">
+                    <div class="prevTitle">关于RGB数值转图片脚本以及蚁剑备注以及Z3学习简单记录</div>
                 </a>
             
         </li>
@@ -550,7 +568,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ubuntu18-04换源，装pwntools问题"><span class="toc-number">1.</span> <span class="toc-text">ubuntu18.04换源，装pwntools问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#换源"><span class="toc-number">1.1.</span> <span class="toc-text">换源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#备份源"><span class="toc-number">1.1.1.</span> <span class="toc-text">备份源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更换源"><span class="toc-number">1.1.2.</span> <span class="toc-text">更换源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装pwntools-可参考"><span class="toc-number">1.2.</span> <span class="toc-text">安装pwntools(可参考)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#未解决问题-已解决"><span class="toc-number">1.3.</span> <span class="toc-text">未解决问题(已解决)</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#AWVS和Arachni区别"><span class="toc-number">1.</span> <span class="toc-text">AWVS和Arachni区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简单的命令记录"><span class="toc-number">2.</span> <span class="toc-text">简单的命令记录</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

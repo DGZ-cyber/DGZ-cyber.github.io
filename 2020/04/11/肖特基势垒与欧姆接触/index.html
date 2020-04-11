@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>ubuntu18.04换源问题 · DGZ&#39;s Blog</title>
+    <title>肖特基势垒与欧姆接触 · DGZ&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >DGZ&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">ubuntu18.04换源问题</a>
+                <a href="#" class="post-name">肖特基势垒与欧姆接触</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            ubuntu18.04换源问题
+            肖特基势垒与欧姆接触
             <!-- 404 -->
             
         </h1>
@@ -264,14 +264,20 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "光电">光电</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">353</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">1.3k</span>Reading time: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/12/01</span>
+                    <span class="post-intro-time">2020/04/11</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,25 +401,32 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="ubuntu18-04换源，装pwntools问题"><a href="#ubuntu18-04换源，装pwntools问题" class="headerlink" title="ubuntu18.04换源，装pwntools问题"></a>ubuntu18.04换源，装pwntools问题</h1><hr>
-<p>title: ubuntu18.04换源，装pwntools问题</p>
-<p>tags: </p>
-<pre><code> - ubuntu
-</code></pre><hr>
-<p>首先当然要安装好vmware tools</p>
-<h2 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h2><h3 id="备份源"><a href="#备份源" class="headerlink" title="备份源"></a>备份源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources_init.list</span><br></pre></td></tr></table></figure>
-<h3 id="更换源"><a href="#更换源" class="headerlink" title="更换源"></a>更换源</h3><p>用gedit文本编辑器就相当方便，不知道为什么一堆人用vim<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/apt/sources.list</span><br></pre></td></tr></table></figure><br>删除文件中的所有内容，替换成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 阿里源</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure></p>
-<h2 id="安装pwntools-可参考"><a href="#安装pwntools-可参考" class="headerlink" title="安装pwntools(可参考)"></a>安装pwntools<a href="https://www.cnblogs.com/pcat/p/5451780.html" target="_blank" rel="noopener">(可参考)</a></h2><p>pwntools需要python3的环境了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential</span><br><span class="line">python3 -m pip install --upgrade pip</span><br><span class="line">python3 -m pip install --upgrade git+https://github.com/Gallopsled/pwntools.git@dev3</span><br></pre></td></tr></table></figure></p>
-<h2 id="未解决问题-已解决"><a href="#未解决问题-已解决" class="headerlink" title="未解决问题(已解决)"></a>未解决问题(已解决)</h2><p>pip3 ImportError: cannot import name ‘main’<br>解决方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /usr/bin/pip</span><br><span class="line">将：</span><br><span class="line">from pip import main</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    sys.exit(main())</span><br><span class="line">替换成：</span><br><span class="line">from pip import __main__</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    sys.exit(__main__._main())</span><br></pre></td></tr></table></figure><br>最后输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip install pwntools --user</span><br><span class="line"></span><br><span class="line">#因为可能出现ERROR: Could not install packages due to an EnvironmentError: [Errno 13] Permission denied: &apos;/usr/local/lib/python2.7/dist-packages/filelock.py&apos;</span><br><span class="line">Consider using the `--user` option or check the permissions.</span><br></pre></td></tr></table></figure></p>
+        <h2 id="肖特基势垒"><a href="#肖特基势垒" class="headerlink" title="肖特基势垒"></a>肖特基势垒</h2><p>参考：<a href="https://www.jianshu.com/p/c78e70cb22a1" target="_blank" rel="noopener">https://www.jianshu.com/p/c78e70cb22a1</a><br>这个大哥很言简意赅，但里面有些东西让我纠结了一会<br>之后参考金属半导体结：<a href="https://wenku.baidu.com/view/afe3426730126edb6f1aff00bed5b9f3f80f7211.html" target="_blank" rel="noopener">https://wenku.baidu.com/view/afe3426730126edb6f1aff00bed5b9f3f80f7211.html</a><br>二极管：<a href="https://wenku.baidu.com/view/ec9fefebb9f67c1cfad6195f312b3169a451ea29.html" target="_blank" rel="noopener">https://wenku.baidu.com/view/ec9fefebb9f67c1cfad6195f312b3169a451ea29.html</a></p>
+<p>当N型半导体和P型半导体接触时，由于载流子的扩散形成耗尽层，从而形成PN节。<br>而当金属与半导体接触时，电子与空穴的扩散同样会导致耗尽层与内建电场的形成，此时内建电场的方向从N型半导体指向金属，如下图：<br><img src="https://s1.ax1x.com/2020/04/11/GHfKc6.png" alt="GHfKc6.png"></p>
+<p>功函数表示要让电子从材料中逃逸到自由空间中的最小热能量，电子亲和势表示电子从自由空间掉落到半导体导带底部所释放的能量。<br><img src="https://s1.ax1x.com/2020/04/11/GHfCcV.png" alt="GHfCcV.png"></p>
+<p><strong>当金属与半导体接触时，载流子扩散流动必须使接触面两侧的费米能级相等才能达到平衡状态，所以接触后半导体中的能带会因为载流子扩散而形成的内建电场而弯曲，</strong></p>
+<p>以n型半导体为例，当金属功函数小于半导体功函数时，如下图：<br><img src="https://s1.ax1x.com/2020/04/11/GHfA74.png" alt="GHfA74.png"></p>
+<p>能带的弯曲导致了势垒的形成，从能带图上看，电子不能随意地从半导体导带低移动到金属上，这样在接触面就会形成了电子的势垒，称为肖特基势垒(Schottky Barrier)，对应地形成了整流结，而对应于图1，因为内建电场的形成导致了达到平衡状态之后载流子不能随意在界面之间穿越，肖特基二极管就是利用该原理工作的。</p>
+<p>联系传统的PN结二极管，在正向偏压(即金属加正电压、而N型半导体加负电压，电场方向从金属指向N型半导体)的情况下</p>
+<p>从能带图上看，正向偏压时由于外电场的存在，抬高了半导体侧的费米能级（即削弱了内建电场，促进了电子往金属迁移），使得半导体中的电子面临的势垒高度降低，从而更容易流过接触面进入金属，而在加负向偏压时则会加大该势垒（增强了内建电场，抑制了N区电子的迁移）<br><img src="https://s1.ax1x.com/2020/04/11/GHfdjf.png" alt="GHfdjf.png"></p>
+<h2 id="欧姆接触"><a href="#欧姆接触" class="headerlink" title="欧姆接触"></a>欧姆接触</h2><p>很多时候我们并不想在金属与半导体接触面出现肖特基势垒，比如半导体器件用金属引线引出信号。<br>理论上有两种方式，一是降低势垒高度，使载流子不需要很高的能量就可以跃过势垒；二是大幅减小势垒宽度，使载流子以隧穿的方式穿过。</p>
+<p>如果通过选择不同材料，使半导体的费米能级小于金属的费米能级，则接触面能带情况将如下图所示：<br><img src="https://s1.ax1x.com/2020/04/11/GHfWvV.png" alt="GHfWvV.png"></p>
+<p>这样电子从半导体进入金属没有势垒，而从金属进入半导体只有很小的势垒，比较小的电压就可以使电子轻松跃过势垒进入半导体。这样就是欧姆接触(OhmicContact)的情况，当然其IV曲线并不是像理想欧姆电阻一样的直线，而是近似直线。</p>
+<p>另一种方式是通过重掺杂的方式，使形成的势垒宽度很窄，这样电子可以不用跃过势垒而直接通过隧穿流过接触面，正向偏压、负向偏压与IV特性(黑色曲线)如下图：<br><img src="https://s1.ax1x.com/2020/04/11/GHf759.png" alt="GHf759.png"></p>
+<p>所以从IV曲线上可以简单地区分对应半导体与金属之间形成了肖特基接触还是欧姆接触。欧姆接触不具有整流特性，正向电压无论加在电极的哪一端，电流都和电压成正比，类似于一个小电阻的作用。</p>
+<p>肖特基二极管</p>
+<blockquote>
+<p>肖特基二极管是以贵金属（金、银、铝、铂等）A为正极，以N型半导体B为负极，利用二者接触面上形成的势垒具有整流特性而制成的金属-半导体器件。因为N型半导体中存在着大量的电子，贵金属中仅有极少量的自由电子，所以电子便从浓度高的B中向浓度低的A中扩散。显然，金属A中没有空穴（只有金属阳离子和电子），也就不存在空穴自A向B的扩散运动。随着电子不断从B扩散到A，B表面电子浓度逐渐降低，表面电中性被破坏，少子空穴相对浓度提高，于是就形成势垒，其电场方向为B→A。但在该电场作用之下，A中的电子也会产生从A→B的漂移运动，从而削弱了由于扩散运动而形成的电场。当建立起一定宽度的空间电荷区后，电场引起的电子漂移运动和浓度不同引起的电子扩散运动达到相对的平衡，便形成了肖特基势垒。</p>
+</blockquote>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
-            <p>原文链接：<a href="https://dgz-cyber.github.io/2019/12/01/ubuntu18.04%E6%8D%A2%E6%BA%90%E9%97%AE%E9%A2%98/">https://dgz-cyber.github.io/2019/12/01/ubuntu18.04%E6%8D%A2%E6%BA%90%E9%97%AE%E9%A2%98/</a>
-            <p>发表日期：<a href="https://dgz-cyber.github.io/2019/12/01/ubuntu18.04%E6%8D%A2%E6%BA%90%E9%97%AE%E9%A2%98/">December 1st 2019, 7:44:39 pm</a>
-            <p>更新日期：<a href="https://dgz-cyber.github.io/2019/12/01/ubuntu18.04%E6%8D%A2%E6%BA%90%E9%97%AE%E9%A2%98/">February 17th 2020, 11:22:49 pm</a>
+            <p>原文链接：<a href="https://dgz-cyber.github.io/2020/04/11/%E8%82%96%E7%89%B9%E5%9F%BA%E5%8A%BF%E5%9E%92%E4%B8%8E%E6%AC%A7%E5%A7%86%E6%8E%A5%E8%A7%A6/">https://dgz-cyber.github.io/2020/04/11/%E8%82%96%E7%89%B9%E5%9F%BA%E5%8A%BF%E5%9E%92%E4%B8%8E%E6%AC%A7%E5%A7%86%E6%8E%A5%E8%A7%A6/</a>
+            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/04/11/%E8%82%96%E7%89%B9%E5%9F%BA%E5%8A%BF%E5%9E%92%E4%B8%8E%E6%AC%A7%E5%A7%86%E6%8E%A5%E8%A7%A6/">April 11th 2020, 3:06:58 pm</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/04/11/%E8%82%96%E7%89%B9%E5%9F%BA%E5%8A%BF%E5%9E%92%E4%B8%8E%E6%AC%A7%E5%A7%86%E6%8E%A5%E8%A7%A6/">April 11th 2020, 3:07:01 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -421,17 +434,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title= "关于钠离子电池的学习记录">
-                    <div class="nextTitle">关于钠离子电池的学习记录</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/12/01/ubuntu%E8%BF%9B%E7%A8%8B%E9%97%AE%E9%A2%98/" title= "ubuntu进程问题">
-                    <div class="prevTitle">ubuntu进程问题</div>
+                <a href= "/2020/04/11/Arachni%E5%92%8C%E5%91%BD%E4%BB%A4%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/" title= "Arachni和命令的简单记录">
+                    <div class="prevTitle">Arachni和命令的简单记录</div>
                 </a>
             
         </li>
@@ -550,7 +558,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ubuntu18-04换源，装pwntools问题"><span class="toc-number">1.</span> <span class="toc-text">ubuntu18.04换源，装pwntools问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#换源"><span class="toc-number">1.1.</span> <span class="toc-text">换源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#备份源"><span class="toc-number">1.1.1.</span> <span class="toc-text">备份源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更换源"><span class="toc-number">1.1.2.</span> <span class="toc-text">更换源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装pwntools-可参考"><span class="toc-number">1.2.</span> <span class="toc-text">安装pwntools(可参考)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#未解决问题-已解决"><span class="toc-number">1.3.</span> <span class="toc-text">未解决问题(已解决)</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#肖特基势垒"><span class="toc-number">1.</span> <span class="toc-text">肖特基势垒</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#欧姆接触"><span class="toc-number">2.</span> <span class="toc-text">欧姆接触</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
