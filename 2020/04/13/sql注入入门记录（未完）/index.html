@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>DGZ&#39;s Blog</title>
+    <title>sql注入入门记录（未完） · DGZ&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >DGZ&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">sql注入入门记录（未完）</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>DGZ's Blog.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            sql注入入门记录（未完）
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">2.7k</span>Reading time: <span class="post-count reading-time">11 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/04/13</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,40 +399,122 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/04/11/%E8%82%96%E7%89%B9%E5%9F%BA%E5%8A%BF%E5%9E%92%E4%B8%8E%E6%AC%A7%E5%A7%86%E6%8E%A5%E8%A7%A6/" >
-            
-                <span>肖特基势垒与欧姆接触</span>
-        </a>
-        <div class="abstract-content">
-            肖特基势垒参考：https://www.jianshu.com/p/c78e70cb22a1这个大哥很言简意赅，但里面有些东西让我纠结了一会之后参考金属半导体结：https://wenku.baidu.com/view/afe3426730126edb6f1aff00bed5b9f3f80f7211.html二极管：https://wenku.baidu.com/view/ec9fefebb9f67c1cfad6195f312b3169a451ea29.html
-当N型半导体和P型半导体接触时，由于载流子的扩散形成耗尽层，从而形成PN节。而当金属与半导体接触时，电子与空穴的扩散同样会导致...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "光电">光电</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>由于比较泛，所以就单独拿一篇文章来记录，仅是入门<br>参考赵师傅b站：<a href="https://www.bilibili.com/video/BV1XE411f7C8" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1XE411f7C8</a><br>pockr教程</p>
+<p>利用wampserver的集成套件，使用里面的mysql数据库<br>cmd中输入<code>mysql -u root -p</code> 回车后再输入密码<br>基础命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">show databases;   </span><br><span class="line">create database test;</span><br><span class="line">user test;</span><br><span class="line">create table users(id int(11),name varchar(255));</span><br><span class="line">show tables;</span><br><span class="line">desc users;</span><br><span class="line">insert into users values(1,&apos;dgz&apos;),(2,&apos;admin&apos;),(4,&apos;test&apos;);</span><br><span class="line">select * from users;</span><br><span class="line">select * from users order by id;</span><br><span class="line">select * from users order by id\G; 的作用是将查到的结构旋转90度变成纵向</span><br><span class="line">select * from users order by id desc;  #根据id大小倒序排</span><br><span class="line">select * from users limit 1 offset 0;  #偏移0选一行值</span><br><span class="line">select * from users limit 2 offset 1;  #偏移1选两行值，即选第二、三行数据</span><br><span class="line">update users set name=&apos;test2&apos; where id = 1;</span><br><span class="line">update users set name=&apos;test2&apos; where id = 1\G; 的作用是将查到的结构旋转90度变成纵向</span><br><span class="line">delete from users where id=2;</span><br></pre></td></tr></table></figure><br>由于本地mysql对于字符型与整数型，会存在一个自动转换的过程，所以对于常见sql注入复现的题目本地测试会有点差别。<br><img src="https://s1.ax1x.com/2020/04/13/GjASeA.png" alt="GjASeA.png"><br>参考：<a href="https://blog.csdn.net/yjgithub/article/details/74534066" target="_blank" rel="noopener">https://blog.csdn.net/yjgithub/article/details/74534066</a><br>原本是VARCHAR类型,不加引号,在搜索时需要加多一个转换操作,将INT转换VARCHAR，会多花一点时间，但是对于我这么小的表几乎没有影响，搜索的结果都是一样的。</p>
+<h2 id="DVWA靶场sql-injection"><a href="#DVWA靶场sql-injection" class="headerlink" title="DVWA靶场sql injection"></a>DVWA靶场sql injection</h2><h3 id="low级别"><a href="#low级别" class="headerlink" title="low级别"></a>low级别</h3><p>查看源代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( <span class="keyword">isset</span>( $_REQUEST[ <span class="string">'Submit'</span> ] ) ) &#123; </span><br><span class="line">    <span class="comment">// Get input </span></span><br><span class="line">    $id = $_REQUEST[ <span class="string">'id'</span> ]; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// Check database </span></span><br><span class="line">    $query  = <span class="string">"SELECT first_name, last_name FROM users WHERE user_id = '$id';"</span>; </span><br><span class="line">    $result = mysqli_query($GLOBALS[<span class="string">"___mysqli_ston"</span>],  $query ) <span class="keyword">or</span> <span class="keyword">die</span>( <span class="string">'&lt;pre&gt;'</span> . ((is_object($GLOBALS[<span class="string">"___mysqli_ston"</span>])) ? mysqli_error($GLOBALS[<span class="string">"___mysqli_ston"</span>]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : <span class="keyword">false</span>)) . <span class="string">'&lt;/pre&gt;'</span> ); </span><br><span class="line"></span><br><span class="line">    <span class="comment">// Get results </span></span><br><span class="line">    <span class="keyword">while</span>( $row = mysqli_fetch_assoc( $result ) ) &#123; </span><br><span class="line">        <span class="comment">// Get values </span></span><br><span class="line">        $first = $row[<span class="string">"first_name"</span>]; </span><br><span class="line">        $last  = $row[<span class="string">"last_name"</span>]; </span><br><span class="line"></span><br><span class="line">        <span class="comment">// Feedback for end user </span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&lt;pre&gt;ID: &#123;$id&#125;&lt;br /&gt;First name: &#123;$first&#125;&lt;br /&gt;Surname: &#123;$last&#125;&lt;/pre&gt;"</span>; </span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    mysqli_close($GLOBALS[<span class="string">"___mysqli_ston"</span>]); </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>id是字符型的，所以构造sql语句时需要单引号闭合，而且看得出没有过滤，没有白名单黑名单</p>
+<p>当然也可以测试一下，输入<code>1&#39; and 1=1#</code>和<code>1&#39; and 1=2#</code></p>
+<p>对于此处这个sql语句，代入之后是<code>SELECT first_name, last_name FROM users WHERE user_id = &#39;1&#39; and 1=1#&#39;;</code>#号的作用是注释掉后面的引号，而没有注释掉分号，</p>
+<p>但是本地测试可以看到#对分号有影响，注释掉分号了，因为分号没了就不是完整的sql语句了所以无法运行搜索，所以是有区别的。</p>
+<p><img src="https://s1.ax1x.com/2020/04/13/Gjz7b6.png" alt="Gjz7b6.png"></p>
+<p><img src="https://s1.ax1x.com/2020/04/13/Gjz2UU.png" alt="Gjz2UU.png"></p>
+<p>而输入<code>1&#39; and 1=2#</code>没有回显</p>
+<p>而对于<code>1&#39; or 1=1#</code> 某一些服务只会回显id=1，而不会所有都显示出来，所以最好可以改成<code>0&#39; or 1=1#</code>，让前面的查询无效，在dvwa下此时是所有信息都会显示出来。</p>
+<p><img src="https://s1.ax1x.com/2020/04/13/GjzfC4.png" alt="GjzfC4.png"><br>对于<code>order by</code>查字段数，原理其实是<code>order by</code>是一个排序的功能符？（我可以这么说吗）</p>
+<p><img src="https://s1.ax1x.com/2020/04/13/GjzR5F.png" alt="GjzR5F.png"></p>
+<p>如图的测试，相同id以age大小排序</p>
+<p>而在sql注入中测试时<br><img src="https://s1.ax1x.com/2020/04/13/GjzgET.png" alt="GjzgET.png"></p>
+<p><code>order by</code>实际上是以字段序数和字段名称进行排序，如图<code>order by 3</code>和<code>order by age</code>结果是一样的，而<code>order by 4</code>报错是因为没有第四列，所以通过<code>order by</code>可以查字段数，常用的方法是二分法查询。<br><img src="https://s1.ax1x.com/2020/04/13/Gjzh8J.png" alt="Gjzh8J.png"></p>
+<p>所以在dvwa中，这样的语句可以有正确回显，而当<code>order by 3</code>时就会报错，因为<code>&quot;SELECT first_name, last_name FROM users WHERE user_id = &#39;$id&#39;;&quot;; 只有两个字段，超过2就会出错</code></p>
+<p>对于<code>union select</code>联合查询，union运算符可以将两个或者两个以上select语句的查询结果集合合并成一个结果集显示，即执行联合查询。需要注意在使用union查询的时候需要和主查询的列数相同，其需要前后搜索的字段个数相同，也就是一般用<code>order by</code>知道字段数之后才<code>union select</code></p>
+<p><img src="https://s1.ax1x.com/2020/04/13/Gjz429.png" alt="Gjz429.png"></p>
+<p>如图，前后select的字段必须相同，不然无法联合查询，排序1，2，3是要知道字段对应的位置，大概是因为原表中没有id=1，name=2，age=3的数据才这么回显出来。</p>
+<p>当我们输入<code>1&#39; union select version(),@@version_compile_os#</code></p>
+<p><img src="https://s1.ax1x.com/2020/04/13/Gjz5vR.png" alt="Gjz5vR.png"></p>
+<p>在第二个结果返回了当前数据库的版本和当前操作系统。</p>
+<p>之后就是通过<code>union select</code>获取到我们想要的关键信息</p>
+<p>其中，information_schema是mysql自带的一个库，可以叫元数据库，这个库保存了mysql所有数据库的信息，如数据库名、数据库的表与访问权限等等，该数据库拥有一个名为TABLES的数据表，该表包含两个字段table_name和table_schema，分别记录DBMS中的存储的表名和表名所在的数据库。</p>
+<p>更详细介绍可见：<a href="https://www.cnblogs.com/lcbwwy/p/12670465.html" target="_blank" rel="noopener">https://www.cnblogs.com/lcbwwy/p/12670465.html</a></p>
+<p><img src="https://s1.ax1x.com/2020/04/13/GjzoK1.png" alt="GjzoK1.png"></p>
+<p>所以接下来的关键信息获取，要通过元数据库获取</p>
+<p>利用database()获得数据库名称</p>
+<p><img src="https://s1.ax1x.com/2020/04/13/GjzTDx.png" alt="GjzTDx.png"></p>
+<p>然后<code>1&#39; union select 1,table_name from information_schema.TABLES where table_schema=&#39;dvwa&#39;#</code>，得到库里面的表名users和guestbook，然后猜想users实际一点</p>
+<p><img src="https://s1.ax1x.com/2020/04/13/GjzbVK.png" alt="GjzbVK.png"></p>
+<p>接下来<code>1&#39; union select 1,column_name from information_schema.COLUMNS where table_name=&#39;users&#39;#</code></p>
+<p>对大小写不敏感，其实全部表名库名小写大写都行</p>
+<p><img src="https://s1.ax1x.com/2020/04/13/GjzL5D.png" alt="GjzL5D.png"></p>
+<p><code>1&#39; union select user,password from users#</code></p>
+<p><img src="https://s1.ax1x.com/2020/04/13/GjzXPe.png" alt="GjzXPe.png"></p>
+<p>得到了用户名和密码</p>
+<h3 id="Medium级别"><a href="#Medium级别" class="headerlink" title="Medium级别"></a>Medium级别</h3><p>变成了选择框</p>
+<p><img src="https://s1.ax1x.com/2020/04/13/Gjzv2d.png" alt="Gjzv2d.png"></p>
+<p>查看源代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( <span class="keyword">isset</span>( $_POST[ <span class="string">'Submit'</span> ] ) ) &#123; </span><br><span class="line">    <span class="comment">// Get input </span></span><br><span class="line">    $id = $_POST[ <span class="string">'id'</span> ]; </span><br><span class="line"></span><br><span class="line">    $id = mysqli_real_escape_string($GLOBALS[<span class="string">"___mysqli_ston"</span>], $id); </span><br><span class="line"></span><br><span class="line">    $query  = <span class="string">"SELECT first_name, last_name FROM users WHERE user_id = $id;"</span>; </span><br><span class="line">    $result = mysqli_query($GLOBALS[<span class="string">"___mysqli_ston"</span>], $query) <span class="keyword">or</span> <span class="keyword">die</span>( <span class="string">'&lt;pre&gt;'</span> . mysqli_error($GLOBALS[<span class="string">"___mysqli_ston"</span>]) . <span class="string">'&lt;/pre&gt;'</span> ); </span><br><span class="line"></span><br><span class="line">    <span class="comment">// Get results </span></span><br><span class="line">    <span class="keyword">while</span>( $row = mysqli_fetch_assoc( $result ) ) &#123; </span><br><span class="line">        <span class="comment">// Display values </span></span><br><span class="line">        $first = $row[<span class="string">"first_name"</span>]; </span><br><span class="line">        $last  = $row[<span class="string">"last_name"</span>]; </span><br><span class="line"></span><br><span class="line">        <span class="comment">// Feedback for end user </span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&lt;pre&gt;ID: &#123;$id&#125;&lt;br /&gt;First name: &#123;$first&#125;&lt;br /&gt;Surname: &#123;$last&#125;&lt;/pre&gt;"</span>; </span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// This is used later on in the index.php page </span></span><br><span class="line"><span class="comment">// Setting it here so we can close the database connection in here like in the rest of the source scripts </span></span><br><span class="line">$query  = <span class="string">"SELECT COUNT(*) FROM users;"</span>; </span><br><span class="line">$result = mysqli_query($GLOBALS[<span class="string">"___mysqli_ston"</span>],  $query ) <span class="keyword">or</span> <span class="keyword">die</span>( <span class="string">'&lt;pre&gt;'</span> . ((is_object($GLOBALS[<span class="string">"___mysqli_ston"</span>])) ? mysqli_error($GLOBALS[<span class="string">"___mysqli_ston"</span>]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : <span class="keyword">false</span>)) . <span class="string">'&lt;/pre&gt;'</span> ); </span><br><span class="line">$number_of_rows = mysqli_fetch_row( $result )[<span class="number">0</span>]; </span><br><span class="line"></span><br><span class="line">mysqli_close($GLOBALS[<span class="string">"___mysqli_ston"</span>]); </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>看到id是整数型的，而且选择后url没有对应id显示，应该是post型传参</p>
+<p>burp抓包，谷歌浏览器需要在设置里面的管理证书-受信任的根证书颁发机构-导入burp的证书</p>
+<p>残废型选手上线，一直抓不到dvwa的包，后来一看</p>
+<p><img src="https://s1.ax1x.com/2020/04/13/GjzxxA.png" alt="GjzxxA.png"></p>
+<p>都不代理了怎么还能抓到包？赶紧删掉然后就可以抓包了</p>
+<p>源代码中<code>$id = mysqli_real_escape_string($GLOBALS[&quot;___mysqli_ston&quot;], $id);</code>会转义字符串中的特殊字符：包括：NUL（ASCII 0）、\n、\r、\、’、” 和 Control-Z。</p>
+<p>会把我们常用的单引号给转义了，前面会加一个反斜杠</p>
+<p>然后我们这里可以利用16进制绕过引号的过滤</p>
+<p>输入<code>2 union select 1, group_concat(table_name) from information_schema.tables where table_schema=database()#</code></p>
+<p><img src="https://s1.ax1x.com/2020/04/13/GvSSKI.png" alt="GvSSKI.png"><br>对比上面low级别的，我们也可以看到group_concat的作用就是将输出结果用逗号连在一起，</p>
+<p><code>2 union select 1, group_concat(column_name) from information_schema.columns where table_name=0x7573657273#</code></p>
+<p><img src="https://s1.ax1x.com/2020/04/13/GvSprt.png" alt="GvSprt.png"><br><code>2 union select  user,password from users#</code></p>
+<p><img src="https://s1.ax1x.com/2020/04/13/GvS9qP.png" alt="GvS9qP.png"></p>
+<h3 id="High级别"><a href="#High级别" class="headerlink" title="High级别"></a>High级别</h3><p>变成另开的一个输入框，回显还是在原页面</p>
+<p>查看源代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line"></span><br><span class="line">if( isset( $_SESSION [ &apos;id&apos; ] ) ) &#123; </span><br><span class="line">    // Get input </span><br><span class="line">    $id = $_SESSION[ &apos;id&apos; ]; </span><br><span class="line"></span><br><span class="line">    // Check database </span><br><span class="line">    $query  = &quot;SELECT first_name, last_name FROM users WHERE user_id = &apos;$id&apos; LIMIT 1;&quot;; </span><br><span class="line">    $result = mysqli_query($GLOBALS[&quot;___mysqli_ston&quot;], $query ) or die( &apos;&lt;pre&gt;Something went wrong.&lt;/pre&gt;&apos; ); </span><br><span class="line"></span><br><span class="line">    // Get results </span><br><span class="line">    while( $row = mysqli_fetch_assoc( $result ) ) &#123; </span><br><span class="line">        // Get values </span><br><span class="line">        $first = $row[&quot;first_name&quot;]; </span><br><span class="line">        $last  = $row[&quot;last_name&quot;]; </span><br><span class="line"></span><br><span class="line">        // Feedback for end user </span><br><span class="line">        echo &quot;&lt;pre&gt;ID: &#123;$id&#125;&lt;br /&gt;First name: &#123;$first&#125;&lt;br /&gt;Surname: &#123;$last&#125;&lt;/pre&gt;&quot;; </span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    ((is_null($___mysqli_res = mysqli_close($GLOBALS[&quot;___mysqli_ston&quot;]))) ? false : $___mysqli_res);        </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>可以看到依然是没有过滤，只是通过<code>LIMIT 1</code>限制了返回一行值，但是我们依然可以通过#注释掉，所以没有什么用</p>
+<p>因此直接用low级别的payload就可以了</p>
+<p>需要特别提到的是，High级别的查询提交页面与查询结果显示页面不是同一个，也没有执行302跳转，这样做的目的是为了防止一般的sqlmap工具注入，因为sqlmap在注入过程中，无法在查询提交页面上获取查询的结果，没有了反馈，也就没办法进一步注入。</p>
+<h3 id="Impossible级别"><a href="#Impossible级别" class="headerlink" title="Impossible级别"></a>Impossible级别</h3><p>查看源代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line"></span><br><span class="line">if( isset( $_GET[ &apos;Submit&apos; ] ) ) &#123; </span><br><span class="line">    // Check Anti-CSRF token </span><br><span class="line">    checkToken( $_REQUEST[ &apos;user_token&apos; ], $_SESSION[ &apos;session_token&apos; ], &apos;index.php&apos; ); </span><br><span class="line"></span><br><span class="line">    // Get input </span><br><span class="line">    $id = $_GET[ &apos;id&apos; ]; </span><br><span class="line"></span><br><span class="line">    // Was a number entered? </span><br><span class="line">    if(is_numeric( $id )) &#123; </span><br><span class="line">        // Check the database </span><br><span class="line">        $data = $db-&gt;prepare( &apos;SELECT first_name, last_name FROM users WHERE user_id = (:id) LIMIT 1;&apos; ); </span><br><span class="line">        $data-&gt;bindParam( &apos;:id&apos;, $id, PDO::PARAM_INT ); </span><br><span class="line">        $data-&gt;execute(); </span><br><span class="line">        $row = $data-&gt;fetch(); </span><br><span class="line"></span><br><span class="line">        // Make sure only 1 result is returned </span><br><span class="line">        if( $data-&gt;rowCount() == 1 ) &#123; </span><br><span class="line">            // Get values </span><br><span class="line">            $first = $row[ &apos;first_name&apos; ]; </span><br><span class="line">            $last  = $row[ &apos;last_name&apos; ]; </span><br><span class="line"></span><br><span class="line">            // Feedback for end user </span><br><span class="line">            echo &quot;&lt;pre&gt;ID: &#123;$id&#125;&lt;br /&gt;First name: &#123;$first&#125;&lt;br /&gt;Surname: &#123;$last&#125;&lt;/pre&gt;&quot;; </span><br><span class="line">        &#125; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">// Generate Anti-CSRF token </span><br><span class="line">generateSessionToken(); </span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>这种防御据称是不可以注入的，因为利用了PDO技术</p>
+<blockquote>
+<p><strong>PDO技术</strong>：PHP数据对象（PHP Data Object）。在生成网页时，许多PHP脚本通常都会执行除参数之外其他部分完全相同的查询语句，针对这种重复执行一个查询，每次迭代使用不同的参数情况，PDO提供了一种名为预处理语句(prepared statement)的机制。它可以将整个SQL命令向数据库服务器发送一次，以后只有参数发生变化，数据库服务器只需对命令的结构做一次分析就够了，即编译一次，可以多次执行。会在服务器上缓存查询的语句和执行过程，而只在服务器和客户端之间传输有变化的列值，以此来消除这些额外的开销。这不仅大大减少了需要传输的数据量，还提高了命令的处理效率。可以有效防止SQL注入，在执行单个查询时快于直接使用query()或exec()的方法，速度快且安全，推荐使用。</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$data = $db-&gt;prepare( <span class="string">'SELECT first_name, last_name FROM users WHERE user_id = (:id) LIMIT 1;'</span> ); </span><br><span class="line">$data-&gt;bindParam( <span class="string">':id'</span>, $id, PDO::PARAM_INT );</span><br></pre></td></tr></table></figure>
+<p>我的理解就是由于使用的是同一个sql语句进行查询，只有参数发生变化，利用PDO就可以编译一次，多次执行，不用重复编译，减少时间，此外划清了代码与数据的界限，有效防御SQL注入。</p>
+<p>还有利用is_numeric($id)函数来判断输入的id是否是数字or数字字符串，满足条件才知晓query查询语句</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>( $data-&gt;rowCount() == <span class="number">1</span> ) &#123; </span><br><span class="line">            <span class="comment">// Get values </span></span><br><span class="line">            $first = $row[ <span class="string">'first_name'</span> ]; </span><br><span class="line">            $last  = $row[ <span class="string">'last_name'</span> ];</span><br></pre></td></tr></table></figure>
+<p>只有当返回的查询结果数量为一个记录时，才会成功输出，这样就有效预防了暴库</p>
+<p>Anti-CSRF token机制的加入了进一步提高了安全性，session_token是随机生成的动态值，每次向服务器请求，客户端都会携带最新从服务端下发的session_token值向服务器请求作匹配验证，相互匹配才会验证通过</p>
+
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
+            <p>原文链接：<a href="https://dgz-cyber.github.io/2020/04/13/sql%E6%B3%A8%E5%85%A5%E5%85%A5%E9%97%A8%E8%AE%B0%E5%BD%95%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/">https://dgz-cyber.github.io/2020/04/13/sql%E6%B3%A8%E5%85%A5%E5%85%A5%E9%97%A8%E8%AE%B0%E5%BD%95%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/</a>
+            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/04/13/sql%E6%B3%A8%E5%85%A5%E5%85%A5%E9%97%A8%E8%AE%B0%E5%BD%95%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/">April 13th 2020, 5:30:20 pm</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/04/13/sql%E6%B3%A8%E5%85%A5%E5%85%A5%E9%97%A8%E8%AE%B0%E5%BD%95%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/">April 13th 2020, 6:22:44 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/04/11/%E8%82%96%E7%89%B9%E5%9F%BA%E5%8A%BF%E5%9E%92%E4%B8%8E%E6%AC%A7%E5%A7%86%E6%8E%A5%E8%A7%A6/" title= "肖特基势垒与欧姆接触">
+                    <div class="prevTitle">肖特基势垒与欧姆接触</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -456,6 +599,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DVWA靶场sql-injection"><span class="toc-number">1.</span> <span class="toc-text">DVWA靶场sql injection</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#low级别"><span class="toc-number">1.1.</span> <span class="toc-text">low级别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Medium级别"><span class="toc-number">1.2.</span> <span class="toc-text">Medium级别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#High级别"><span class="toc-number">1.3.</span> <span class="toc-text">High级别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Impossible级别"><span class="toc-number">1.4.</span> <span class="toc-text">Impossible级别</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1482,6 +1643,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
