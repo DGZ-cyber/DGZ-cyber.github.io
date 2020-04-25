@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="DGZ">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="DGZ">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>安恒四月赛-Crypto · DGZ&#39;s Blog</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/favicon2.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >DGZ&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">安恒四月赛-Crypto</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>DGZ's Blog.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            安恒四月赛-Crypto
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">4.1k</span>Reading time: <span class="post-count reading-time">23 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/04/25</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>难得两道题都会做</p>
+<h3 id="notrsa"><a href="#notrsa" class="headerlink" title="notrsa"></a>notrsa</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import getPrime as getprime ,long_to_bytes,bytes_to_long,inverse</span><br><span class="line">from secret import flag,p,q</span><br><span class="line">from sympy import isprime,nextprime</span><br><span class="line">import random</span><br><span class="line"></span><br><span class="line">m=bytes_to_long(flag)</span><br><span class="line">n=p*q</span><br><span class="line">g=n+1</span><br><span class="line">r=random.randint(1,n)</span><br><span class="line"></span><br><span class="line">c=(pow(g,m,n*n)*pow(r,n,n*n))%(n*n)</span><br><span class="line"></span><br><span class="line">print &quot;c=%d&quot;%(c)</span><br><span class="line">print &quot;n=%d&quot;%(n)</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">c=29088911054711509252215615231015162998042579425917914434962376243477176757448053722602422672251758332052330100944900171067962180230120924963561223495629695702541446456981441239486190458125750543542379899722558637306740763104274377031599875275807723323394379557227060332005571272240560453811389162371812183549</span><br><span class="line">n=6401013954612445818165507289870580041358569258817613282142852881965884799988941535910939664068503367303343695466899335792545332690862283029809823423608093</span><br><span class="line">&apos;&apos;&apos;</span><br></pre></td></tr></table></figure>
+<p>我一开始在谷歌查到的是：<a href="http://blog.rb-tree.xyz/2020/03/09/zer0pts-ctf-2020-dirty-laundry/" target="_blank" rel="noopener">http://blog.rb-tree.xyz/2020/03/09/zer0pts-ctf-2020-dirty-laundry/</a><br>原本想着这个应该是这道题的简化版<br>没想到是更简单的东西<br>里面提到Paillier cryptosystem 这一玩意<br>于是我百度了一下查到了：<a href="https://blog.csdn.net/qq_33885461/article/details/86555560" target="_blank" rel="noopener">https://blog.csdn.net/qq_33885461/article/details/86555560</a><br>解密过程都写好了</p>
+<p>简单记录：<br>3.1 秘钥生成</p>
+<blockquote>
+<p>1.随机选择两个大质数p和q满足$gcd(pq,(p−1)(q−1)=1$。 这个属性是保证两个质数长度相等。<br>2.计算$ n=pq$，和$λ=lcm(p−1,q−1)$<br>3.选择随机整数$g(∈Z_{n^2}^∗​)   $   4.使得满足n整除g的阶。<br>5.定义 $L(x)=(x−1)/n$<br>6.计算$μ=(L(g^λmodn^2))^{−1}mod\ n$<br>7.公钥(n,g) 私钥为(λ,μ)</p>
+</blockquote>
+<p>3.2 加密</p>
+<blockquote>
+<p>1.m为原文(0≤m&lt;n)<br>2.选择随机数$r(0&lt;r&lt;n,r∈Z_{n^2}^∗​)$ 且$gcd(r,n)=1$<br>3.加密$ c=g^m∗r^nmodn^2$</p>
+</blockquote>
+<p>3.3 解密</p>
+<script type="math/tex; mode=display">m=L(c^λmod\ n^2)∗μ \ mod\ n</script><p>首先看到n挺短的，拖进yafu分解得到p和q<br>因为这个是求lamda的关键<br>利用gmpy2.lcm可以求出lamda<br>sage可以直接用lcm<br>然后照着解密过程写脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import getPrime as getprime ,long_to_bytes,bytes_to_long,inverse</span><br><span class="line">import random</span><br><span class="line">import gmpy2</span><br><span class="line">def L(x):</span><br><span class="line">	n=6401013954612445818165507289870580041358569258817613282142852881965884799988941535910939664068503367303343695466899335792545332690862283029809823423608093</span><br><span class="line">	k=(x-1)//n</span><br><span class="line">	return k</span><br><span class="line">n=6401013954612445818165507289870580041358569258817613282142852881965884799988941535910939664068503367303343695466899335792545332690862283029809823423608093</span><br><span class="line">c=29088911054711509252215615231015162998042579425917914434962376243477176757448053722602422672251758332052330100944900171067962180230120924963561223495629695702541446456981441239486190458125750543542379899722558637306740763104274377031599875275807723323394379557227060332005571272240560453811389162371812183549</span><br><span class="line">g=n+1</span><br><span class="line">p=80006336965345725157774618059504992841841040207998249416678435780577798937819</span><br><span class="line">q=80006336965345725157774618059504992841841040207998249416678435780577798937447</span><br><span class="line">print (gmpy2.lcm(p-1,q-1)) #3200506977306222909082753644935290020679284629408806641071426440982942399994390761618504486309093909033612342740607826856064668096014463079124333912866414</span><br><span class="line">lamda=3200506977306222909082753644935290020679284629408806641071426440982942399994390761618504486309093909033612342740607826856064668096014463079124333912866414</span><br><span class="line">L_1=inverse(L(pow(g,lamda,n*n)),n*n)%n</span><br><span class="line">miu=L_1%n</span><br><span class="line">m=L(pow(c,lamda,n*n))*miu%n</span><br><span class="line">print(long_to_bytes(m))</span><br><span class="line">#b&apos;flag&#123;5785203dbe6e8fd8bdbab860f5718155&#125;&apos;</span><br></pre></td></tr></table></figure></p>
+<h3 id="ComplexEncode"><a href="#ComplexEncode" class="headerlink" title="ComplexEncode"></a>ComplexEncode</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import *</span><br><span class="line">from flag import FLAG,false_flag</span><br><span class="line">import gmpy2</span><br><span class="line">import random</span><br><span class="line">import hashlib</span><br><span class="line">import base64</span><br><span class="line"></span><br><span class="line">def rsaEncode(msg):</span><br><span class="line">    f=open(&quot;out&quot;,&quot;a&quot;)</span><br><span class="line">    while True:</span><br><span class="line">        ran=random.randint(3, 12)</span><br><span class="line">        if isPrime(ran):</span><br><span class="line">            break</span><br><span class="line">    e=ran*getPrime(30)</span><br><span class="line">    p = getPrime(1024)</span><br><span class="line">    q = getPrime(1024)</span><br><span class="line">    while (not gmpy2.gcd((p-1)*(q-1),e)==ran or p*q&lt;pow(msg,ran)):</span><br><span class="line">        p = getPrime(1024)</span><br><span class="line">        q = getPrime(1024)</span><br><span class="line">    n=p*q</span><br><span class="line">    assert(pow(msg,ran)&lt;n)</span><br><span class="line">    print(&quot;rsaEncode_init_finish!&quot;)</span><br><span class="line">    dsaEncode(p)</span><br><span class="line">    f.write(&quot;rsaEncode n:&quot;+hex(n)+&quot;\n&quot;)</span><br><span class="line">    f.write(&quot;rsaEncode e:&quot;+hex(e)+&quot;\n&quot;)</span><br><span class="line">    c=pow(msg,e,n)</span><br><span class="line">    f.write(&quot;rsaEncode flag is:&quot;+hex(c)+&quot;\n&quot;)</span><br><span class="line">    f.close()</span><br><span class="line"></span><br><span class="line">def rsaEncode2(m):</span><br><span class="line">    m=int.from_bytes(m.encode(),&apos;big&apos;)</span><br><span class="line">    f=open(&quot;out&quot;,&quot;w&quot;)</span><br><span class="line">    while True:</span><br><span class="line">        ran=random.randint(20, 50)</span><br><span class="line">        if isPrime(ran):</span><br><span class="line">            break</span><br><span class="line">    e=ran*getPrime(30)</span><br><span class="line">    p = getPrime(1024)</span><br><span class="line">    q = gmpy2.next_prime(p)</span><br><span class="line">    while (not gmpy2.gcd((p-1)*(q-1),e)==ran or p*q&gt;pow(m,ran)):</span><br><span class="line">        p = getPrime(1024)</span><br><span class="line">        q = gmpy2.next_prime(p)</span><br><span class="line">    n=p*q</span><br><span class="line">    assert(pow(m,ran)&gt;n)</span><br><span class="line">    c=pow(m,e,n)</span><br><span class="line">    f.write(&quot;n2:&quot;+hex(n)+&quot;\n&quot;)</span><br><span class="line">    f.write(&quot;e2:&quot;+hex(e)+&quot;\n&quot;)</span><br><span class="line">    f.write(&quot;rsaEncode2 re is:&quot;+hex(c)+&quot;\n&quot;)</span><br><span class="line">    f.close()</span><br><span class="line">    print(&quot;rsaEncode2_finish!&quot;)</span><br><span class="line">    return pow(m,ran,n)</span><br><span class="line"></span><br><span class="line">def dsaEncode(p):</span><br><span class="line">    key=genkey(p)</span><br><span class="line">    (r,s,k,q)=sign(rsaEncode2(false_flag),key)</span><br><span class="line">    sig= r.to_bytes(205, &apos;big&apos;) + s.to_bytes(205, &apos;big&apos;) + k.to_bytes(205, &apos;big&apos;)+ q.to_bytes(205, &apos;big&apos;)</span><br><span class="line">    f=open(&quot;out&quot;,&quot;a&quot;)</span><br><span class="line">    f.write(&quot;dsaEncode :&quot;+base64.b64encode(sig).decode()+&quot;\n&quot;)</span><br><span class="line">    f.close()</span><br><span class="line"></span><br><span class="line">def genkey(x):</span><br><span class="line">    # DSA</span><br><span class="line">    N=1024</span><br><span class="line">    L=2048-N-1</span><br><span class="line">    while True:</span><br><span class="line">        q = getPrime(N)</span><br><span class="line">        if q-1&gt;x:</span><br><span class="line">            break</span><br><span class="line">    assert(q-1&gt;x)</span><br><span class="line">    while True:</span><br><span class="line">        t = random.getrandbits(L)</span><br><span class="line">        p = (t * 2*q + 1)</span><br><span class="line">        if isPrime(p):</span><br><span class="line">            break</span><br><span class="line">    e = (p-1) // q</span><br><span class="line">    g = pow(2, e, p)</span><br><span class="line">    y = pow(g, x, p)</span><br><span class="line">    print(&quot;genkey_finish!&quot;)</span><br><span class="line">    return &#123;&apos;y&apos;:y, &apos;g&apos;:g, &apos;p&apos;:p, &apos;q&apos;:q, &apos;x&apos;:x&#125;</span><br><span class="line"></span><br><span class="line">def sign(m, key):</span><br><span class="line">    g, p, q, x = key[&apos;g&apos;], key[&apos;p&apos;], key[&apos;q&apos;], key[&apos;x&apos;]</span><br><span class="line">    k = random.randint(1, q-1)</span><br><span class="line">    Hm = int.from_bytes(hashlib.md5(str(m).encode(&apos;utf-8&apos;)).hexdigest().encode(), &apos;big&apos;)</span><br><span class="line">    r = pow(g, k, p) % q</span><br><span class="line">    s = (inverse(k, q) * (Hm + x*r)) % q</span><br><span class="line">    return (r, s, k, q)</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    msg=int.from_bytes(FLAG.encode(),&apos;big&apos;)</span><br><span class="line">    rsaEncode(msg)</span><br></pre></td></tr></table></figure>
+<p>还是算汇总几个密码算法的简单题，主要就是看懂这段代码的加密过程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg=int.from_bytes(FLAG.encode(),&apos;big&apos;)</span><br><span class="line">rsaEncode(msg)</span><br></pre></td></tr></table></figure><br>将flag转成整形，然后用rsaEncode函数加密，看一下rsaEncode函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">def rsaEncode(msg):</span><br><span class="line">    f=open(&quot;out&quot;,&quot;a&quot;)</span><br><span class="line">    while True:</span><br><span class="line">        ran=random.randint(3, 12)</span><br><span class="line">        if isPrime(ran):</span><br><span class="line">            break</span><br><span class="line">    e=ran*getPrime(30)</span><br><span class="line">    p = getPrime(1024)</span><br><span class="line">    q = getPrime(1024)</span><br><span class="line">    while (not gmpy2.gcd((p-1)*(q-1),e)==ran or p*q&lt;pow(msg,ran)):</span><br><span class="line">        p = getPrime(1024)</span><br><span class="line">        q = getPrime(1024)</span><br><span class="line">    n=p*q</span><br><span class="line">    assert(pow(msg,ran)&lt;n)</span><br><span class="line">    print(&quot;rsaEncode_init_finish!&quot;)</span><br><span class="line">    dsaEncode(p)</span><br><span class="line">    f.write(&quot;rsaEncode n:&quot;+hex(n)+&quot;\n&quot;)</span><br><span class="line">    f.write(&quot;rsaEncode e:&quot;+hex(e)+&quot;\n&quot;)</span><br><span class="line">    c=pow(msg,e,n)</span><br><span class="line">    f.write(&quot;rsaEncode flag is:&quot;+hex(c)+&quot;\n&quot;)</span><br><span class="line">    f.close()</span><br></pre></td></tr></table></figure><br>赋值一个素数ran，范围在3到12之间，e为ran乘一个30位的素数，p和q为1024位的大素数<br>接下来这个while循环就有意思了<br>只要gmpy2.gcd((p-1)<em>(q-1),e)不为ran <strong>或者</strong> p</em>q&lt;pow(msg,ran) 就继续循环，直到找到这个p和q<br>所以输出的pow(msg,ran)&lt;p<em>q 且 gmpy2.gcd((p-1)</em>(q-1),e)==ran</p>
+<p>接下来dsaEncode(p)，对p进行了dsa加密<br>c=pow(msg,e,n) 常规的rsa加密</p>
+<p>跟进到dsaEncode(p)函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def dsaEncode(p):</span><br><span class="line">    key=genkey(p)</span><br><span class="line">    (r,s,k,q)=sign(rsaEncode2(false_flag),key)</span><br><span class="line">    sig= r.to_bytes(205, &apos;big&apos;) + s.to_bytes(205, &apos;big&apos;) + k.to_bytes(205, &apos;big&apos;)+ q.to_bytes(205, &apos;big&apos;)</span><br><span class="line">    f=open(&quot;out&quot;,&quot;a&quot;)</span><br><span class="line">    f.write(&quot;dsaEncode :&quot;+base64.b64encode(sig).decode()+&quot;\n&quot;)</span><br><span class="line">    f.close()</span><br></pre></td></tr></table></figure><br>根据p生成了key，key是<code>{&#39;y&#39;:y, &#39;g&#39;:g, &#39;p&#39;:p, &#39;q&#39;:q, &#39;x&#39;:x}</code><br>然后再对false_flag进行了rsaEncode2，再用key签名</p>
+<p>看看rsaEncode2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">def rsaEncode2(m):</span><br><span class="line">    m=int.from_bytes(m.encode(),&apos;big&apos;)</span><br><span class="line">    f=open(&quot;out&quot;,&quot;w&quot;)</span><br><span class="line">    while True:</span><br><span class="line">        ran=random.randint(20, 50)</span><br><span class="line">        if isPrime(ran):</span><br><span class="line">            break</span><br><span class="line">    e=ran*getPrime(30)</span><br><span class="line">    p = getPrime(1024)</span><br><span class="line">    q = gmpy2.next_prime(p)</span><br><span class="line">    while (not gmpy2.gcd((p-1)*(q-1),e)==ran or p*q&gt;pow(m,ran)):</span><br><span class="line">        p = getPrime(1024)</span><br><span class="line">        q = gmpy2.next_prime(p)</span><br><span class="line">    n=p*q</span><br><span class="line">    assert(pow(m,ran)&gt;n)</span><br><span class="line">    c=pow(m,e,n)</span><br><span class="line">    f.write(&quot;n2:&quot;+hex(n)+&quot;\n&quot;)</span><br><span class="line">    f.write(&quot;e2:&quot;+hex(e)+&quot;\n&quot;)</span><br><span class="line">    f.write(&quot;rsaEncode2 re is:&quot;+hex(c)+&quot;\n&quot;)</span><br><span class="line">    f.close()</span><br><span class="line">    print(&quot;rsaEncode2_finish!&quot;)</span><br><span class="line">    return pow(m,ran,n)</span><br></pre></td></tr></table></figure><br>这里就是题目的突破口了，ran和e的生成和之前一样，关键是p和q，差值很相近可以直接用yafu分解这里的n2，分解得到的p和q进而可以利用gcd求出这个ran，再求出pow(m,ran,n)，这个就是rsaEncode2(false_flag)的结果<br>为什么可以求出pow(m,ran,n)呢？<br>参考之前的wp（RSA——当e与φ(n)不互素时），可以令pow(m,e,n)=pow(m^ran,e//ran,n)，将这个m^ran看作是新的明文，设为x<br>求得的x就是pow(m,ran,n)<br>所以此处我们得到了rsaEncode2(false_flag)，代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">e2=int(&apos;0x57e6b0c63&apos;,16)</span><br><span class="line">n2_p=92038254802992589334836021211021722416892343074988502820738425960842862985591620926198422759102071572852989309010179392091711882907907766877651639325642946829388178711105989373057972159393372729050507806434617955128196692311614810456775707826817847326317108693718175021812398842350298774399748620926186724103</span><br><span class="line">n2_q= 92038254802992589334836021211021722416892343074988502820738425960842862985591620926198422759102071572852989309010179392091711882907907766877651639325642946829388178711105989373057972159393372729050507806434617955128196692311614810456775707826817847326317108693718175021812398842350298774399748620926186723619</span><br><span class="line">ran=41</span><br><span class="line">e2=e2//ran</span><br><span class="line">phi2=(n2_p-1)*(n2_q-1)</span><br><span class="line">d2=gmpy2.invert(e2,phi2)</span><br><span class="line">f1=pow(c2,d2,n2) #即rsaEncode2(false_flag)</span><br></pre></td></tr></table></figure></p>
+<p>接下来我们看看sign函数，怎么签名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def sign(m, key):</span><br><span class="line">    g, p, q, x = key[&apos;g&apos;], key[&apos;p&apos;], key[&apos;q&apos;], key[&apos;x&apos;]</span><br><span class="line">    k = random.randint(1, q-1)</span><br><span class="line">    Hm = int.from_bytes(hashlib.md5(str(m).encode(&apos;utf-8&apos;)).hexdigest().encode(), &apos;big&apos;)</span><br><span class="line">    r = pow(g, k, p) % q</span><br><span class="line">    s = (inverse(k, q) * (Hm + x*r)) % q</span><br><span class="line">    return (r, s, k, q)</span><br></pre></td></tr></table></figure><br>这里是dsa的标准签名，参考：<a href="https://www.jarviswang.me/?p=169" target="_blank" rel="noopener">https://www.jarviswang.me/?p=169</a><br>也就是把我们的rsaEncode2(false_flag)得到的值进行了md5加密得到了Hm，之后返回了四个值，其中包括了关键的k，有了k我们就可以求出p</p>
+<p><a href="https://imgchr.com/i/J6k6ds" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/04/25/J6k6ds.png" alt="J6k6ds.png"></a></p>
+<p>x就是p</p>
+<p>然后我们就要提取r, s, k, q的值出来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dsas=&apos;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACR4uuC531illQ9yIEW1Ki22kYtZNrX77elRFDZr8EKcnrkZC+yyMxlxFNsCrFqEPhGzAPXS++Aa248WMv1uZDNIzi84jiMw7ZWS82OKEwzy0ozV7lEa7deI+QoVdl49kXx3ZVaR2/TrXrfr3dkiBQyORp/DPsSQdkdLoCmtgNycQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAmkIjVBdkWLaqnSz0OdPi69RsjMwT1wVxq81vfDFnOO+JYKfG0OiAZEeJoSeParez6jBH0+RLVc4f6xOFgZcDYopkzR8ZNYlJR78oWmi/0cuxt4nYTTVirtUux3JrT75YQ/+bWmhswBMHQeIAttvqoZp/YZPOmHZdDkl7arrdZ5UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEt+f1ID5QKI6NEqnVMMputnxfuIs4hCKZbPCEeV6uGoLJSbKaxBlzaO37bTzINBAxCcKQfCsV4ZwZFpTmozZ/dSdoKnIq/tcPh++80pUAjSjVI/rVInJi4CKgaeaf/8MX8ajCImkLJt6N4pA109eZ6TVJDFnbSRRY9P5i5iF2XwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACh5RoGbxvmvqT2pj93NhFj5UruyVjoxCkyw5kD2qEVCfKXZT1ysK9F5A2MJuU1qLKiJ76ATUVid1dtanCzd8XzkzfdY3nEtxqJ4CEJTSnIuthBz4ETBd8+v2+Oc4nTaimIdhQrEtI5M2z9+tq+uQ/qaXbg735CQiU7jjyALgOCoQ==&apos;</span><br><span class="line">print(base64.b64decode(dsas))</span><br><span class="line">#b&apos;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x91\xe2\xeb\x82\xe7&#125;b\x96T=\xc8\x81\x16\xd4\xa8\xb6\xdaF-d\xda\xd7\xef\xb7\xa5DP\xd9\xaf\xc1\nrz\xe4d/\xb2\xc8\xcce\xc4Sl\n\xb1j\x10\xf8F\xcc\x03\xd7K\xef\x80kn&lt;X\xcb\xf5\xb9\x90\xcd#8\xbc\xe28\x8c\xc3\xb6VK\xcd\x8e(L3\xcbJ3W\xb9Dk\xb7^#\xe4(U\xd9x\xf6E\xf1\xdd\x95ZGo\xd3\xadz\xdf\xafwd\x88\x1429\x1a\x7f\x0c\xfb\x12A\xd9\x1d.\x80\xa6\xb6\x03rq\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x9aB#T\x17dX\xb6\xaa\x9d,\xf49\xd3\xe2\xeb\xd4l\x8c\xcc\x13\xd7\x05q\xab\xcdo|1g8\xef\x89`\xa7\xc6\xd0\xe8\x80dG\x89\xa1\&apos;\x8fj\xb7\xb3\xea0G\xd3\xe4KU\xce\x1f\xeb\x13\x85\x81\x97\x03b\x8ad\xcd\x1f\x195\x89IG\xbf(Zh\xbf\xd1\xcb\xb1\xb7\x89\xd8M5b\xae\xd5.\xc7rkO\xbeXC\xff\x9bZhl\xc0\x13\x07A\xe2\x00\xb6\xdb\xea\xa1\x9a\x7fa\x93\xce\x98v]\x0eI&#123;j\xba\xddg\x95\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00K~\x7fR\x03\xe5\x02\x88\xe8\xd1*\x9dS\x0c\xa6\xebg\xc5\xfb\x88\xb3\x88B)\x96\xcf\x08G\x95\xea\xe1\xa8,\x94\x9b)\xacA\x976\x8e\xdf\xb6\xd3\xcc\x83A\x03\x10\x9c)\x07\xc2\xb1^\x19\xc1\x91iNj3g\xf7Rv\x82\xa7&quot;\xaf\xedp\xf8~\xfb\xcd)P\x08\xd2\x8dR?\xadR\&apos;&amp;.\x02*\x06\x9ei\xff\xfc1\x7f\x1a\x8c&quot;&amp;\x90\xb2m\xe8\xde)\x03]=y\x9e\x93T\x90\xc5\x9d\xb4\x91E\x8fO\xe6.b\x17e\xf0\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xa1\xe5\x1a\x06o\x1b\xe6\xbe\xa4\xf6\xa6?w6\x11c\xe5J\xee\xc9X\xe8\xc4)2\xc3\x99\x03\xda\xa1\x15\t\xf2\x97e=r\xb0\xafE\xe4\r\x8c&amp;\xe55\xa8\xb2\xa2\&apos;\xbe\x80MEbwWmjp\xb3w\xc5\xf3\x937\xddcy\xc4\xb7\x1a\x89\xe0!\tM)\xc8\xba\xd8A\xcf\x81\x13\x05\xdf&gt;\xbfo\x8es\x89\xd3j)\x88v\x14+\x12\xd293l\xfd\xfa\xda\xbe\xb9\x0f\xeaiv\xe0\xef~BB%;\x8e&lt;\x80.\x03\x82\xa1&apos;</span><br></pre></td></tr></table></figure><br>我们知道to_bytes如果不满205字节，就会补零填充，我们以0位基准，切分提取四个值，在转成整形<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># #r.to_bytes(205, &apos;big&apos;) + s.to_bytes(205, &apos;big&apos;) + k.to_bytes(205, &apos;big&apos;)+ q.to_bytes(205, &apos;big&apos;)</span><br><span class="line"># r=b&apos;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x91\xe2\xeb\x82\xe7&#125;b\x96T=\xc8\x81\x16\xd4\xa8\xb6\xdaF-d\xda\xd7\xef\xb7\xa5DP\xd9\xaf\xc1\nrz\xe4d/\xb2\xc8\xcce\xc4Sl\n\xb1j\x10\xf8F\xcc\x03\xd7K\xef\x80kn&lt;X\xcb\xf5\xb9\x90\xcd#8\xbc\xe28\x8c\xc3\xb6VK\xcd\x8e(L3\xcbJ3W\xb9Dk\xb7^#\xe4(U\xd9x\xf6E\xf1\xdd\x95ZGo\xd3\xadz\xdf\xafwd\x88\x1429\x1a\x7f\x0c\xfb\x12A\xd9\x1d.\x80\xa6\xb6\x03rq&apos;</span><br><span class="line"># s=b&apos;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x9aB#T\x17dX\xb6\xaa\x9d,\xf49\xd3\xe2\xeb\xd4l\x8c\xcc\x13\xd7\x05q\xab\xcdo|1g8\xef\x89`\xa7\xc6\xd0\xe8\x80dG\x89\xa1\&apos;\x8fj\xb7\xb3\xea0G\xd3\xe4KU\xce\x1f\xeb\x13\x85\x81\x97\x03b\x8ad\xcd\x1f\x195\x89IG\xbf(Zh\xbf\xd1\xcb\xb1\xb7\x89\xd8M5b\xae\xd5.\xc7rkO\xbeXC\xff\x9bZhl\xc0\x13\x07A\xe2\x00\xb6\xdb\xea\xa1\x9a\x7fa\x93\xce\x98v]\x0eI&#123;j\xba\xddg\x95&apos;</span><br><span class="line"># k=b&apos;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00K~\x7fR\x03\xe5\x02\x88\xe8\xd1*\x9dS\x0c\xa6\xebg\xc5\xfb\x88\xb3\x88B)\x96\xcf\x08G\x95\xea\xe1\xa8,\x94\x9b)\xacA\x976\x8e\xdf\xb6\xd3\xcc\x83A\x03\x10\x9c)\x07\xc2\xb1^\x19\xc1\x91iNj3g\xf7Rv\x82\xa7&quot;\xaf\xedp\xf8~\xfb\xcd)P\x08\xd2\x8dR?\xadR\&apos;&amp;.\x02*\x06\x9ei\xff\xfc1\x7f\x1a\x8c&quot;&amp;\x90\xb2m\xe8\xde)\x03]=y\x9e\x93T\x90\xc5\x9d\xb4\x91E\x8fO\xe6.b\x17e\xf0&apos;</span><br><span class="line"># q=b&apos;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xa1\xe5\x1a\x06o\x1b\xe6\xbe\xa4\xf6\xa6?w6\x11c\xe5J\xee\xc9X\xe8\xc4)2\xc3\x99\x03\xda\xa1\x15\t\xf2\x97e=r\xb0\xafE\xe4\r\x8c&amp;\xe55\xa8\xb2\xa2\&apos;\xbe\x80MEbwWmjp\xb3w\xc5\xf3\x937\xddcy\xc4\xb7\x1a\x89\xe0!\tM)\xc8\xba\xd8A\xcf\x81\x13\x05\xdf&gt;\xbfo\x8es\x89\xd3j)\x88v\x14+\x12\xd293l\xfd\xfa\xda\xbe\xb9\x0f\xeaiv\xe0\xef~BB%;\x8e&lt;\x80.\x03\x82\xa1&apos;</span><br><span class="line">r=bytes_to_long(r)</span><br><span class="line">s=bytes_to_long(s)</span><br><span class="line">k=bytes_to_long(k)</span><br><span class="line">q=bytes_to_long(q)</span><br><span class="line">#r=102444918260914485960515803593656316264069896558543767748045943245816490463204473313147395429832916075026026311649763977454471046744529091286030098421361251686596825698355745706175964479701105151417546201923868642009237880256729235848382505965454374745716920833655480554504720664662850531237312582572126204529</span><br><span class="line">#s=108323898286056086264484557562172859592659941517728209114449871694547991549133924499860722352034592004099117956766326680190915008107049586782560663817197951802874855680436813946926042994668133657035897758213925852954473237450059599800406927980814502939104336113843276842305872574993878555111236443318012176277</span><br><span class="line">#k=53013781125497306915492459533428444528312942617065973290553458779787098973595549883715635840270520436192847906470878403996377952490572570631141756139325067570505281652679711641154708496619877076338721762727749382658378305782411860893158703845541176473795908042964684829863093781341028842168306612717701522928</span><br><span class="line">#q=113686484877116147135245142666172434187495627210597203868865118549955747598193227686630443159583536767390607705595639440619639708279113383984927573204387862603446583828648765766295831093188087021302240469550495379046137652835726203757437694409427584766671910267180390324458641227647973332811523622914243134113</span><br></pre></td></tr></table></figure><br>我们这里得到了k，也就可以求p<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">m=7096687392414687807681566964785645564873574601917190998581568386550667329018739259797776326864568687765381440079816449721044545236538423441977746751754813825754970682778877307282795282550266331491153064703269062572120889378041060093675391580077144394755237319606990734843877022645841076656313250742140415555541111463760763347590281217609545738852928572445181357955416584538341583858213804907523206443869947930061237735468622840996602687017058718801489227037218139266802570004247133644202041084124199916578310297785630261027531276582721516387941888602039590077866521538878084013332968268094317500216548755933226692331</span><br><span class="line">Hm = int.from_bytes(hashlib.md5(str(m).encode(&apos;utf-8&apos;)).hexdigest().encode(), &apos;big&apos;)</span><br><span class="line">#print(Hm)</span><br><span class="line">r_1=gmpy2.invert(r,q)</span><br><span class="line">p=(r_1*(k*s-Hm))%q</span><br><span class="line">print(p)#103030773486942436659654142903041768844236525866077315420280212349105891011479998019985691813994423283314954926516323846142847363751224051148209594215128512810458860209543214947790266589161123092397904977469160422016164042419663403876859442534225766340503698469512307799400684898177977116843033274844620260771</span><br></pre></td></tr></table></figure><br>此处m就是rsaEncode2(false_flag)，求得p就完事了，回去rsaEncode函数求q，然后发现和rsaEncode2过程差不多，指数处也要提取公因子，最后因为 assert(pow(msg,ran)&lt;n)，所以求解msg可以直接开五次方根得到flag</p>
+<p>总脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import *</span><br><span class="line">import gmpy2</span><br><span class="line">import random</span><br><span class="line">import hashlib</span><br><span class="line">import base64</span><br><span class="line"></span><br><span class="line">n1=int(&apos;0x769bf99a95e9f446788300bfc679b04f26498d26ce1f1384ef22a4bc0606d2fdcf4af86b8e9b26003f561532613a8b7bcb09c0009aefc09c5297f53342b9fe111562c0789dfa91ff4def12c7cb551828079418e1244387f392d6f420c04eb8b99278f5dacb6042828dae19c1f6638d46f9601aceee1511bf600ef548db15ea6ce1ae975cd08236fdac7d457ac9fa203c8f7914702c78dc3ef24fa50c32208225096f5af761f9e4c581dfca7dbc2a4062d59196578e0213a8d1d8a05bfe398a3c8c195b3997fb01b930e2c925732ef78fdd39b4e4681ab3fea4d2c4f1a3b935df5d494817e2c8eef72e3f22f1ef80c3455add7206baf92495ae59adaa7f1bfd25&apos;,16)</span><br><span class="line">e1=0x12a316381</span><br><span class="line">c1=int(&apos;0xa97f8fd2cbf4aa1cae331dc5261c93a8da3c0a4aadd33cf204cdb2e38e3afdd16aed1a23cd911f96ddc7152b14120949235c0f1849999c5eae06932900f0ccb7c19fb3854623dc0bbc9b9b1fe640075d1db0be91f0e45776b959d008edd17cf41c24d711a5c767d10a630eec8d96baf2668a358c3cbe4533e410667748d73725c04113e9c7d4f19d520aab6b3241a96feb54632a6f816efdc3a2d7c28604a25ce9fd3dc1d0210e0c70132618125bf8eae1f73fa48699fb7cffe5721b5b7fc8511d6cec4ecef1a8bca0d8fe29b0856b3648feac3f1020650063c40be606d9faf0004517dfb202dfb9c664a887f366119ef2efcbf84813f9a4ad54e9ad05e20f0&apos;,16)</span><br><span class="line">n2=int(&apos;0x431a834246a5969d460cee6b7db01ec4e05daffd60d6674fd1cf3ab96544ad788df5ef729eba08fce3d6c237b47b7cbda093fb414672eea6a58bd902c7e73844a85b2626e3f17a2c2b6c6521288925792bfa2a338cf1d2128d771b55bac2a2cc85f95dd68b4463661813c7ed268c1ca203c74b513edf749799acbfd70b656976f81d124c0385f4dfe549185a4853ace927db615c1ce95b8230a504dbdc6db1ff639e9700e6f074432493b6bf1aa349a9cf66a7116a6095803718a5b78d541b7fbf643bed0bbde5a9370f54a457feef2fde1db15012c337385d011c4a601fe092a0b0a503b65efb1d2c70de6883a504d04292e4216e5c586e0df85b00732460f5&apos;,16)</span><br><span class="line">e2=int(&apos;0x57e6b0c63&apos;,16)</span><br><span class="line">c2=int(&apos;0x174e74a04d09ee859030c9fa292c266f9de06bf833dcffc5d24a4382251620cac743cf2d500428d5784fc271e610965547675db2716a9ab277395fc565a2d8520b21d4384a525beda292c276b4477852255c910b0dd08374e68e421b137d90c6c8ca98e219a73231eb285707fff221e57a005113ec16ef61bde87bebd69da1d09cccda411242ba7607a470b31e54e79603eb2c568825a7534df24d0e411fa60d96925f3f2cc63e3ab60f1fe51be80009aba3fdfe947365e578f04fd04a1f9e4afb5fc7ccc1ee831622917386c0d7ae00e6f3f4abd818f6e76d9d173a2e53357496441ae140284c8a6cc3aa22232f1a58fc101427236f2c2afc2277470eb83116&apos;,16)</span><br><span class="line"></span><br><span class="line">n2_p=92038254802992589334836021211021722416892343074988502820738425960842862985591620926198422759102071572852989309010179392091711882907907766877651639325642946829388178711105989373057972159393372729050507806434617955128196692311614810456775707826817847326317108693718175021812398842350298774399748620926186724103</span><br><span class="line">n2_q= 92038254802992589334836021211021722416892343074988502820738425960842862985591620926198422759102071572852989309010179392091711882907907766877651639325642946829388178711105989373057972159393372729050507806434617955128196692311614810456775707826817847326317108693718175021812398842350298774399748620926186723619</span><br><span class="line">phi2=(n2_p-1)*(n2_q-1)</span><br><span class="line">ran=41</span><br><span class="line">e2=e2//ran</span><br><span class="line">phi2=(n2_p-1)*(n2_q-1)</span><br><span class="line">d2=gmpy2.invert(e2,phi2)</span><br><span class="line">fake_flag_rsa2=pow(c2,d2,n2)  #7096687392414687807681566964785645564873574601917190998581568386550667329018739259797776326864568687765381440079816449721044545236538423441977746751754813825754970682778877307282795282550266331491153064703269062572120889378041060093675391580077144394755237319606990734843877022645841076656313250742140415555541111463760763347590281217609545738852928572445181357955416584538341583858213804907523206443869947930061237735468622840996602687017058718801489227037218139266802570004247133644202041084124199916578310297785630261027531276582721516387941888602039590077866521538878084013332968268094317500216548755933226692331</span><br><span class="line"></span><br><span class="line">dsas=&apos;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACR4uuC531illQ9yIEW1Ki22kYtZNrX77elRFDZr8EKcnrkZC+yyMxlxFNsCrFqEPhGzAPXS++Aa248WMv1uZDNIzi84jiMw7ZWS82OKEwzy0ozV7lEa7deI+QoVdl49kXx3ZVaR2/TrXrfr3dkiBQyORp/DPsSQdkdLoCmtgNycQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAmkIjVBdkWLaqnSz0OdPi69RsjMwT1wVxq81vfDFnOO+JYKfG0OiAZEeJoSeParez6jBH0+RLVc4f6xOFgZcDYopkzR8ZNYlJR78oWmi/0cuxt4nYTTVirtUux3JrT75YQ/+bWmhswBMHQeIAttvqoZp/YZPOmHZdDkl7arrdZ5UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEt+f1ID5QKI6NEqnVMMputnxfuIs4hCKZbPCEeV6uGoLJSbKaxBlzaO37bTzINBAxCcKQfCsV4ZwZFpTmozZ/dSdoKnIq/tcPh++80pUAjSjVI/rVInJi4CKgaeaf/8MX8ajCImkLJt6N4pA109eZ6TVJDFnbSRRY9P5i5iF2XwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACh5RoGbxvmvqT2pj93NhFj5UruyVjoxCkyw5kD2qEVCfKXZT1ysK9F5A2MJuU1qLKiJ76ATUVid1dtanCzd8XzkzfdY3nEtxqJ4CEJTSnIuthBz4ETBd8+v2+Oc4nTaimIdhQrEtI5M2z9+tq+uQ/qaXbg735CQiU7jjyALgOCoQ==&apos;</span><br><span class="line">r=b&apos;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x91\xe2\xeb\x82\xe7&#125;b\x96T=\xc8\x81\x16\xd4\xa8\xb6\xdaF-d\xda\xd7\xef\xb7\xa5DP\xd9\xaf\xc1\nrz\xe4d/\xb2\xc8\xcce\xc4Sl\n\xb1j\x10\xf8F\xcc\x03\xd7K\xef\x80kn&lt;X\xcb\xf5\xb9\x90\xcd#8\xbc\xe28\x8c\xc3\xb6VK\xcd\x8e(L3\xcbJ3W\xb9Dk\xb7^#\xe4(U\xd9x\xf6E\xf1\xdd\x95ZGo\xd3\xadz\xdf\xafwd\x88\x1429\x1a\x7f\x0c\xfb\x12A\xd9\x1d.\x80\xa6\xb6\x03rq&apos;</span><br><span class="line">s=b&apos;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x9aB#T\x17dX\xb6\xaa\x9d,\xf49\xd3\xe2\xeb\xd4l\x8c\xcc\x13\xd7\x05q\xab\xcdo|1g8\xef\x89`\xa7\xc6\xd0\xe8\x80dG\x89\xa1\&apos;\x8fj\xb7\xb3\xea0G\xd3\xe4KU\xce\x1f\xeb\x13\x85\x81\x97\x03b\x8ad\xcd\x1f\x195\x89IG\xbf(Zh\xbf\xd1\xcb\xb1\xb7\x89\xd8M5b\xae\xd5.\xc7rkO\xbeXC\xff\x9bZhl\xc0\x13\x07A\xe2\x00\xb6\xdb\xea\xa1\x9a\x7fa\x93\xce\x98v]\x0eI&#123;j\xba\xddg\x95&apos;</span><br><span class="line">k=b&apos;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00K~\x7fR\x03\xe5\x02\x88\xe8\xd1*\x9dS\x0c\xa6\xebg\xc5\xfb\x88\xb3\x88B)\x96\xcf\x08G\x95\xea\xe1\xa8,\x94\x9b)\xacA\x976\x8e\xdf\xb6\xd3\xcc\x83A\x03\x10\x9c)\x07\xc2\xb1^\x19\xc1\x91iNj3g\xf7Rv\x82\xa7&quot;\xaf\xedp\xf8~\xfb\xcd)P\x08\xd2\x8dR?\xadR\&apos;&amp;.\x02*\x06\x9ei\xff\xfc1\x7f\x1a\x8c&quot;&amp;\x90\xb2m\xe8\xde)\x03]=y\x9e\x93T\x90\xc5\x9d\xb4\x91E\x8fO\xe6.b\x17e\xf0&apos;</span><br><span class="line">q=b&apos;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xa1\xe5\x1a\x06o\x1b\xe6\xbe\xa4\xf6\xa6?w6\x11c\xe5J\xee\xc9X\xe8\xc4)2\xc3\x99\x03\xda\xa1\x15\t\xf2\x97e=r\xb0\xafE\xe4\r\x8c&amp;\xe55\xa8\xb2\xa2\&apos;\xbe\x80MEbwWmjp\xb3w\xc5\xf3\x937\xddcy\xc4\xb7\x1a\x89\xe0!\tM)\xc8\xba\xd8A\xcf\x81\x13\x05\xdf&gt;\xbfo\x8es\x89\xd3j)\x88v\x14+\x12\xd293l\xfd\xfa\xda\xbe\xb9\x0f\xeaiv\xe0\xef~BB%;\x8e&lt;\x80.\x03\x82\xa1&apos;</span><br><span class="line">r=bytes_to_long(r)</span><br><span class="line">s=bytes_to_long(s)</span><br><span class="line">k=bytes_to_long(k)</span><br><span class="line">q=bytes_to_long(q)</span><br><span class="line"></span><br><span class="line">m=7096687392414687807681566964785645564873574601917190998581568386550667329018739259797776326864568687765381440079816449721044545236538423441977746751754813825754970682778877307282795282550266331491153064703269062572120889378041060093675391580077144394755237319606990734843877022645841076656313250742140415555541111463760763347590281217609545738852928572445181357955416584538341583858213804907523206443869947930061237735468622840996602687017058718801489227037218139266802570004247133644202041084124199916578310297785630261027531276582721516387941888602039590077866521538878084013332968268094317500216548755933226692331</span><br><span class="line">Hm = int.from_bytes(hashlib.md5(str(m).encode(&apos;utf-8&apos;)).hexdigest().encode(), &apos;big&apos;)</span><br><span class="line">r_1=gmpy2.invert(r,q)</span><br><span class="line">p=(r_1*(k*s-Hm))%q</span><br><span class="line"></span><br><span class="line">q=n1//p</span><br><span class="line">phi1=(p-1)*(q-1)</span><br><span class="line">e1=5002847105</span><br><span class="line">e11=e1//5</span><br><span class="line">phi1=(p-1)*(q-1)</span><br><span class="line">d1=gmpy2.invert(e11,phi1)</span><br><span class="line">f1=pow(c1,d1,n1)</span><br><span class="line">flag=gmpy2.iroot(f1,5)[0]</span><br><span class="line">print(long_to_bytes(flag))</span><br><span class="line">b&apos;flag&#123;2a4d55342b46289d1f624d3083c5e2de&#125;&apos;</span><br></pre></td></tr></table></figure></p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
+            <p>原文链接：<a href="https://dgz-cyber.github.io/2020/04/25/%E5%AE%89%E6%81%92%E5%9B%9B%E6%9C%88%E8%B5%9B-Crypto/">https://dgz-cyber.github.io/2020/04/25/%E5%AE%89%E6%81%92%E5%9B%9B%E6%9C%88%E8%B5%9B-Crypto/</a>
+            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/04/25/%E5%AE%89%E6%81%92%E5%9B%9B%E6%9C%88%E8%B5%9B-Crypto/">April 25th 2020, 11:21:20 pm</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/04/25/%E5%AE%89%E6%81%92%E5%9B%9B%E6%9C%88%E8%B5%9B-Crypto/">April 25th 2020, 11:21:33 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/04/24/NCTF2019%20ChildRSA%20wp/" title= "NCTF2019 ChildRSA wp">
+                    <div class="prevTitle">NCTF2019 ChildRSA wp</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:congjian_lin@163.com" target="_blank" rel="noopener" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/DGZ-cyber" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/wechat.png" />
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#notrsa"><span class="toc-number">1.</span> <span class="toc-text">notrsa</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ComplexEncode"><span class="toc-number">2.</span> <span class="toc-text">ComplexEncode</span></a></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 52
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/25</span><a class="archive-post-title" href= "/2020/04/25/%E5%AE%89%E6%81%92%E5%9B%9B%E6%9C%88%E8%B5%9B-Crypto/" >安恒四月赛-Crypto</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/24</span><a class="archive-post-title" href= "/2020/04/24/NCTF2019%20ChildRSA%20wp/" >NCTF2019 ChildRSA wp</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/24</span><a class="archive-post-title" href= "/2020/04/24/%E8%99%8E%E7%AC%A6%E6%9D%AF-MISC-%E5%A5%87%E6%80%AA%E7%9A%84%E7%BB%84%E7%BB%87/" >虎符杯-MISC-奇怪的组织</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/22</span><a class="archive-post-title" href= "/2020/04/22/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E5%9F%B9%E8%AE%AD%E8%AE%B0%E5%BD%95-Web/" >深信服培训记录-Web</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2020/04/21/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E5%9F%B9%E8%AE%AD%E8%AE%B0%E5%BD%95-Crypto/" >深信服培训记录-Crypto</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span><a class="archive-post-title" href= "/2020/04/19/%E8%99%8E%E7%AC%A6ctf2020%E8%AE%B0%E5%BD%95%EF%BC%88%E5%BE%85%E8%A1%A5%E5%85%85%EF%BC%89/" >虎符ctf2020记录（待补充）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "/2020/04/17/DVWA-upload/" >DVWA-upload</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span><a class="archive-post-title" href= "/2020/04/13/sql%E6%B3%A8%E5%85%A5%E5%85%A5%E9%97%A8%E8%AE%B0%E5%BD%95%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/" >sql注入入门记录（未完）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2020/04/11/Arachni%E5%92%8C%E5%91%BD%E4%BB%A4%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/" >Arachni和命令的简单记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "/2020/04/03/%E5%85%B3%E4%BA%8ERGB%E6%95%B0%E5%80%BC%E8%BD%AC%E5%9B%BE%E7%89%87%E8%84%9A%E6%9C%AC%E4%BB%A5%E5%8F%8A%E8%9A%81%E5%89%91%E5%A4%87%E6%B3%A8%E4%BB%A5%E5%8F%8AZ3%E5%AD%A6%E4%B9%A0%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/" >关于RGB数值转图片脚本以及蚁剑备注以及Z3学习简单记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/02</span><a class="archive-post-title" href= "/2020/04/02/angstormctf%20WP%20(%E6%9C%AA%E5%AE%8C)/" >angstormctf WP (未完)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/01</span><a class="archive-post-title" href= "/2020/04/01/%E8%B5%B5%E5%B8%88%E5%82%85b%E7%AB%99%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9misc%20(%E6%9C%AA%E5%AE%8C)/" >赵师傅b站视频学习记录以及一点misc (未完)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/30</span><a class="archive-post-title" href= "/2020/03/30/2019%E9%AB%98%E6%A0%A1%E8%BF%90%E7%BB%B4%E6%8C%91%E6%88%98%E8%B5%9B%20WP-Crypto%20%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/" >2019高校运维挑战赛 WP-Crypto （未完）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span><a class="archive-post-title" href= "/2020/03/29/BJDCTF%20WP%20-%20WEB-1/" >BJDCTF WP - WEB-1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2020/03/24/BJDCTF%20WP%20-%20MISC%E3%80%81CRYPTO%E3%80%81RE/" >BJDCTF WP - MISC、CRYPTO、RE</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/20</span><a class="archive-post-title" href= "/2020/03/20/Aurora%E6%8B%9B%E6%96%B0%E8%B5%9B%E2%80%94%E2%80%94%E5%85%B3%E4%BA%8Emod/" >Aurora招新赛——关于mod</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/19</span><a class="archive-post-title" href= "/2020/03/19/%E7%83%A4%E9%B8%A1%E7%BF%85%EF%BC%88%E6%A0%B9%EF%BC%89%E5%8F%8A%E7%83%A4%E8%9B%8B%E6%8C%9E%E6%B6%B2%E8%AE%B0%E5%BD%95/" >烤鸡翅（根）及烤蛋挞液记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/%E7%83%A4%E7%AE%B1%E8%9B%8B%E7%B3%95%E8%AE%B0%E5%BD%95/" >烤箱蛋糕记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/%E8%AE%BA%E6%96%87%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/" >论文的一点记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/08</span><a class="archive-post-title" href= "/2020/03/08/%E3%80%8A%E6%99%B6%E4%BD%93%E7%94%9F%E9%95%BF%E7%9A%84%E7%89%A9%E7%90%86%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%AC%E4%B8%80%E3%80%81%E4%BA%8C%E3%80%81%E4%B9%9D%E7%AB%A0%EF%BC%88%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD%EF%BC%89/" >《晶体生长的物理基础》第一、二、九章（未完待续）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href= "/2020/03/06/hgame2020%20RSA%EF%BC%9F/" >hgame2020 RSA？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href= "/2020/03/06/%E3%80%8A%E9%94%82%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E6%9D%90%E6%96%99%E8%A7%A3%E6%9E%90%E3%80%8B%E8%AE%B0%E5%BD%95%EF%BC%88%E5%8D%8A%E7%94%B5%E6%B1%A0%EF%BC%89/" >《锂离子电池材料解析》记录（半电池）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href= "/2020/03/06/%E3%80%8A%E9%94%82%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E6%9D%90%E6%96%99%E8%A7%A3%E6%9E%90%E3%80%8B%E8%AE%B0%E5%BD%95%EF%BC%88%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%89/" >《锂离子电池材料解析》记录（第三章）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href= "/2020/03/06/%E7%94%B5%E9%A5%AD%E7%85%B2%E8%9B%8B%E7%B3%95%E8%AE%B0%E5%BD%95/" >电饭煲蛋糕记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "/2020/03/03/hgame2020%20not_One-time/" >hgame2020 not_One-time</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "/2020/03/03/RSA%E2%80%94%E2%80%94%E5%BD%93e%E4%B8%8E%CF%86(n)%E4%B8%8D%E4%BA%92%E7%B4%A0%E6%97%B6/" >RSA——当e与φ(n)不互素时</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span><a class="archive-post-title" href= "/2020/02/28/Socketserver%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%BE%85%E5%A1%AB%EF%BC%89/" >Socketserver学习（待填）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "/2020/02/27/%E3%80%8A%E9%94%82%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E6%9D%90%E6%96%99%E8%A7%A3%E6%9E%90%E3%80%8B%E8%AE%B0%E5%BD%95%EF%BC%88%E7%AC%AC%E4%B8%80%E3%80%81%E4%BA%8C%E7%AB%A0%EF%BC%89/" >《锂离子电池材料解析》记录（第一、二章）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "/2020/02/27/HGAME-MISC(WEEK%20TWO)%20Writes%20up/" >HGAME-MISC(WEEK TWO) Writes up</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "/2020/02/25/CBC%E7%BF%BB%E8%BD%AC%E6%94%BB%E5%87%BB%E5%8F%8APadding%20Oracle%20Attack(POA)%E7%9A%84%E8%AE%B0%E5%BD%95/" >CBC翻转攻击及Padding Oracle Attack(POA)的记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "/2020/02/24/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Bpwn%E8%84%9A%E6%9C%AC/" >i春秋新春赛pwn脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "/2020/02/24/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9BCrypto%E8%AE%B0%E5%BD%95/" >i春秋新春赛Crypto记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "/2020/02/22/hgame2020%20%E4%BA%8C%E5%8F%91%E5%85%A5%E9%AD%82%20%E5%8F%8Amt_rand()%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%B0%E5%BD%95/" >hgame2020 二发入魂 及mt_rand()函数的记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "/2020/02/21/HGAME-MISC(WEEK%20ONE)%20Writes%20up/" >HGAME-MISC(WEEK ONE) Writes up</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/hgame2020%20%E6%9D%82%E8%AE%B0%E5%BD%95-1/" >hgame2020 杂记录-1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "/2020/02/16/HGAME-WEB%20Writes%20up/" >HGAME-WEB Writes up</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >HGAME-CRYPTO Writes up</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" >Windows下安装sqlmap，以及DVWA搭建的注意事项</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/hello-world/" >Hello World</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/04/17/Upload-labs%20(%E6%9C%AA%E5%AE%8C%E5%99%A2%EF%BC%81%E5%BF%85%E5%A1%AB%E5%9D%91)/" >Upload-labs (未完噢！必填坑)</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/11/26/hexo%20archer%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E9%97%AE%E9%A2%98/" >hexo archer主题无法显示数学公式的问题</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/12/01/ubuntu%E8%BF%9B%E7%A8%8B%E9%97%AE%E9%A2%98/" >ubuntu进程问题</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/03/09/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Beasy_RSA/" >i春秋新春赛easy_RSA</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/12/01/ubuntu18.04%E6%8D%A2%E6%BA%90%E9%97%AE%E9%A2%98/" >ubuntu18.04换源问题</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/13/%E3%80%8A%E5%8F%8D%E6%AC%BA%E9%AA%97%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" >《反欺骗的艺术》读书笔记</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/12/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%91%E7%91%9E%E5%B9%B8%E7%9C%9F%E6%98%AF%E5%89%B2%E7%BE%8E%E5%9B%BD%E9%9F%AD%E8%8F%9C%EF%BC%8C%E8%A1%A5%E8%B4%B4%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%96%9D%E5%92%96%E5%95%A1%E5%90%97%EF%BC%9F/" >【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >关于钠离子电池的学习记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span><a class="archive-post-title" href= "/2019/11/26/%E5%85%B3%E4%BA%8E%E6%AF%95%E8%AE%BE%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/" >关于毕设的一点记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" >第一篇博文</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/04/11/%E8%82%96%E7%89%B9%E5%9F%BA%E5%8A%BF%E5%9E%92%E4%B8%8E%E6%AC%A7%E5%A7%86%E6%8E%A5%E8%A7%A6/" >肖特基势垒与欧姆接触</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/03/09/%E9%AB%98%E6%A0%A1%E6%88%98%E2%80%9C%E7%96%AB%E2%80%9D%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%88%86%E4%BA%AB%E8%B5%9B-MISC/" >高校战“疫”网络安全分享赛-MISC</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
+    
+        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="Re"><span class="iconfont-archer">&#xe606;</span>Re</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+    
+        <span class="sidebar-tag-name" data-tags="None"><span class="iconfont-archer">&#xe606;</span>None</span>
+    
+        <span class="sidebar-tag-name" data-tags="杂"><span class="iconfont-archer">&#xe606;</span>杂</span>
+    
+        <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
+    
+        <span class="sidebar-tag-name" data-tags="晶体"><span class="iconfont-archer">&#xe606;</span>晶体</span>
+    
+        <span class="sidebar-tag-name" data-tags="社工"><span class="iconfont-archer">&#xe606;</span>社工</span>
+    
+        <span class="sidebar-tag-name" data-tags="锂离子电池"><span class="iconfont-archer">&#xe606;</span>锂离子电池</span>
+    
+        <span class="sidebar-tag-name" data-tags="钙钛矿"><span class="iconfont-archer">&#xe606;</span>钙钛矿</span>
+    
+        <span class="sidebar-tag-name" data-tags="毕设"><span class="iconfont-archer">&#xe606;</span>毕设</span>
+    
+        <span class="sidebar-tag-name" data-tags="烹饪"><span class="iconfont-archer">&#xe606;</span>烹饪</span>
+    
+        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
+    
+        <span class="sidebar-tag-name" data-tags="光电"><span class="iconfont-archer">&#xe606;</span>光电</span>
+    
+        <span class="sidebar-tag-name" data-tags="待定"><span class="iconfont-archer">&#xe606;</span>待定</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Uncategorized"><span class="iconfont-archer">&#xe60a;</span>Uncategorized</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "DGZ"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
