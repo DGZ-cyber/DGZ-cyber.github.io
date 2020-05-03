@@ -359,6 +359,44 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/04/17/Upload-labs%20(%E6%9C%AA%E5%AE%8C%E5%99%A2%EF%BC%81%E5%BF%85%E5%A1%AB%E5%9D%91)/" >
+            
+                <span>Upload-labs (未完噢！必填坑)</span>
+        </a>
+        <div class="abstract-content">
+            Pass-01一开始无论怎么样都抓不到包，醉了
+试了半天，后面发现上传jpg后缀的文件，就可以抓到包，这应该是前端的js代码原因，如果不是图片文件就不让你上传，数据传不到后端也就抓不到包
+险恶噢，但是没用，我可以直接禁用掉！
+发现删除掉checkfile函数不太管用，于是我直接在网页设置里禁用掉js
+
+
+然后就可以上传了，F12查看图片路径在哪，蚁剑顺利连上。
+当然也可以直接上传jpg文件，在burp里面改成php后缀再上传，flag在根目录下：
+flag{348703be-a0d6-4284-af8c-8c936115c5d1}
+Pass-02上传php文件一句话木马文件，修改Cont...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/04/17/DVWA-upload/" >
             
                 <span>DVWA-upload</span>
@@ -535,9 +573,9 @@ ws3做法有两个
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
         <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Misc">Misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
     
 </div>
             
@@ -629,39 +667,6 @@ sstihttps://blog.csdn.net/qq_40657585/article/details/836572201&#123;% for c in 
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/24/BJDCTF%20WP%20-%20MISC%E3%80%81CRYPTO%E3%80%81RE/" >
-            
-                <span>BJDCTF WP - MISC、CRYPTO、RE</span>
-        </a>
-        <div class="abstract-content">
-            MISC最简单的misc-y1ng下载有一个压缩包，显示有密码，直接用winrar自带的修复，可以打开里面的secret文件，以文本形式打开secret，发现有关键词IHDR，但是没有PNG，于是加上PNG头89504E47，用winhex操作，由于没有插入功能，随便打开一个文件输入十六进制字符串，然后框选住右键Edit&gt;copy block，再到secret中，点击第一格数据，右键Edit&gt; clipboard data&gt;paste，再另存为png文件，就可以看到解密就可以得到flag有一个类似burp的在线解密（转码）网站：https://www.rapidtabl...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Misc">Misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Re">Re</a>
     
 </div>
             
@@ -1637,9 +1642,18 @@ sstihttps://blog.csdn.net/qq_40657585/article/details/836572201&#123;% for c in 
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 55
+        Total : 56
         </div>
         <!-- search  -->
         
@@ -1652,6 +1666,11 @@ sstihttps://blog.csdn.net/qq_40657585/article/details/836572201&#123;% for c in 
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span><a class="archive-post-title" href= "/2020/05/03/NTRU%E6%A0%BC%E5%AF%86%E7%A0%81/" >NTRU格密码</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1850,17 +1869,7 @@ sstihttps://blog.csdn.net/qq_40657585/article/details/836572201&#123;% for c in 
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >HGAME-CRYPTO Writes up</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" >Windows下安装sqlmap，以及DVWA搭建的注意事项</a>
         </li>
     
     
@@ -1875,6 +1884,20 @@ sstihttps://blog.csdn.net/qq_40657585/article/details/836572201&#123;% for c in 
     
         <li class="archive-post-item">
             <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/04/17/Upload-labs%20(%E6%9C%AA%E5%AE%8C%E5%99%A2%EF%BC%81%E5%BF%85%E5%A1%AB%E5%9D%91)/" >Upload-labs (未完噢！必填坑)</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" >Windows下安装sqlmap，以及DVWA搭建的注意事项</a>
         </li>
     
     
@@ -1902,7 +1925,7 @@ sstihttps://blog.csdn.net/qq_40657585/article/details/836572201&#123;% for c in 
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/11/26/hexo%20archer%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E9%97%AE%E9%A2%98/" >hexo archer主题无法显示数学公式的问题</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/12/01/ubuntu%E8%BF%9B%E7%A8%8B%E9%97%AE%E9%A2%98/" >ubuntu进程问题</a>
         </li>
     
     
@@ -1930,7 +1953,7 @@ sstihttps://blog.csdn.net/qq_40657585/article/details/836572201&#123;% for c in 
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/12/01/ubuntu%E8%BF%9B%E7%A8%8B%E9%97%AE%E9%A2%98/" >ubuntu进程问题</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/12/01/ubuntu18.04%E6%8D%A2%E6%BA%90%E9%97%AE%E9%A2%98/" >ubuntu18.04换源问题</a>
         </li>
     
     
@@ -1967,6 +1990,20 @@ sstihttps://blog.csdn.net/qq_40657585/article/details/836572201&#123;% for c in 
     
         </ul>
     
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
     
@@ -1981,11 +2018,6 @@ sstihttps://blog.csdn.net/qq_40657585/article/details/836572201&#123;% for c in 
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" >第一篇博文</a>
-        </li>
-    
-    
     
     
     
@@ -1996,7 +2028,21 @@ sstihttps://blog.csdn.net/qq_40657585/article/details/836572201&#123;% for c in 
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/12/01/ubuntu18.04%E6%8D%A2%E6%BA%90%E9%97%AE%E9%A2%98/" >ubuntu18.04换源问题</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/11/26/hexo%20archer%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E9%97%AE%E9%A2%98/" >hexo archer主题无法显示数学公式的问题</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" >第一篇博文</a>
         </li>
     
     
@@ -2032,11 +2078,11 @@ sstihttps://blog.csdn.net/qq_40657585/article/details/836572201&#123;% for c in 
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
-    
         <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
         <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
     
         <span class="sidebar-tag-name" data-tags="Re"><span class="iconfont-archer">&#xe606;</span>Re</span>
     
@@ -2046,17 +2092,17 @@ sstihttps://blog.csdn.net/qq_40657585/article/details/836572201&#123;% for c in 
     
         <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
     
+        <span class="sidebar-tag-name" data-tags="社工"><span class="iconfont-archer">&#xe606;</span>社工</span>
+    
         <span class="sidebar-tag-name" data-tags="锂离子电池"><span class="iconfont-archer">&#xe606;</span>锂离子电池</span>
     
         <span class="sidebar-tag-name" data-tags="晶体"><span class="iconfont-archer">&#xe606;</span>晶体</span>
     
-        <span class="sidebar-tag-name" data-tags="社工"><span class="iconfont-archer">&#xe606;</span>社工</span>
-    
-        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
-    
         <span class="sidebar-tag-name" data-tags="钙钛矿"><span class="iconfont-archer">&#xe606;</span>钙钛矿</span>
     
         <span class="sidebar-tag-name" data-tags="毕设"><span class="iconfont-archer">&#xe606;</span>毕设</span>
+    
+        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
     
         <span class="sidebar-tag-name" data-tags="烹饪"><span class="iconfont-archer">&#xe606;</span>烹饪</span>
     
