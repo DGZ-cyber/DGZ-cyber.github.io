@@ -359,6 +359,74 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/02/27/HGAME-MISC(WEEK%20TWO)%20Writes%20up/" >
+            
+                <span>HGAME-MISC(WEEK TWO) Writes up</span>
+        </a>
+        <div class="abstract-content">
+            看着wp涨涨知识
+地球上最后的夜晚⾸先解压附件，⾥⾯有⼀个名为“No Password”（⽆密码）的PDF，和⼀个加密的7z。尝试打开7z压缩包，发现⽂件名已被加密，不知道密码的情况下⽆法得知压缩包内有什么⽂件。于是思考密码是不是藏在PDF中。通过搜索可以得知，可能是使⽤wbStego将数据隐写到了PDF内。下载⼯具 (http://wbstego.wbailer.com/) 并尝试解密：
+(确实百度PDF隐写可以查到wbStego)
+那我就装一个来玩玩呗官网下载完解压可以直接用：在magicbook上会报错解不了密，用游戏本，解密得：Zip Password: OmR#O12#b3b%...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/27</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Misc">Misc</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/02/25/CBC%E7%BF%BB%E8%BD%AC%E6%94%BB%E5%87%BB%E5%8F%8APadding%20Oracle%20Attack(POA)%E7%9A%84%E8%AE%B0%E5%BD%95/" >
+            
+                <span>CBC翻转攻击及Padding Oracle Attack(POA)的记录</span>
+        </a>
+        <div class="abstract-content">
+            CBC翻转攻击加密与解密
+
+Plaintext：明文数据IV：初始向量Key：分组加密使用的密钥Ciphertext：密文数据明文都是先与混淆数据（第一组是与IV，之后都是与前一组的密文）进行异或，再执行分组加密的。
+
+分组加密算法在实现加解/密时，需要把消息进行分组(block)，而block的大小常见有64bit、128bit、256bit等。
+对于CBC，整个加密的过程简单说来就是：
+
+1.首先将明文分组(常见的以16字节为一组)，位数不足的使用特殊字符填充(padding)。2.生成一个随机的初始化向量(IV)和一个密钥。3.将IV和第一组明文异或。4.用密钥对3中xor后产生的...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/25</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/02/24/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Bpwn%E8%84%9A%E6%9C%AC/" >
             
                 <span>i春秋新春赛pwn脚本</span>
@@ -592,68 +660,6 @@ http://139.199.182.61/index.php?id=1
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "社工">社工</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >
-            
-                <span>HGAME-CRYPTO Writes up</span>
-        </a>
-        <div class="abstract-content">
-            Week 1签到题 InfantRSA发现我之前网上抄的脚本不太好用了1234567891011121314151617181920212223from libnum import n2sdef inverse(u, v):    &quot;&quot;&quot;The inverse of :data:`u` *mod* :data:`v`.&quot;&quot;&quot;    u3, v3 = u, v    u1, v1 = 1, 0    while v3 &gt; 0:        q = u3 // v3        u1, v1 = v1, u1 - v1*q...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/12/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%91%E7%91%9E%E5%B9%B8%E7%9C%9F%E6%98%AF%E5%89%B2%E7%BE%8E%E5%9B%BD%E9%9F%AD%E8%8F%9C%EF%BC%8C%E8%A1%A5%E8%B4%B4%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%96%9D%E5%92%96%E5%95%A1%E5%90%97%EF%BC%9F/" >
-            
-                <span>【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？</span>
-        </a>
-        <div class="abstract-content">
-            原链接地址 https://mp.weixin.qq.com/s/svfYhubkGtv-8PEA4erptA瑞幸咖啡只用了17个月，就完成了从创立到IPO，创造全球最快IPO纪录。在2019年底门店数量已超过星巴克，并计划在2021年底门店达到10000家（中国）。观点：瑞幸并不是割美国韭菜，补贴中国人喝咖啡。
-瑞幸的打法：1.短期：以咖啡为切入点瑞幸把咖啡当作“Grabber”，而星巴克把咖啡当作“Holder”。两个词：Grabber和Holder，来自于Edison Tse的《源创新》
-
-
-“Grabber”是任何可以吸引人兴趣的概念，它可能是一个美好的前景，一个新的价值诉求，一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "杂">杂</a>
     
 </div>
             
@@ -1674,9 +1680,45 @@ http://139.199.182.61/index.php?id=1
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 58
+        Total : 60
         </div>
         <!-- search  -->
         
@@ -1689,6 +1731,16 @@ http://139.199.182.61/index.php?id=1
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span><a class="archive-post-title" href= "/2020/05/09/%E7%9C%8B%E9%9B%AA%E4%B8%80%E9%81%93RSA/" >看雪一道RSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/07</span><a class="archive-post-title" href= "/2020/05/07/Vmware%E7%94%A8%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E5%BC%BA%E5%88%B6%E5%85%B3%E9%97%AD%E5%90%8E%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" >Vmware用任务管理器强制关闭后处理方法</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1882,40 +1934,12 @@ http://139.199.182.61/index.php?id=1
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "/2020/02/21/HGAME-MISC(WEEK%20ONE)%20Writes%20up/" >HGAME-MISC(WEEK ONE) Writes up</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >HGAME-CRYPTO Writes up</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/04/17/Upload-labs%20(%E6%9C%AA%E5%AE%8C%E5%99%A2%EF%BC%81%E5%BF%85%E5%A1%AB%E5%9D%91)/" >Upload-labs (未完噢！必填坑)</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2020 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "/2020/02/22/hgame2020%20%E4%BA%8C%E5%8F%91%E5%85%A5%E9%AD%82%20%E5%8F%8Amt_rand()%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%B0%E5%BD%95/" >hgame2020 二发入魂 及mt_rand()函数的记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "/2020/02/21/HGAME-MISC(WEEK%20ONE)%20Writes%20up/" >HGAME-MISC(WEEK ONE) Writes up</a>
         </li>
     
     
@@ -1926,6 +1950,16 @@ http://139.199.182.61/index.php?id=1
     
         <li class="archive-post-item">
             <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "/2020/02/16/HGAME-WEB%20Writes%20up/" >HGAME-WEB Writes up</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >HGAME-CRYPTO Writes up</a>
         </li>
     
     
@@ -1945,6 +1979,20 @@ http://139.199.182.61/index.php?id=1
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/hello-world/" >Hello World</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/04/17/Upload-labs%20(%E6%9C%AA%E5%AE%8C%E5%99%A2%EF%BC%81%E5%BF%85%E5%A1%AB%E5%9D%91)/" >Upload-labs (未完噢！必填坑)</a>
         </li>
     
     
@@ -2023,12 +2071,12 @@ http://139.199.182.61/index.php?id=1
     
         </ul>
     
-    <div class="archive-year"> 2020 </div>
+    <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/12/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%91%E7%91%9E%E5%B9%B8%E7%9C%9F%E6%98%AF%E5%89%B2%E7%BE%8E%E5%9B%BD%E9%9F%AD%E8%8F%9C%EF%BC%8C%E8%A1%A5%E8%B4%B4%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%96%9D%E5%92%96%E5%95%A1%E5%90%97%EF%BC%9F/" >【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？</a>
         </li>
     
     
@@ -2051,17 +2099,8 @@ http://139.199.182.61/index.php?id=1
         </li>
     
     
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/12/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%91%E7%91%9E%E5%B9%B8%E7%9C%9F%E6%98%AF%E5%89%B2%E7%BE%8E%E5%9B%BD%E9%9F%AD%E8%8F%9C%EF%BC%8C%E8%A1%A5%E8%B4%B4%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%96%9D%E5%92%96%E5%95%A1%E5%90%97%EF%BC%9F/" >【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？</a>
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" >第一篇博文</a>
         </li>
     
     
@@ -2084,20 +2123,6 @@ http://139.199.182.61/index.php?id=1
     
         </ul>
     
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" >第一篇博文</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
     <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
@@ -2111,13 +2136,13 @@ http://139.199.182.61/index.php?id=1
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
+        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
         <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
     
-        <span class="sidebar-tag-name" data-tags="Re"><span class="iconfont-archer">&#xe606;</span>Re</span>
+        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
     
-        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+        <span class="sidebar-tag-name" data-tags="Re"><span class="iconfont-archer">&#xe606;</span>Re</span>
     
         <span class="sidebar-tag-name" data-tags="杂"><span class="iconfont-archer">&#xe606;</span>杂</span>
     
@@ -2125,17 +2150,17 @@ http://139.199.182.61/index.php?id=1
     
         <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
     
+        <span class="sidebar-tag-name" data-tags="锂离子电池"><span class="iconfont-archer">&#xe606;</span>锂离子电池</span>
+    
         <span class="sidebar-tag-name" data-tags="晶体"><span class="iconfont-archer">&#xe606;</span>晶体</span>
     
         <span class="sidebar-tag-name" data-tags="社工"><span class="iconfont-archer">&#xe606;</span>社工</span>
     
-        <span class="sidebar-tag-name" data-tags="锂离子电池"><span class="iconfont-archer">&#xe606;</span>锂离子电池</span>
+        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
     
         <span class="sidebar-tag-name" data-tags="钙钛矿"><span class="iconfont-archer">&#xe606;</span>钙钛矿</span>
     
         <span class="sidebar-tag-name" data-tags="毕设"><span class="iconfont-archer">&#xe606;</span>毕设</span>
-    
-        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
     
         <span class="sidebar-tag-name" data-tags="烹饪"><span class="iconfont-archer">&#xe606;</span>烹饪</span>
     

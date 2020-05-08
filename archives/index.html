@@ -346,6 +346,64 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/05/09/%E7%9C%8B%E9%9B%AA%E4%B8%80%E9%81%93RSA/" >
+            
+                <span>看雪一道RSA</span>
+        </a>
+        <div class="abstract-content">
+            看雪一道RSA思考的时间太久了…为什么我如此地菜…我还要花时间学挖洞怎么学…
+参考：https://bbs.pediy.com/thread-251190.htm
+题目
+123456789101112131415161718192021222324#!/usr/bin/env python# -*- coding: utf-8 -*-from Crypto.PublicKey import RSA#https://github.com/hellman/libnumimport libnumimport uuid'''[+]c: 116225428823152461101983817801...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/09</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/05/07/Vmware%E7%94%A8%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E5%BC%BA%E5%88%B6%E5%85%B3%E9%97%AD%E5%90%8E%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" >
+            
+                <span>Vmware用任务管理器强制关闭后处理方法</span>
+        </a>
+        <div class="abstract-content">
+            有时提示更新但是我就是不更新，然后复制文件进去时一不小心就boom了卡住，还取消不了，这时我只能任务管理器结束了嘛= =
+然后主要是任务管理器详细信息里面有一个wmware-vmx.exe这个结束不了，导致更新也更新不了
+解决办法是在cmd中输入services.msc 然后对服务进行管理，将所有与vmware有关的服务禁止掉，然后重启电脑，之后就没有那个wmware-vmx.exe进程了，打开vmware进行正常更新然后就可以重新打开虚拟机了
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/07</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "杂">杂</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/05/06/%E6%B5%81%E5%AF%86%E7%A0%81%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0/" >
             
                 <span>流密码简单学习</span>
@@ -603,80 +661,6 @@ notrsa123456789101112131415161718from Crypto.Util.number import getPrime as getp
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/04/24/%E8%99%8E%E7%AC%A6%E6%9D%AF-MISC-%E5%A5%87%E6%80%AA%E7%9A%84%E7%BB%84%E7%BB%87/" >
-            
-                <span>虎符杯-MISC-奇怪的组织</span>
-        </a>
-        <div class="abstract-content">
-            wp参考：https://blog.csdn.net/qq785913417/article/details/105653420/
-https://blog.csdn.net/a965527596/article/details/105644062
-
-提示了浏览行为和聊天内容
-然而我在比赛时只找到了浏览行为
-所以这说明了在虚拟机装windows系统的关键，他的覆盖本机我觉得不太好操作，怕搞坏了
-比赛时我的操作是下载了SQLite Expert Personal 5 
-然后导入sqlite的文件慢慢看，在火狐的某个文件也可以找到相关的浏览记录，但是显然没有直接像wp那么直观
-如下，用eve...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Misc">Misc</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/04/22/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E5%9F%B9%E8%AE%AD%E8%AE%B0%E5%BD%95-Web/" >
-            
-                <span>深信服培训记录-Web</span>
-        </a>
-        <div class="abstract-content">
-            前言：四个部分：操作系统、Web服务器、Web语言以及数据库万变不离其宗，web题目离不开这四个方向
-出一个web题目相当于搭一个网站
-获取flag的方式：信息获取和权限获取
-LAMP系统：
-
-LAMP含义：一个web系统的组成部分只有四个方面：操作系统、Web服务软件（apache、nginx）、Web语言以及数据库，这个是解题的基础    Linux，操作系统    Apache，网页服务器    MariaDB或MySQL，数据库管理系统（或者数据库服务器）    PHP、Perl或Python，脚本语言
-
-web系统中的漏洞无论是什么原因造成的，都可以被分类到以上这四个方面。
-关...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
     
 </div>
             
@@ -1594,9 +1578,45 @@ web系统中的漏洞无论是什么原因造成的，都可以被分类到以�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 58
+        Total : 60
         </div>
         <!-- search  -->
         
@@ -1609,6 +1629,16 @@ web系统中的漏洞无论是什么原因造成的，都可以被分类到以�
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span><a class="archive-post-title" href= "/2020/05/09/%E7%9C%8B%E9%9B%AA%E4%B8%80%E9%81%93RSA/" >看雪一道RSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/07</span><a class="archive-post-title" href= "/2020/05/07/Vmware%E7%94%A8%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E5%BC%BA%E5%88%B6%E5%85%B3%E9%97%AD%E5%90%8E%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" >Vmware用任务管理器强制关闭后处理方法</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1802,40 +1832,12 @@ web系统中的漏洞无论是什么原因造成的，都可以被分类到以�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "/2020/02/21/HGAME-MISC(WEEK%20ONE)%20Writes%20up/" >HGAME-MISC(WEEK ONE) Writes up</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >HGAME-CRYPTO Writes up</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/04/17/Upload-labs%20(%E6%9C%AA%E5%AE%8C%E5%99%A2%EF%BC%81%E5%BF%85%E5%A1%AB%E5%9D%91)/" >Upload-labs (未完噢！必填坑)</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2020 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "/2020/02/22/hgame2020%20%E4%BA%8C%E5%8F%91%E5%85%A5%E9%AD%82%20%E5%8F%8Amt_rand()%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%B0%E5%BD%95/" >hgame2020 二发入魂 及mt_rand()函数的记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "/2020/02/21/HGAME-MISC(WEEK%20ONE)%20Writes%20up/" >HGAME-MISC(WEEK ONE) Writes up</a>
         </li>
     
     
@@ -1846,6 +1848,16 @@ web系统中的漏洞无论是什么原因造成的，都可以被分类到以�
     
         <li class="archive-post-item">
             <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "/2020/02/16/HGAME-WEB%20Writes%20up/" >HGAME-WEB Writes up</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >HGAME-CRYPTO Writes up</a>
         </li>
     
     
@@ -1865,6 +1877,20 @@ web系统中的漏洞无论是什么原因造成的，都可以被分类到以�
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/hello-world/" >Hello World</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/04/17/Upload-labs%20(%E6%9C%AA%E5%AE%8C%E5%99%A2%EF%BC%81%E5%BF%85%E5%A1%AB%E5%9D%91)/" >Upload-labs (未完噢！必填坑)</a>
         </li>
     
     
@@ -1943,12 +1969,12 @@ web系统中的漏洞无论是什么原因造成的，都可以被分类到以�
     
         </ul>
     
-    <div class="archive-year"> 2020 </div>
+    <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/12/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%91%E7%91%9E%E5%B9%B8%E7%9C%9F%E6%98%AF%E5%89%B2%E7%BE%8E%E5%9B%BD%E9%9F%AD%E8%8F%9C%EF%BC%8C%E8%A1%A5%E8%B4%B4%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%96%9D%E5%92%96%E5%95%A1%E5%90%97%EF%BC%9F/" >【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？</a>
         </li>
     
     
@@ -1971,17 +1997,8 @@ web系统中的漏洞无论是什么原因造成的，都可以被分类到以�
         </li>
     
     
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/12/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%91%E7%91%9E%E5%B9%B8%E7%9C%9F%E6%98%AF%E5%89%B2%E7%BE%8E%E5%9B%BD%E9%9F%AD%E8%8F%9C%EF%BC%8C%E8%A1%A5%E8%B4%B4%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%96%9D%E5%92%96%E5%95%A1%E5%90%97%EF%BC%9F/" >【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？</a>
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" >第一篇博文</a>
         </li>
     
     
@@ -2004,20 +2021,6 @@ web系统中的漏洞无论是什么原因造成的，都可以被分类到以�
     
         </ul>
     
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" >第一篇博文</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
     <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
@@ -2031,13 +2034,13 @@ web系统中的漏洞无论是什么原因造成的，都可以被分类到以�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
+        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
         <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
     
-        <span class="sidebar-tag-name" data-tags="Re"><span class="iconfont-archer">&#xe606;</span>Re</span>
+        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
     
-        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+        <span class="sidebar-tag-name" data-tags="Re"><span class="iconfont-archer">&#xe606;</span>Re</span>
     
         <span class="sidebar-tag-name" data-tags="杂"><span class="iconfont-archer">&#xe606;</span>杂</span>
     
@@ -2045,17 +2048,17 @@ web系统中的漏洞无论是什么原因造成的，都可以被分类到以�
     
         <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
     
+        <span class="sidebar-tag-name" data-tags="锂离子电池"><span class="iconfont-archer">&#xe606;</span>锂离子电池</span>
+    
         <span class="sidebar-tag-name" data-tags="晶体"><span class="iconfont-archer">&#xe606;</span>晶体</span>
     
         <span class="sidebar-tag-name" data-tags="社工"><span class="iconfont-archer">&#xe606;</span>社工</span>
     
-        <span class="sidebar-tag-name" data-tags="锂离子电池"><span class="iconfont-archer">&#xe606;</span>锂离子电池</span>
+        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
     
         <span class="sidebar-tag-name" data-tags="钙钛矿"><span class="iconfont-archer">&#xe606;</span>钙钛矿</span>
     
         <span class="sidebar-tag-name" data-tags="毕设"><span class="iconfont-archer">&#xe606;</span>毕设</span>
-    
-        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
     
         <span class="sidebar-tag-name" data-tags="烹饪"><span class="iconfont-archer">&#xe606;</span>烹饪</span>
     
