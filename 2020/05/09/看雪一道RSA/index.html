@@ -264,9 +264,15 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">448</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">443</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -395,7 +401,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="看雪一道RSA"><a href="#看雪一道RSA" class="headerlink" title="看雪一道RSA"></a>看雪一道RSA</h1><p>思考的时间太久了…为什么我如此地菜…我还要花时间学挖洞怎么学…</p>
+        <p>思考的时间太久了…为什么我如此地菜…我还要花时间学挖洞怎么学…</p>
 <p>参考：<a href="https://bbs.pediy.com/thread-251190.htm" target="_blank" rel="noopener">https://bbs.pediy.com/thread-251190.htm</a></p>
 <p>题目</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Crypto.PublicKey <span class="keyword">import</span> RSA</span><br><span class="line"><span class="comment">#https://github.com/hellman/libnum</span></span><br><span class="line"><span class="keyword">import</span> libnum</span><br><span class="line"><span class="keyword">import</span> uuid</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[+]c: 11622542882315246110198381780183915609885519794877638505888594318562049026875880773537475606421060851429089552521799855057027886903089045577109813131337411921487337465750533590631207496479099488188299062942178796174555168674712568378658858077222180944610864942429506071933825243631320461029402707050914749156857671955119372825884795180000144215132575842540467844284302164343073962738640412159437432082145434169104637104493153922807815726660347039567345441510659262739472851333525285962666179396710551064200850498123897201656365809967826085971401423720719968392295754099890208333604214557262123433949228347513816601858942270105905028665541583348520387445357850609498889211150135260431118281908911786331560514084002109424387727057040008628088391762000037896541315584868057004565383762789933210314395498347130144686602708726062407595082308912297303979962192896001591877838171018700151256900172437013887608913521641241205521734522794951440636550705178589005728250181715006876150918012968184851855731273296965605183204816253195084613324490885963526865525299044530681913885694303639328847246147837870731896624166657669627218280799351074582104102789652580089543558488110230582552692122452677137682052196370567053767353002469899164906203524</span></span><br><span class="line"><span class="string">[+]N: 587968709539058313408360344694175927521393435295867041552138836606960116863153627892312711153444067023197048186735303913044122621915045595629336179214144182446538243466715834788299906377841573446054648074403456659034364370317810535639221958019488280674690299403030279034786147112205845689053851316875209287768229591403395364697513328405136562784999789757383283588143659042259431257123353856954190780441115046949767558439078366241457066877382475754158382409736522845698996533956491214258865232971655580947034295973684267291517478631677398758172903115326862798759208382421878492675176885274168199265667769069598506141732479397548393084018568565807729340314773768180197401175943611466390257275211756053220458003475758090694483667816464266328983297319762108936501126103556538051197300127945603910572127418577927453087498829225758576754701560706108903918961457819158694038438844261753477862389295231995570079982815866588639648009619532021364274990501839112831858171797039899325481102398448835637957957459508761469632465528770464341746877892783955689295070505140454641584801559515858363095788553686755947134361627356046897478967408989088014417477413794585473915127799859415216061461677004314432371582508650893848080925431008351355550152007</span></span><br><span class="line"><span class="string">[+]g: 13687797836288679153470514913607716390506304947283858895417177644617977497889490618478125297714629372001506903805031551586875936223725525654940903258032589976321090510242035896440327719990180830470876971374300547060229575827116755853365035922025013391258548160205751904588941484849014624286544168015159637397041426885730692000178417792429534072915561797567703567303112138061929961912896209854470052675348624854143392625380453115758095231546499614292015518026583476816594200501256973716245005187995459385544286205456854077514855765298028625413107944401620765972570158961128150918149196080876157775025322093170149476396577062472842743913042563886868214359985484725077407837700954980617210638094102914647887027651477766533834650123562149779914938828201079611405866005738631120225623386211991062745976174810473880890008785707421499725522649037000040322498207639419474616435759375343499333340375771200572128962006825666899736998990417116279580541474375252742063939982374907374364979109435935335255797938262324738887658234277982055814962875063181268619501475173315921248738265304609605405256568393060613560961415365219659386650074175184062689645977864277139302709935390235796431788831377615036052532360778649053010355032315203680097382427813377816739880854417886162628922799338852518273958881330838668155325304900209508779583738213848243670088766519961161693232457045880024843819530093376731876449976282236412779228497424289717087178247731066079336521431896601464971225717450766734888527559985150837482175845367148607905956395212451673061412164439986008055704341195216491700802850635239198031365269154336835028904031328596974614842402229723764044153287297309033112761791456392305755469723939924594337531849107437026285961770248575126198290035220628533791779487534575997602039033539953397358706048378707330202870647220908704914154287806034576068616259170534</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">flag = <span class="string">"flag&#123;"</span> + str(uuid.uuid4()) + <span class="string">"&#125;"</span></span><br><span class="line">rsa = RSA.generate(<span class="number">4096</span>, e=<span class="number">65537</span>)</span><br><span class="line">p = rsa.p</span><br><span class="line">d = rsa.d</span><br><span class="line">e = rsa.e</span><br><span class="line">N = rsa.n</span><br><span class="line">m = libnum.s2n(flag)</span><br><span class="line">c = pow(m, e, N)</span><br><span class="line">g = d*(p - libnum.s2n(<span class="string">"welcome"</span>))</span><br><span class="line"><span class="keyword">print</span> <span class="string">"[+]c:"</span>,c</span><br><span class="line"><span class="keyword">print</span> <span class="string">"[+]N:"</span>,N</span><br><span class="line"><span class="keyword">print</span> <span class="string">"[+]g:"</span>,g</span><br></pre></td></tr></table></figure>
@@ -438,8 +444,8 @@ c^p - c \equiv 0\ mod\ p</script><p>这说明什么？说明<script type="math/t
         <div class="license-wrapper">
             <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
             <p>原文链接：<a href="https://dgz-cyber.github.io/2020/05/09/%E7%9C%8B%E9%9B%AA%E4%B8%80%E9%81%93RSA/">https://dgz-cyber.github.io/2020/05/09/%E7%9C%8B%E9%9B%AA%E4%B8%80%E9%81%93RSA/</a>
-            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/05/09/%E7%9C%8B%E9%9B%AA%E4%B8%80%E9%81%93RSA/">May 9th 2020, 12:45:13 am</a>
-            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/05/09/%E7%9C%8B%E9%9B%AA%E4%B8%80%E9%81%93RSA/">May 9th 2020, 12:45:13 am</a>
+            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/05/09/%E7%9C%8B%E9%9B%AA%E4%B8%80%E9%81%93RSA/">May 9th 2020, 12:48:20 am</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/05/09/%E7%9C%8B%E9%9B%AA%E4%B8%80%E9%81%93RSA/">May 9th 2020, 12:48:23 am</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -571,7 +577,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#看雪一道RSA"><span class="toc-number">1.</span> <span class="toc-text">看雪一道RSA</span></a></li></ol>
+        
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -584,10 +590,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
     
     
     
@@ -1668,13 +1670,31 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >HGAME-CRYPTO Writes up</a>
         </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >HGAME-CRYPTO Writes up</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/04/17/Upload-labs%20(%E6%9C%AA%E5%AE%8C%E5%99%A2%EF%BC%81%E5%BF%85%E5%A1%AB%E5%9D%91)/" >Upload-labs (未完噢！必填坑)</a>
         </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
     
     
         <li class="archive-post-item">
@@ -1693,20 +1713,6 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/hello-world/" >Hello World</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/04/17/Upload-labs%20(%E6%9C%AA%E5%AE%8C%E5%99%A2%EF%BC%81%E5%BF%85%E5%A1%AB%E5%9D%91)/" >Upload-labs (未完噢！必填坑)</a>
         </li>
     
     
@@ -1799,6 +1805,20 @@ top:50vh;
     
         </ul>
     
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
     
@@ -1850,11 +1870,11 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
+    
         <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
         <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
-    
-        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
     
         <span class="sidebar-tag-name" data-tags="Re"><span class="iconfont-archer">&#xe606;</span>Re</span>
     
@@ -1864,17 +1884,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
     
+        <span class="sidebar-tag-name" data-tags="社工"><span class="iconfont-archer">&#xe606;</span>社工</span>
+    
         <span class="sidebar-tag-name" data-tags="锂离子电池"><span class="iconfont-archer">&#xe606;</span>锂离子电池</span>
     
         <span class="sidebar-tag-name" data-tags="晶体"><span class="iconfont-archer">&#xe606;</span>晶体</span>
     
-        <span class="sidebar-tag-name" data-tags="社工"><span class="iconfont-archer">&#xe606;</span>社工</span>
-    
-        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
-    
         <span class="sidebar-tag-name" data-tags="钙钛矿"><span class="iconfont-archer">&#xe606;</span>钙钛矿</span>
     
         <span class="sidebar-tag-name" data-tags="毕设"><span class="iconfont-archer">&#xe606;</span>毕设</span>
+    
+        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
     
         <span class="sidebar-tag-name" data-tags="烹饪"><span class="iconfont-archer">&#xe606;</span>烹饪</span>
     
