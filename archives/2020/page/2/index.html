@@ -346,6 +346,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/04/24/NCTF2019%20ChildRSA%20wp/" >
+            
+                <span>NCTF2019 ChildRSA wp</span>
+        </a>
+        <div class="abstract-content">
+            参考官方wp:http://soreatu.com/ctf/writeups/Writeup%20for%20Crypto%20problems%20in%20NCTF%202019.html#childrsa以及：https://blog.csdn.net/weixin_44017838/article/details/104907559
+题目中官方wp中的和另外的wp有点区别，主要是n和c，不过问题不大，思路都差不多，本文章是在官方wp的基础上加了点工，补充了自己在理解官方wp中某些地方的思考题目：1234567891011121314151617181920from random ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/04/24/%E8%99%8E%E7%AC%A6%E6%9D%AF-MISC-%E5%A5%87%E6%80%AA%E7%9A%84%E7%BB%84%E7%BB%87/" >
             
                 <span>虎符杯-MISC-奇怪的组织</span>
@@ -466,47 +496,9 @@ web系统中的漏洞无论是什么原因造成的，都可以被分类到以�
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
-    
         <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Misc">Misc</a>
     
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/04/17/Upload-labs%20(%E6%9C%AA%E5%AE%8C%E5%99%A2%EF%BC%81%E5%BF%85%E5%A1%AB%E5%9D%91)/" >
-            
-                <span>Upload-labs (未完噢！必填坑)</span>
-        </a>
-        <div class="abstract-content">
-            Pass-01一开始无论怎么样都抓不到包，醉了
-试了半天，后面发现上传jpg后缀的文件，就可以抓到包，这应该是前端的js代码原因，如果不是图片文件就不让你上传，数据传不到后端也就抓不到包
-险恶噢，但是没用，我可以直接禁用掉！
-发现删除掉checkfile函数不太管用，于是我直接在网页设置里禁用掉js
-
-
-然后就可以上传了，F12查看图片路径在哪，蚁剑顺利连上。
-当然也可以直接上传jpg文件，在burp里面改成php后缀再上传，flag在根目录下：
-flag{348703be-a0d6-4284-af8c-8c936115c5d1}
-Pass-02上传php文件一句话木马文件，修改Cont...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
     
         <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
     
@@ -629,9 +621,9 @@ is_uploaded_file($_FILES[‘upfile’][‘tmp_name’] 后的[‘tmp_name’] �
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
-    
         <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Misc">Misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
     
 </div>
             
@@ -660,9 +652,9 @@ is_uploaded_file($_FILES[‘upfile’][‘tmp_name’] 后的[‘tmp_name’] �
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
-    
         <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Misc">Misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
     
 </div>
             
@@ -1612,6 +1604,10 @@ is_uploaded_file($_FILES[‘upfile’][‘tmp_name’] 后的[‘tmp_name’] �
     
     
     
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 60
@@ -1627,6 +1623,11 @@ is_uploaded_file($_FILES[‘upfile’][‘tmp_name’] 后的[‘tmp_name’] �
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/14</span><a class="archive-post-title" href= "/2020/05/14/Upload-labs%20%EF%BC%88%E7%9C%8B%E7%BC%98%E5%88%86%E5%A1%AB%E5%9D%91%EF%BC%89/" >Upload-labs （看缘分填坑）</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1850,31 +1851,13 @@ is_uploaded_file($_FILES[‘upfile’][‘tmp_name’] 后的[‘tmp_name’] �
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >HGAME-CRYPTO Writes up</a>
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
         </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/04/17/Upload-labs%20(%E6%9C%AA%E5%AE%8C%E5%99%A2%EF%BC%81%E5%BF%85%E5%A1%AB%E5%9D%91)/" >Upload-labs (未完噢！必填坑)</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >HGAME-CRYPTO Writes up</a>
         </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2020 </div>
-    <ul class="year-list">
     
     
         <li class="archive-post-item">
@@ -1971,6 +1954,20 @@ is_uploaded_file($_FILES[‘upfile’][‘tmp_name’] 后的[‘tmp_name’] �
     
         </ul>
     
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >关于钠离子电池的学习记录</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
     <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
@@ -1985,27 +1982,8 @@ is_uploaded_file($_FILES[‘upfile’][‘tmp_name’] 后的[‘tmp_name’] �
     
         </ul>
     
-    <div class="archive-year"> 2020 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >关于钠离子电池的学习记录</a>
-        </li>
     
     
         <li class="archive-post-item">
@@ -2050,13 +2028,13 @@ is_uploaded_file($_FILES[‘upfile’][‘tmp_name’] 后的[‘tmp_name’] �
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
-    
-        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
-    
         <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
     
+        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
+    
         <span class="sidebar-tag-name" data-tags="Re"><span class="iconfont-archer">&#xe606;</span>Re</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
         <span class="sidebar-tag-name" data-tags="杂"><span class="iconfont-archer">&#xe606;</span>杂</span>
     
@@ -2064,17 +2042,17 @@ is_uploaded_file($_FILES[‘upfile’][‘tmp_name’] 后的[‘tmp_name’] �
     
         <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
     
+        <span class="sidebar-tag-name" data-tags="晶体"><span class="iconfont-archer">&#xe606;</span>晶体</span>
+    
         <span class="sidebar-tag-name" data-tags="社工"><span class="iconfont-archer">&#xe606;</span>社工</span>
     
         <span class="sidebar-tag-name" data-tags="锂离子电池"><span class="iconfont-archer">&#xe606;</span>锂离子电池</span>
     
-        <span class="sidebar-tag-name" data-tags="晶体"><span class="iconfont-archer">&#xe606;</span>晶体</span>
+        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
     
         <span class="sidebar-tag-name" data-tags="钙钛矿"><span class="iconfont-archer">&#xe606;</span>钙钛矿</span>
     
         <span class="sidebar-tag-name" data-tags="毕设"><span class="iconfont-archer">&#xe606;</span>毕设</span>
-    
-        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
     
         <span class="sidebar-tag-name" data-tags="烹饪"><span class="iconfont-archer">&#xe606;</span>烹饪</span>
     

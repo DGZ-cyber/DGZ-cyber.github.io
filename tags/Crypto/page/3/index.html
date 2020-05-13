@@ -78,6 +78,8 @@
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -201,10 +203,8 @@
 </head>
 
     
-        <body class="home-body">
     
-    
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -220,34 +220,21 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            DGZ's Blog.
-            <!-- 文章页  -->
-            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
-            
-            
-                it's better to burn out than to fade away
-            
-            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -359,296 +346,12 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/27/HGAME-MISC(WEEK%20TWO)%20Writes%20up/" >
+        <a class="abstract-title" href = "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >
             
-                <span>HGAME-MISC(WEEK TWO) Writes up</span>
+                <span>HGAME-CRYPTO Writes up</span>
         </a>
         <div class="abstract-content">
-            看着wp涨涨知识
-地球上最后的夜晚⾸先解压附件，⾥⾯有⼀个名为“No Password”（⽆密码）的PDF，和⼀个加密的7z。尝试打开7z压缩包，发现⽂件名已被加密，不知道密码的情况下⽆法得知压缩包内有什么⽂件。于是思考密码是不是藏在PDF中。通过搜索可以得知，可能是使⽤wbStego将数据隐写到了PDF内。下载⼯具 (http://wbstego.wbailer.com/) 并尝试解密：
-(确实百度PDF隐写可以查到wbStego)
-那我就装一个来玩玩呗官网下载完解压可以直接用：在magicbook上会报错解不了密，用游戏本，解密得：Zip Password: OmR#O12#b3b%...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Misc">Misc</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/25/CBC%E7%BF%BB%E8%BD%AC%E6%94%BB%E5%87%BB%E5%8F%8APadding%20Oracle%20Attack(POA)%E7%9A%84%E8%AE%B0%E5%BD%95/" >
-            
-                <span>CBC翻转攻击及Padding Oracle Attack(POA)的记录</span>
-        </a>
-        <div class="abstract-content">
-            CBC翻转攻击加密与解密
-
-Plaintext：明文数据IV：初始向量Key：分组加密使用的密钥Ciphertext：密文数据明文都是先与混淆数据（第一组是与IV，之后都是与前一组的密文）进行异或，再执行分组加密的。
-
-分组加密算法在实现加解/密时，需要把消息进行分组(block)，而block的大小常见有64bit、128bit、256bit等。
-对于CBC，整个加密的过程简单说来就是：
-
-1.首先将明文分组(常见的以16字节为一组)，位数不足的使用特殊字符填充(padding)。2.生成一个随机的初始化向量(IV)和一个密钥。3.将IV和第一组明文异或。4.用密钥对3中xor后产生的...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/24/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Bpwn%E8%84%9A%E6%9C%AC/" >
-            
-                <span>i春秋新春赛pwn脚本</span>
-        </a>
-        <div class="abstract-content">
-            exp来自大哥诺夜
-borrowstack12345678910111213141516171819202122232425262728293031323334353637383940414243444546from pwn import *#p = process(&quot;./borrowstack&quot;)p = remote(&quot;123.56.85.29&quot;,3635)p.send(&quot;a&quot;*0x60+p64(0x601080+0x100-0x60)+p64(0x400699))vsyscall = 0xffffffffff600000pu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Pwn">Pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/24/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9BCrypto%E8%AE%B0%E5%BD%95/" >
-            
-                <span>i春秋新春赛Crypto记录</span>
-        </a>
-        <div class="abstract-content">
-            本菜依然很菜，只能做网上提供了脚本的题目。但还是结合wp和自己的理解写点东西吧。
-warm up题目给了三个文件：12345678910111213141516171819202122232425#challenge.pyfrom Crypto.Util.number import *from encode import KEYq=getPrime(1024)p=getPrime(1024)r=getPrime(1024)s=getPrime(1500)e1=125794e2=42373n1=p*qn2=p*rn3=p*q*sc1=pow(s,e1,n1)Key=int(KEY.enco...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/22/hgame2020%20%E4%BA%8C%E5%8F%91%E5%85%A5%E9%AD%82%20%E5%8F%8Amt_rand()%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%B0%E5%BD%95/" >
-            
-                <span>hgame2020 二发入魂 及mt_rand()函数的记录</span>
-        </a>
-        <div class="abstract-content">
-            原链接：https://www.ambionics.io/blog/php-mt-rand-prediction
-只用两个输出值破解mt_rand函数，无需爆破介绍当在对一个旧网站做渗透测试时，我们遇到了一些很久没见到过的代码：12345678&lt;?phpfunction resetPassword($email)&#123;    [...]    $superSecretToken = md5($email . &apos;:&apos; . mt_rand());    [...]    $this-&gt;sendEmailWithResetToken($email, $su...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/21/HGAME-MISC(WEEK%20ONE)%20Writes%20up/" >
-            
-                <span>HGAME-MISC(WEEK ONE) Writes up</span>
-        </a>
-        <div class="abstract-content">
-            签到题Li0tIC4uLi0tIC4tLi4gLS4tLiAtLS0tLSAtLSAuIC4uLS0uLSAtIC0tLSAuLi0tLi0gLi4tLS0gLS0tLS0gLi4tLS0gLS0tLS0gLi4tLS4tIC4uLi4gLS0uIC4tIC0tIC4uLi0tbase64解密：把空格换成斜杠：.—/…—/.-../-.-./——-/—/./..—.-/-/—-/..—.-/..—-/——-/..—-/——-/..—.-/…./—./.-/—/…—在http://www.bejson.com/enc/morse/这个网站解密得到：W3LC0ME%udTO%ud2020%u...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Misc">Misc</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/19/hgame2020%20%E6%9D%82%E8%AE%B0%E5%BD%95-1/" >
-            
-                <span>hgame2020 杂记录-1</span>
-        </a>
-        <div class="abstract-content">
-            hgame2020 杂记录-1标签（空格分隔）： 未分类
-
-Cosmos的留言板-1题目url:
-
-http://139.199.182.61/index.php?id=1
-
-简单测试一下
-
-1# 回显：id=1 过滤了# 而1%23 回显1#，用url编码即可绕过-1 OR 1 =1 回显：id:-1OR1=1  过滤了空格1, 回显：id=1, 逗号未被过滤，但是没有用到逗号1+ 回显：id=1 过滤了+， select同理，而1seselectlect回显1select，用双写可以绕过
-
-主要是绕过对空格的过滤,用了$/**/$ ，后面发现直接%0a（换行符）也可以，还更直接…再试...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/19</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/16/HGAME-WEB%20Writes%20up/" >
-            
-                <span>HGAME-WEB Writes up</span>
-        </a>
-        <div class="abstract-content">
-            WEEK ONECosmos 的博客利用awvs扫出git仓库地址，在仓库找到评论板块，https://github.com/FeYcYodhrPDJSru/8LTUKCL83VLhXbc/commit/f79171d9c97a1ab3ea6c97b3eb4f0e1551549853#commentsbase64解码aGdhbWV7ZzF0X2xlQGtfMXNfZGFuZ2VyMHVzXyEhISF9完事了
-接头霸王用burp或者F12改请求头，burp的过程就不展示了，简单记录一下用F12的过程其中里面有四关，12345You need to come from https://vi...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >
-            
-                <span>关于长晶体的一些记录</span>
-        </a>
-        <div class="abstract-content">
-            晶体生长的基本过程宏观角度晶体生长过程是晶体与环境相（蒸气、溶液，熔体）界面向环境相中不断推移的过程，也就是由包含组成晶体单元的母相从低秩序相向高度有序晶相的转变。
-微观角度晶体生长过程可以看做一个“基元”过程。所谓“基元”，是指结晶过程中最基本的结构单元，从广义上说，“基元”可以是原子、分子，也可以是具有一定几何构型的原子（分子）聚集体。通俗一点，晶体生长的行为，宏观的是在晶核上生长，微观上是一颗一颗吸附在一起，然后一层一层、一排一排扫过去生长
-
-（1）长晶体的过程是一个溶解平衡的过程，溶解和析出的过程。（2）析出的过程：析出的时候会形成晶体或者非晶，一般来说晶体都有一个晶格能，能量更...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "晶体">晶体</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/13/%E3%80%8A%E5%8F%8D%E6%AC%BA%E9%AA%97%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" >
-            
-                <span>《反欺骗的艺术》读书笔记</span>
-        </a>
-        <div class="abstract-content">
-            第7章 假冒的站点和危险的附件天下没有免费的午餐，然而我们大部分人因为贪小便宜，想急于得到免费品，以至于注意力被分散，无暇关注对方提供的是什么东西，可能“绵里藏针”。
-这一章主要讲的是钓鱼邮件，利用人们总是期望免费得到某些东西的心理来实施，让我注意到一个我之前没接触到的概念就是7.2来自朋友的消息，如果收到了与自己关系密切的人发来的邮件，也要考虑打开附件是否安全，提到了有一种病毒作用是：首先进入了某个人的电脑，然后把自己发送给此人邮箱地址簿的每个人。于是所有人都会从自己认识并信任的人那里收到一封邮件，附有带病毒的附件。
-第8章 利用同情心、内疚感和胁迫手段经验丰富的社交工程师善于设计一种...
+            Week 1签到题 InfantRSA发现我之前网上抄的脚本不太好用了1234567891011121314151617181920212223from libnum import n2sdef inverse(u, v):    &quot;&quot;&quot;The inverse of :data:`u` *mod* :data:`v`.&quot;&quot;&quot;    u3, v3 = u, v    u1, v1 = 1, 0    while v3 &gt; 0:        q = u3 // v3        u1, v1 = v1, u1 - v1*q...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -659,7 +362,7 @@ http://139.199.182.61/index.php?id=1
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "社工">社工</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Crypto">Crypto</a>
     
 </div>
             
@@ -669,114 +372,11 @@ http://139.199.182.61/index.php?id=1
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/4/">&amp;#60; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">NEXT &amp;#62;</a>
+        <a class="extend prev" rel="prev" href="/tags/Crypto/page/2/">&amp;#60; PREV</a><a class="page-number" href="/tags/Crypto/">1</a><a class="page-number" href="/tags/Crypto/page/2/">2</a><span class="page-number current">3</span>
     </nav>
     
 </main>
             <!-- profile -->
-            
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/doge.jpg >
-    <div class="profile-name">大狗子</div>
-    
-    <div class="profile-signature">
-        咕咕咕
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
-            
-                <a href="mailto:congjian_lin@163.com" target="_blank" rel="noopener" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/DGZ-cyber" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                  
-                  <img class="profile-qr" src="/assets/wechat.png" />
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= //https://chikorita.fun/ target="_black">domain</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= //https://apeng.fun/ target="_black">Apeng</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= //https://wulidecade.cn/ target="_black">Decade</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= //https://ashen.run/ target="_black">Ashen</a>
-                    </span>
-                
-            
-        </div>
-    
-    
-</div>
             
         </div>
         <footer class="footer footer-unloaded">
